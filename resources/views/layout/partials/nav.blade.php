@@ -47,7 +47,9 @@
 				<li class="{{ Request::is('attendance') ? 'active' : '' }}"> 
 					<a href="{{url('attendance')}}"><i class="feather-grid"></i> <span>Attendance</span></a>
 				</li>
-				
+				<li class="{{ Request::is('logs') ? 'active' : '' }}"> 
+					<a href="{{url('logs')}}"><i class="feather-grid"></i> <span>Course Logs</span></a>
+				</li>	
 				<li class="{{ Request::is('results') ? 'active' : '' }}"> 
 					<a href="{{url('results')}}"><i class="feather-grid"></i> <span>Results</span></a>
 				</li>

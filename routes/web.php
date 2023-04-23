@@ -37,6 +37,8 @@ Route::get('/results/download/{id}', [App\Http\Controllers\ResultController::cla
 Route::get('/results/print/{id}', [App\Http\Controllers\ResultController::class,'Print'])->name('results.print');
 Route::resource('results', App\Http\Controllers\ResultController::class);
 
+Route::resource('logs', App\Http\Controllers\CourseLogController::class);
+
 Route::get('/model-solutions/download/{id}', [App\Http\Controllers\ModelSolutionsController::class,'Download'])->name('paper-solutions.download');
 Route::get('/model-solutions/print/{id}', [App\Http\Controllers\ModelSolutionsController::class,'Print'])->name('paper-solutions.print');
 Route::get('/profile', [App\Http\Controllers\HomeController::class,'settings'])->name('profile.index');

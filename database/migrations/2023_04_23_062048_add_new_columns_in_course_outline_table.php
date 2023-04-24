@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('course_logs', function (Blueprint $table) {
-            $table->id();
-            $table->date('date');
-            $table->string('duration');
-            $table->text('topics_covered');
-            $table->text('evaluation_instruments');
-            $table->timestamps();
+        Schema::table('course_outlines', function (Blueprint $table) {
+            $table->string('weekly_tution_pattern');
+            $table->text('course_structure');
+            $table->text('course_style');
+            $table->string('web_link');
+            $table->string('teaching_team');
         });
     }
 
@@ -30,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course_logs');
+        Schema::table('course_outline', function (Blueprint $table) {
+            //
+        });
     }
 };

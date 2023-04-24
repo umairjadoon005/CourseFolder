@@ -83,7 +83,32 @@
 </select>
                                 </div>
                             </div>
-                          
+                            <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Weekly Tution Pattern</label>
+                                                <input type="text" class="form-control" name="weekly_tution_pattern" placeholder="2 Lectures (90 Minutes each)">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Course Structure</label>
+                                                <input type="text" class="form-control" name="course_structure" placeholder="Presentation by instructors, tasks, quizzes, assignments">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Course Style</label>
+                                                <input type="text" class="form-control" name="course_style" placeholder="The course will be delivered mostly in a classroom environment">
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Web Link</label>
+                                                <input type="text" class="form-control" name="web_link" placeholder="http://google.meet/exampleurl">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="col-form-label">Teaching Team</label>
+                                                <input type="text" class="form-control" name="teaching_team" placeholder="Sir. John Doe">
+                                            </div>
+                                        </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

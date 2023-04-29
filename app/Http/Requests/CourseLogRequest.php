@@ -24,6 +24,14 @@ class CourseLogRequest extends FormRequest{
             // 'start_time' => 'required',
             // 'end_time' => 'required',
             'topics_covered' => 'required',
+            'log_document' => 'required|max:1',
+    'lolg_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx,png,jpg,jpeg,gif|max:5120'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'notes_document.max'=> 'Maximum 1 files allowed.'
         ];
     }
 }

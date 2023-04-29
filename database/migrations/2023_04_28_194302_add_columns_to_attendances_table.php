@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('attendances', function (Blueprint $table) {
-           $table->bigInteger('roll_no',0);
+           $table->bigInteger('roll_no')->default(0);
            $table->string('student_name')->nullable();
-           $table->string('activity_ref','P');
+           $table->string('activity_ref')->default('P');
            $table->integer('total_attendence')->nullable();
            $table->integer('total_absents')->nullable();
            $table->double('percentage')->nullable();

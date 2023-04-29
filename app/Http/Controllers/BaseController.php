@@ -32,7 +32,7 @@ if($this->user==null){
         });
     }
     protected function UploadFile($request,$input_key){
-        $allowedfileExtension = ['pdf', 'doc', 'docx'];
+        $allowedfileExtension = ['pdf', 'doc', 'docx','ppt','pptx','csv','xlsx','png','jpg','jpeg','gif'];
         $files = $request->allFiles();
         $file_array = array();
         foreach ($files[$input_key] as $key => $file) {

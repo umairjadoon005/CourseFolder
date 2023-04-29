@@ -73,6 +73,13 @@
                             </div>
 
                             <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Total Attendance<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Enter Total Attendance" name="total_attendence">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Total Absents<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" placeholder="Enter Total Number of Absents" name="total_absents">

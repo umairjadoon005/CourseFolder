@@ -14,12 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('attendances', function (Blueprint $table) {
-           $table->bigInteger('roll_no');
-           $table->string('student_name');
-           $table->string('activity_ref');
-           $table->integer('total_attendence');
-           $table->integer('total_absents');
-           $table->double('percentage');
+           $table->bigInteger('roll_no',0);
+           $table->string('student_name')->nullable();
+           $table->string('activity_ref','P');
+           $table->integer('total_attendence')->nullable();
+           $table->integer('total_absents')->nullable();
+           $table->double('percentage')->nullable();
            $table->string('status')->nullable();
         });
     }

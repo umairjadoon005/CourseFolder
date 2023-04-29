@@ -129,11 +129,20 @@ class AttendanceController extends BaseController
     }
 
     private function saveAndUpdate($attendance,$request){
+        $attendance->course_id = $request->course_id;
         $attendance->title = $request->title;
         $attendance->description = $request->description;
-      $file_array=$this->UploadFile($request,'attendance_document');
+        $attendance->roll_no = $request->roll_no;
+        $attendance->student_name = $request->student_name;
+        $attendance->activity_ref = $request->activity_ref;
+        $attendance->total_attendence = $request->total_attendence;
+        $attendance->total_absents = $request->total_absents;
+        $attendance->percentage = $request->percentage;
+        $attendance->status = $request->status;
+
+        $file_array=$this->UploadFile($request,'attendance_document');
         $attendance->document_path = json_encode($file_array);
-        $attendance->course_id = $request->course_id;
+        
         $attendance->save();
       
     }

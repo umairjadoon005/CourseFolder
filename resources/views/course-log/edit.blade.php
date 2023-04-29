@@ -41,7 +41,7 @@
                             
                             <div class="form-group row">
                                 <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
-                                    <input class="form-control" type="date" placeholder="48" value="{{$log->date}}" name="credit_hours">
+                                    <input class="form-control" type="date" placeholder="48" value="{{$log->date}}" name="date">
                                 </div>
                                 <div class="col-sm-8">
                                     <label class="col-form-label">Duration</label>
@@ -62,7 +62,7 @@
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Upload Signature</label>
                                     <br>
-                                    <input type="file" id="file-input" class="form-control" multiple="true" name="log_document">
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
                                 </div>
                             </div>
                           

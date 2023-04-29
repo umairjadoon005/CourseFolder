@@ -27,15 +27,30 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<p>Title<br/>{{$attendance->title}}</p>
-														<p>Descripiton <br/>
-                                                            {{$attendance->description}}</p>
+														<p>Title <span>{{$attendance->title}} </span></p>
+														<p>Descripiton <span>
+                                                            {{$attendance->description}}</span></p>
+                                                            <p>Student's Roll No <span>
+                                                            {{$attendance->roll_no}}</span></p>
+                                                            <p>Student's Name <span>
+                                                            {{$attendance->student_name}}</span></p>
+                                                            <p>Activity Reference <span>
+                                                            {{$attendance->activity_ref}}</span></p>
+                                                            <p>Total Attendance <span>
+                                                            {{$attendance->total_attendence}}</span></p>
+                                                            <p>Total Absents <span>
+                                                            {{$attendance->total_absents}}</span></p>
+                                                            <p>Percentage <span>
+                                                            {{$attendance->percentage}}</span></p>
+                                                            <p>Status <span>
+                                                            {{$attendance->status}}</span></p>
 														<p>Attachments
                                                         @foreach(json_decode($attendance->document_path) as $path)
-                                                        <br/>
+                                                        <span>
                                                         {{$path->name}} <a href="{{route('attendance.download',$attendance->id).'?document='.$path->path}}">Download</a>
                                                         @endforeach
-                                                        </p>
+                                                        </span></p>
+                                                        
                                                         
 													</div>
 												</div>

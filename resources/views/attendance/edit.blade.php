@@ -47,6 +47,52 @@
                                                     <textarea class="form-control" name="description" placeholder="Description">{{$attendance->description}}</textarea>
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Student's Roll No</label>
+                                                    <input type="text" class="form-control" name="roll_no" value="{{$attendance->roll_no}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Student's Name</label>
+                                                    <input type="text" class="form-control" name="student_name" value="{{$attendance->student_name}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Activity Reference</label>
+                                                    <input type="text" class="form-control" name="activity_ref" value="{{$attendance->activity_ref}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Total Attendance</label>
+                                                    <input type="text" class="form-control" name="total_attendence" value="{{$attendance->total_attendence}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Total Absents</label>
+                                                    <input type="text" class="form-control" name="total_absents" value="{{$attendance->total_absents}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Percentage</label>
+                                                    <input type="text" class="form-control" name="percentage" value="{{$attendance->percentage}}">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="col-form-label">Status</label>
+                                                    <input type="text" class="form-control" name="status" value="{{$attendance->status}}">
+                                                </div>
+                                            </div>
+                                            
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
                                                     <label class="col-form-label">Upload Attendance</label>

@@ -68,8 +68,8 @@ parent::__construct();
      */
     public function show($id)
     {
-        $outline=CourseLog::findOrFail($id);
-        return view('course-log.show',compact('outline'))->render();
+        $log=CourseLog::findOrFail($id);
+        return view('course-log.show',compact('log'))->render();
     }
 
     /**

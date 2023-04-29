@@ -65,12 +65,12 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Pre Requisites</label>
-                                                <input type="text" class="form-control" name="pre_requisites" placeholder="Introduction To Computer">
+                                                <label class="col-form-label">Pre Requisite</label>
+                                                <input type="text" class="form-control" name="pre_requisite" placeholder="Introduction To Computer">
                                             </div>
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Post Requisites</label>
-                                                <input type="text" class="form-control" name="post_requisites" placeholder="Software Engineering II">
+                                                <label class="col-form-label">Post Requisite</label>
+                                                <input type="text" class="form-control" name="post_requisite" placeholder="Software Engineering II">
                                             </div>
                                         </div>
                                         <div class="form-group row">

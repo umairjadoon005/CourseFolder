@@ -105,6 +105,11 @@ private function saveAndUpdate($request,$outline){
     $outline->duration_unit = $request->duration_unit;
     $outline->source_structure = $request->source_structure;
     $outline->course_id = $request->course_id;
+    $outline->weekly_tution_pattern = $request->weekly_tution_pattern;
+    $outline->course_structure = $request->course_structure;
+    $outline->course_style = $request->course_style;
+    $outline->web_link = $request->web_link;
+    $outline->teaching_team = $request->teaching_team;
     $outline->save();
 
 }

@@ -41,7 +41,7 @@
                             
                             <div class="form-group row">
                                 <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
-                                    <input class="form-control" type="date" placeholder="48" name="credit_hours">
+                                    <input class="form-control" type="date" placeholder="48" name="date">
                                 </div>
                                 <div class="col-sm-8">
                                     <label class="col-form-label">Duration</label>
@@ -58,7 +58,13 @@
                                     <input type="text" class="form-control" name="evaluation_instruments"  placeholder="Software Engineering II">
                                 </div>
                             </div>
-                          
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Upload Signature</label>
+                                    <br>
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="log_document">
+                                </div>
+                            </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

@@ -21,8 +21,8 @@ class CourseLogRequest extends FormRequest{
         return [
             'course_id' => 'required',
             'date' => 'required',
-            'start_time' => 'required',
-            'end_time' => 'required',
+            // 'start_time' => 'required',
+            // 'end_time' => 'required',
             'topics_covered' => 'required',
         ];
     }

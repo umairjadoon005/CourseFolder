@@ -87,6 +87,13 @@
                                     </textarea>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Upload Signature</label>
+                                    <br>
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
+                                </div>
+                            </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" data-bs-dismiss="modal" class="btn btn-secondary btn-rounded">Cancel</button>

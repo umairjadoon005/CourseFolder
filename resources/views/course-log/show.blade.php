@@ -41,6 +41,8 @@
 													<div class="invoice-total-inner">
 														<p>Topics Covered <span>{{$log->topics_covered}}</span></p>
 														<p>Evaluation Instruments <span>{{$log->evaluation_instruments}}</span></p>
+                            <p>Signature <span>{{$log->log_document}}</span></p>
+                            
 													</div>
 												</div>
 											</div>

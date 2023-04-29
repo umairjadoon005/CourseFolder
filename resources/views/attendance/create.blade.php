@@ -25,7 +25,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form id="save-attendance">
+                        <form id="save-attendance" enctype="multipart/form-data">
                         @csrf 
                         <div class="row">
                                 <div class="col-md-12">

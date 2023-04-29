@@ -50,9 +50,12 @@
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
 														<p>Course Type <span>{{$outline->course_type}}</span></p>
-														<p>Pre Requisites <span>{{$outline->pre_requisites}}</span></p>
-														<p>Post Requisites <span>{{$outline->post_requisites}}</span></p>
+														<p>Pre Requisites <span>{{$outline->pre_requisite}}</span></p>
+														<p>Post Requisites <span>{{$outline->post_requisite}}</span></p>
 														<p>Source Structure <span>{{$outline->source_structure}}</span></p>
+                            <p>Course Style <span>{{$outline->course_style}}</span></p>
+                            <p>Web Link <span>{{$outline->web_link}}</span></p>
+                            <p>Teaching Team <span>{{$outline->teaching_team}}</span></p>
 													</div>
 												</div>
 											</div>

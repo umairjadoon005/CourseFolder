@@ -57,6 +57,7 @@ parent::__construct();
         $outline = new CourseLog;
         $this->saveAndUpdate($request,$outline);
         return response()->json('Log successfully created.',200);
+
     }
 
     /**
@@ -100,10 +101,12 @@ parent::__construct();
 private function saveAndUpdate($request,$log){
     $log->date = $request->date;
     $log->topics_covered = $request->topics_covered;
-    $log->course_duration = $request->course_duration;
-    $log->duration_unit = $request->duration_unit;
+    $log->duration = $request->duration;
+    // $log->duration_unit = $request->duration_unit;
     $log->evaluation_instruments = $request->evaluation_instruments;
     $log->course_id = $request->course_id;
+    $file_array=$this->UploadFile($request,'log_document');
+    $log->signature = json_encode($file_array);
     $log->save();
 
 }

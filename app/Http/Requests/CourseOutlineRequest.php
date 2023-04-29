@@ -22,6 +22,7 @@ class CourseOutlineRequest extends FormRequest{
             'course_id' => 'required',
             'course_type' => 'required',
             'credit_hours' => 'required',
+            'weekly_tution_pattern' => 'required',
         ];
     }
 }

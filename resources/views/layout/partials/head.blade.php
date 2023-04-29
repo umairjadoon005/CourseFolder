@@ -153,7 +153,7 @@
 <!-- Main CSS -->
 <link rel="stylesheet" href="{{url('assets/css/style.css')}}" class="themecls">
 <!-- Toatr CSS -->		
-<link rel="stylesheet" href="assets/plugins//toastr/toatr.css">
+<link rel="stylesheet" href="{{url('assets/plugins//toastr/toatr.css')}}">
 <!-- jQuery -->
 <script src="{{ URL::asset('/assets/js/jquery-3.6.0.min.js')}}"></script>
 <script type="text/javascript">

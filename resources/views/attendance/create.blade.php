@@ -52,6 +52,49 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Student's Roll Number<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Enter Student's Roll Number" name="roll_no">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Student's Name<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Enter Student's Name" name="student_name">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Activity Reference<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Enter Activity Reference" name="activity_ref">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Total Absents<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Enter Total Number of Absents" name="total_absents">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">percentage<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Percentage" name="percentage">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Status<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Status" name="status">
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Upload Attendance</label>
                                     <br>

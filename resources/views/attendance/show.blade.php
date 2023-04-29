@@ -35,8 +35,8 @@
                                                         <br/>
                                                         {{$path->name}} <a href="{{route('attendance.download',$attendance->id).'?document='.$path->path}}">Download</a>
                                                         @endforeach
-
                                                         </p>
+                                                        
 													</div>
 												</div>
 											</div>

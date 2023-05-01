@@ -59,6 +59,7 @@
                                     <input type="text" class="form-control" name="evaluation_instruments"  placeholder="Software Engineering II">
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Upload Signature</label>
@@ -66,6 +67,33 @@
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
                                 </div>
                             </div>
+                            
+                            <!--
+
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Upload Best File</label>
+                                    <br>
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="best_file[]">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Upload Average File</label>
+                                    <br>
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="avg_file[]">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Upload Best File</label>
+                                    <br>
+                                    <input type="file" id="file-input" class="form-control" multiple="true" name="worst_file[]">
+                                </div>
+                            </div>
+                            -->
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

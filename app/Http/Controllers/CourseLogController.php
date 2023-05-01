@@ -57,7 +57,6 @@ parent::__construct();
         $outline = new CourseLog;
         $this->saveAndUpdate($request,$outline);
         return response()->json('Log successfully created.',200);
-
     }
 
     /**
@@ -66,7 +65,8 @@ parent::__construct();
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+     public function show($id)
     {
         $log=CourseLog::findOrFail($id);
         return view('course-log.show',compact('log'))->render();
@@ -107,8 +107,26 @@ private function saveAndUpdate($request,$log){
     $log->course_id = $request->course_id;
     $file_array=$this->UploadFile($request,'log_document');
     $log->signature = json_encode($file_array);
-    $log->save();
+    
 
+    /** 
+     * $file_array = $this->UploadFile($request,'best_file');
+    *$log->best_file = json_encode($file_array);
+
+    *$file_array = $this->UploadFile($request,'avg_file');
+    *$log->avg_file = json_encode($file_array);
+
+    *$file_array = $this->UploadFile($request,'worst_file');
+    *$log->worst_file = json_encode($file_array);
+     * 
+     * 
+    */
+
+    
+
+    
+
+    $log->save();
 }
     /**
      * Remove the specified resource from storage.

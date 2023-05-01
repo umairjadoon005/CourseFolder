@@ -44,4 +44,9 @@ Route::get('/model-solutions/print/{id}', [App\Http\Controllers\ModelSolutionsCo
 Route::get('/profile', [App\Http\Controllers\HomeController::class,'settings'])->name('profile.index');
 Route::post('/profile', [App\Http\Controllers\HomeController::class,'store'])->name('profile.store');
 Route::resource('model-solutions', App\Http\Controllers\ModelSolutionsController::class);
+
+Route::get('/samples/downloadBest/{id}', [App\Http\Controllers\SamplesController::class,'downloadBest'])->name('samples.downloadBest');
+Route::get('/samples/downloadAvg/{id}', [App\Http\Controllers\SamplesController::class,'downloadAvg'])->name('samples.downloadAvg');
+Route::get('/samples/downloadWorst/{id}', [App\Http\Controllers\SamplesController::class,'downloadWorst'])->name('samples.downloadWorst');
+
 });

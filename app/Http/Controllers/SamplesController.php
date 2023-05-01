@@ -69,9 +69,21 @@ class SamplesController extends BaseController
 private function saveAndUpdate($sample,$request){
     $sample->title = $request->title;
     $sample->description = $request->description;
-   $file_array=$this->UploadFile($request,'samples_document');
+    $file_array=$this->UploadFile($request,'samples_document');
     $sample->document_path = json_encode($file_array);
     $sample->paper_id = $request->paper_id;
+
+    $file_array = $this->UploadFile($request,'best_file');
+    $sample->best_file = json_encode($file_array);
+
+    $file_array = $this->UploadFile($request,'avg_file');
+    $sample->avg_file = json_encode($file_array);
+
+    $file_array = $this->UploadFile($request,'worst_file');
+    $sample->worst_file = json_encode($file_array);
+
+
+
     $sample->save();
    
 }
@@ -111,6 +123,134 @@ private function saveAndUpdate($sample,$request){
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
+
+     public function downloadBest($id,Request $request)
+     {
+         if($request->has('document')){
+             $file_path=$request->query('document');
+         $file= storage_path(). "/app/files/".$file_path;
+         $mimeType = File::mimeType($file);
+         $extension = File::extension($file);
+         $headers = [
+             'Content-Type' => $mimeType
+         ];
+     
+         return Response::download($file, 'Sample.'.$extension, $headers);
+     }
+     $zip = new ZipArchive();
+     $fileName = 'Samples.zip';
+     if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
+     {
+         $sample=Samples::findOrFail($id);
+ 
+         $files = json_decode($sample->document_path);
+         foreach ($files as $key => $value){
+             $file= storage_path(). "/app/files/".$value->path;
+             $zip->addFile($file, $value->name);
+         }
+         $zip->close();
+     }
+ 
+     return response()->download(public_path($fileName));
+     }
+
+
+
+     public function downloadAvg($id,Request $request)
+     {
+         if($request->has('document')){
+             $file_path=$request->query('document');
+         $file= storage_path(). "/app/files/".$file_path;
+         $mimeType = File::mimeType($file);
+         $extension = File::extension($file);
+         $headers = [
+             'Content-Type' => $mimeType
+         ];
+     
+         return Response::download($file, 'Sample.'.$extension, $headers);
+     }
+     $zip = new ZipArchive();
+     $fileName = 'Samples.zip';
+     if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
+     {
+         $sample=Samples::findOrFail($id);
+ 
+         $files = json_decode($sample->document_path);
+         foreach ($files as $key => $value){
+             $file= storage_path(). "/app/files/".$value->path;
+             $zip->addFile($file, $value->name);
+         }
+         $zip->close();
+     }
+ 
+     return response()->download(public_path($fileName));
+     }
+
+
+     public function downloadWorst($id,Request $request)
+     {
+         if($request->has('document')){
+             $file_path=$request->query('document');
+         $file= storage_path(). "/app/files/".$file_path;
+         $mimeType = File::mimeType($file);
+         $extension = File::extension($file);
+         $headers = [
+             'Content-Type' => $mimeType
+         ];
+     
+         return Response::download($file, 'Sample.'.$extension, $headers);
+     }
+     $zip = new ZipArchive();
+     $fileName = 'Samples.zip';
+     if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
+     {
+         $sample=Samples::findOrFail($id);
+ 
+         $files = json_decode($sample->document_path);
+         foreach ($files as $key => $value){
+             $file= storage_path(). "/app/files/".$value->path;
+             $zip->addFile($file, $value->name);
+         }
+         $zip->close();
+     }
+ 
+     return response()->download(public_path($fileName));
+     }
+
+     public function downloadSignature($id,Request $request)
+     {
+         if($request->has('document')){
+             $file_path=$request->query('document');
+         $file= storage_path(). "/app/files/".$file_path;
+         $mimeType = File::mimeType($file);
+         $extension = File::extension($file);
+         $headers = [
+             'Content-Type' => $mimeType
+         ];
+     
+         return Response::download($file, 'Sample.'.$extension, $headers);
+     }
+     $zip = new ZipArchive();
+     $fileName = 'Samples.zip';
+     if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
+     {
+         $sample=Samples::findOrFail($id);
+ 
+         $files = json_decode($sample->document_path);
+         foreach ($files as $key => $value){
+             $file= storage_path(). "/app/files/".$value->path;
+             $zip->addFile($file, $value->name);
+         }
+         $zip->close();
+     }
+ 
+     return response()->download(public_path($fileName));
+     }
+
+
+
+
+
     public function show($id)
     {
         $sample=Samples::findOrFail($id);

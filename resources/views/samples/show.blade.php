@@ -30,13 +30,36 @@
 														<p>Title<br/>{{$sample->title}}</p>
 														<p>Descripiton <br/>
                                                             {{$sample->description}}</p>
+
 														<p>Attachments
                                                         @foreach(json_decode($sample->document_path) as $path)
                                                         <br/>
                                                         {{$path->name}} <a href="{{route('samples.download',$sample->id).'?document='.$path->path}}">Download</a>
                                                         @endforeach
-
                                                         </p>
+
+                                                        <p>Best File 
+                                                         @foreach(json_decode($sample->best_file) as $path)
+                                                        </br>
+                                                         {{$path->name}} <a href="{{route('$samples.download',$sample->id).'?document='.$path->path}}">Download</a>
+                                                        @endforeach
+                                                         </p>
+
+                                                         <p>Average File 
+                                                         @foreach(json_decode($sample->avg_file) as $path)
+                                                        </br>
+                                                         {{$path->name}} <a href="{{route('$samples.download',$sample->id).'?document='.$path->path}}">Download</a>
+                                                        @endforeach
+                                                         </p>
+
+                                                         <p>Worst File 
+                                                         @foreach(json_decode($sample->worst_file) as $path)
+                                                        </br>
+                                                         {{$path->name}} <a href="{{route('$samples.download',$sample->id).'?document='.$path->path}}">Download</a>
+                                                        @endforeach
+                                                         </p>
+                           
+                                                        
 													</div>
 												</div>
 											</div>

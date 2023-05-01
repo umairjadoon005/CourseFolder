@@ -65,7 +65,6 @@ parent::__construct();
      * @param  \App\Models\Course  $course
      * @return \Illuminate\Http\Response
      */
-
      public function show($id)
     {
         $log=CourseLog::findOrFail($id);

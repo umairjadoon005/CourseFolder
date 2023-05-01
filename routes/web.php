@@ -23,6 +23,9 @@ Route::resource('course-descriptions', App\Http\Controllers\CourseController::cl
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);
 Route::get('/samples/download/{id}', [App\Http\Controllers\SamplesController::class,'Download'])->name('samples.download');
 Route::get('/samples/print/{id}', [App\Http\Controllers\SamplesController::class,'Print'])->name('samples.print');
+Route::get('/samples/downloadBest/{id}', [App\Http\Controllers\SamplesController::class,'downloadBest'])->name('samples.downloadBest');
+Route::get('/samples/downloadAvg/{id}', [App\Http\Controllers\SamplesController::class,'downloadAvg'])->name('samples.downloadAvg');
+Route::get('/samples/downloadWorst/{id}', [App\Http\Controllers\SamplesController::class,'downloadWorst'])->name('samples.downloadWorst');
 Route::resource('samples', App\Http\Controllers\SamplesController::class);
 Route::get('/lecture-notes/download/{id}', [App\Http\Controllers\LectureNotesController::class,'Download'])->name('lecture-notes.download');
 Route::get('/lecture-notes/print/{id}', [App\Http\Controllers\LectureNotesController::class,'Print'])->name('lecture-notes.print');
@@ -45,8 +48,6 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class,'settings'])-
 Route::post('/profile', [App\Http\Controllers\HomeController::class,'store'])->name('profile.store');
 Route::resource('model-solutions', App\Http\Controllers\ModelSolutionsController::class);
 
-Route::get('/samples/downloadBest/{id}', [App\Http\Controllers\SamplesController::class,'downloadBest'])->name('samples.downloadBest');
-Route::get('/samples/downloadAvg/{id}', [App\Http\Controllers\SamplesController::class,'downloadAvg'])->name('samples.downloadAvg');
-Route::get('/samples/downloadWorst/{id}', [App\Http\Controllers\SamplesController::class,'downloadWorst'])->name('samples.downloadWorst');
+
 
 });

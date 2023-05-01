@@ -30,7 +30,6 @@
 														<p>Title<br/>{{$sample->title}}</p>
 														<p>Descripiton <br/>
                                                             {{$sample->description}}</p>
-
 														<p>Attachments
                                                         @foreach(json_decode($sample->document_path) as $path)
                                                         <br/>

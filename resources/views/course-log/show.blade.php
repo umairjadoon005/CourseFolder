@@ -41,29 +41,10 @@
 													<div class="invoice-total-inner">
 														<p>Topics Covered <span>{{$log->topics_covered}}</span></p>
 														<p>Evaluation Instruments <span>{{$log->evaluation_instruments}}</span></p>
-                            <p>Signature <span>{{$log->log_document}}</span>
-
-                      <!--
-                            <p>Best File <span>{{$log->best_file}}</span>
-                            
-                               @foreach(json_decode($sample->best_file) as $path)
-                                <span>
-                                {{$path->name}} <a href="{{route('$sample.download',$sample->id).'?document='.$path->path}}">Download</a>
-                                 @endforeach
-                                </span>
-                            </p>
-                           
-                            <p>Average File <span>{{$log->avg_file}}</span></p>
-                            <p>Worst File <span>{{$log->worst_file}}</span></p>
-
-                            
-                            </p> 
-                        -->
-
-
-
-
-													</div>
+                            @foreach(json_decode($log->signature) as $path)
+                                                         {{$path->name}} <a href="{{route('logs.download',$log->id).'?document='.$path->path}}">Download</a>
+													@endforeach
+                            </div>
 												</div>
 											</div>
                     </div>

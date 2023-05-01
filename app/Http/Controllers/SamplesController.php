@@ -135,10 +135,10 @@ private function saveAndUpdate($sample,$request){
              'Content-Type' => $mimeType
          ];
      
-         return Response::download($file, 'Sample.'.$extension, $headers);
+         return Response::download($file, 'BestSample.'.$extension, $headers);
      }
      $zip = new ZipArchive();
-     $fileName = 'Samples.zip';
+     $fileName = 'BestSample.zip';
      if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
      {
          $sample=Samples::findOrFail($id);
@@ -167,10 +167,10 @@ private function saveAndUpdate($sample,$request){
              'Content-Type' => $mimeType
          ];
      
-         return Response::download($file, 'Sample.'.$extension, $headers);
+         return Response::download($file, 'AvgSample.'.$extension, $headers);
      }
      $zip = new ZipArchive();
-     $fileName = 'Samples.zip';
+     $fileName = 'AvgSample.zip';
      if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
      {
          $sample=Samples::findOrFail($id);
@@ -198,10 +198,10 @@ private function saveAndUpdate($sample,$request){
              'Content-Type' => $mimeType
          ];
      
-         return Response::download($file, 'Sample.'.$extension, $headers);
+         return Response::download($file, 'WorstSample.'.$extension, $headers);
      }
      $zip = new ZipArchive();
-     $fileName = 'Samples.zip';
+     $fileName = 'WorstSample.zip';
      if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
      {
          $sample=Samples::findOrFail($id);

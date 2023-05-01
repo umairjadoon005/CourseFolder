@@ -8,6 +8,8 @@ use App\Models\Course;
 use App\Models\CourseLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use App\Models\Result;
 
 class CourseLogController extends BaseController
 {
@@ -120,13 +122,41 @@ private function saveAndUpdate($request,$log){
      * 
      * 
     */
-
-    
-
-    
-
     $log->save();
 }
+
+public function Download($id,Request $request)
+    {
+        if($request->has('document')){
+            $file_path=$request->query('document');
+        $file= storage_path(). "/app/files/".$file_path;
+        $mimeType = File::mimeType($file);
+        $extension = File::extension($file);
+        $headers = [
+            'Content-Type' => $mimeType
+        ];
+    
+        return Response::download($file, 'Signature.'.$extension, $headers);
+    }
+    $zip = new ZipArchive();
+    $fileName = 'Signature.zip';
+    if ($zip->open(public_path($fileName), ZipArchive::CREATE)== TRUE)
+    {
+        $result=Result::findOrFail($id);
+
+        $files = json_decode($result->document_path);
+        foreach ($files as $key => $value){
+            $file= storage_path(). "/app/files/".$value->path;
+            $zip->addFile($file, $value->name);
+        }
+        $zip->close();
+    }
+
+    return response()->download(public_path($fileName));
+    }
+
+
+
     /**
      * Remove the specified resource from storage.
      *

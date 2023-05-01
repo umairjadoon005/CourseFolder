@@ -63,6 +63,7 @@
                                                         <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a class="dropdown-item" href="{{route('course-descriptions.edit',$course->id)}}" target="_blank">Edit</a>
+                                                            <a class="dropdown-item" href="{{route('course-descriptions.show',$course->id)}}" target="_blank">Show</a>
                                                             <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-descriptions.destroy',$course->id)}}','By deleting course, you would not be able to revert it');" href="#">Delete</a>
                                                         </div>
                                                     </div>

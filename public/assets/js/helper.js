@@ -226,6 +226,7 @@ function deleteRecord(type, url, text) {
         buttonsStyling: !1
     }).then(
         function (t) {
+            if(t.isConfirmed){
             $.ajax({
                 url: url,
                 type: type,
@@ -243,5 +244,6 @@ function deleteRecord(type, url, text) {
                     toastr.error(message);
                 }
             });
+        }
         });
 }

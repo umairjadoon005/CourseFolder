@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::group(['middleware' => 'web'], function () {
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('add-teachers', App\Http\Controllers\TeacherController::class);
 Route::resource('course-descriptions', App\Http\Controllers\CourseController::class);
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);
 Route::get('/samples/download/{id}', [App\Http\Controllers\SamplesController::class,'Download'])->name('samples.download');

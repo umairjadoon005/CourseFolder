@@ -23,6 +23,9 @@
 	                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
 	              </a>
 	            </li>
+				<li class="{{ Request::is('add-teachers') ? 'active' : '' }}"> 
+					<a href="{{url('add-teachers')}}"><i class="feather-user"></i> <span>Add Teachers</span></a>
+				</li>
 				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
 					<a href="{{url('course-descriptions')}}"><i class="feather-smartphone"></i> <span>Course Description</span></a>
 				</li>				

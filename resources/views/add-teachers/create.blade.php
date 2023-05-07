@@ -25,7 +25,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form id="save-course" enctype="multipart/form-data">
+                        <form id="save-teacher" enctype="multipart/form-data">
                         @csrf 
     
                             <div class="form-group row">
@@ -44,7 +44,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                    <label class="col-form-label">Experience3</label>
+                                    <label class="col-form-label">Experience</label>
                                     <input type="text" class="form-control"  name="experience" placeholder="Enter Experience">
                                     </div>
                                 </div>
@@ -82,9 +82,9 @@
                            
                             </div>
                             <div class="text-center py-3">
-                                <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
+                              <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" data-bs-dismiss="modal" class="btn btn-secondary btn-rounded">Cancel</button>
-                            </div>
+                               </div>
                         </form>
                     </div>
                 </div>
@@ -110,11 +110,11 @@
     @endcomponent
     @component('components.theme-settings')                
     @endcomponent
-    <script>
+  <script>
             $('#btn-save').on('click', function() {
                
-          saveRecord(this,"POST","{{route('add-teachers.store')}}","add-teacher","Course didn't saved. Please try again");
+          saveRecord(this,"POST","{{route('add-teachers.store')}}","save-teacher","Teacher didn't saved. Please try again");
             });
 </script>
-
-    @endsection
+       
+@endsection

@@ -51,21 +51,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                           
                                              @foreach($teachers as $teacher)
                                             <tr>
                                                 <td>
                                                     <a href="{{route('add-teachers.show',$teacher->id)}}" target="_blank">{{$teacher->teacher_name}}</a>
                                                 </td>
-                                                <td>{{$$teacher->date_of_joining}}</td>
+                                                <td>{{$teacher->date_of_joining}}</td>
                                                 <td>
                                                     {{$teacher->experience}}
                                                 </td>
                                                 <td>{{$teacher->specialization}}</td>
                                                 <td>{{$teacher->salary}}</td>
-                                                <td>{{$$teacher->phone}}</td>
-                                                <td>{{$$teacher->email}}</td>
-                                                <td>{{$$teacher->address}}</td>
+                                                <td>{{$teacher->phone}}</td>
+                                                <td>{{$teacher->email}}</td>
+                                                <td>{{$teacher->address}}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown dropdown-action">
                                                         <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

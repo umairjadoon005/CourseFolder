@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Teacher;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class TeacherController extends Controller
 {
@@ -14,7 +16,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::all();
+       // return view ('add-teachers.index',compact('teachers'));
+       return view('add-teachers.index',compact('teachers'))->render();
     }
 
     /**
@@ -49,6 +53,13 @@ class TeacherController extends Controller
         $teacher->save();
             */
         //return view('add-teachers.create');
+        User::create([
+            'name' => $request->teacher_name, 
+            'email' => $request->email, 
+            'password' => Hash::make('123456'),
+            'email_verified_at' => '2022-01-02 17:04:58', 
+            'created_at' => now()]);
+            
         return response()->json('Teacher successfully saved.',200);
     }
 
@@ -58,9 +69,10 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function show(Teacher $teacher)
+    public function show($id)
     {
-        //
+        $teacher=Teacher::findOrFail($id);
+        return view('add-teachers.show',compact('teacher'))->render();
     }
 
     /**
@@ -69,9 +81,11 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Teacher $teacher)
+    public function edit($id)
     {
-        //
+        
+        $teacher=Teacher::findOrFail($id);
+        return view('add-teachers.edit',compact('teacher'))->render();
     }
 
     /**
@@ -81,9 +95,22 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Teacher $teacher)
+    public function update(Request $request, $id)
     {
-        //
+        $teacher = Teacher::findOrFail($id);
+        $teacher->id = $request->id;
+        $teacher->teacher_name = $request->teacher_name;
+        $teacher->date_of_joining = $request->date_of_joining;
+        $teacher->experience = $request->experience;
+        $teacher->specialization = $request->specialization;
+        $teacher->salary = $request->salary;
+        $teacher->phone = $request->phone;
+        $teacher->email = $request->email;
+        $teacher->address = $request->address;
+        $teacher->save();
+        
+
+        return response()->json('Course successfully updated.',200);
     }
 
     /**
@@ -92,8 +119,9 @@ class TeacherController extends Controller
      * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Teacher $teacher)
+    public function destroy($id)
     {
-        //
+        Teacher::destroy($id);
+        return response()->json('Teacher successfully deleted.',200);
     }
 }

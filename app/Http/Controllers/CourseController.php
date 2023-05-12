@@ -53,7 +53,7 @@ class CourseController extends BaseController
     public function store(CourseRequest $request)
     {
         $course = new Course;
-$this->saveAndUpdate($course,$request);
+        $this->saveAndUpdate($course,$request);
         return response()->json('Course successfully saved.',200);
     }
 

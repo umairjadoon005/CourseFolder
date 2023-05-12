@@ -28,6 +28,12 @@
                         <form id="save-teacher" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Teacher ID<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <input class="form-control" value="{{$teacher->id}}" type="text" placeholder="Teacher ID" name="id">
+                                </div>
+                            </div>
+                        <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Teacher Name <span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <input class="form-control" value="{{$teacher->teacher_name}}" type="text" placeholder="Teacher Name" name="teacher_name">
@@ -36,7 +42,7 @@
                             <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Date of Joining <span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="text" value="{{$$teacher->date_of_joining}}" placeholder="Date of Joining" name="date_of_joining">
+                                    <input class="form-control" type="text" value="{{$teacher->date_of_joining}}" placeholder="Date of Joining" name="date_of_joining">
                                 </div>
                             </div>
                             
@@ -57,23 +63,23 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Salary</label>
-                                    <input type="number" class="form-control" value="{{$$teacher->salary}}" name="salary" placeholder="Salary">
+                                    <input type="number" class="form-control" value="{{$teacher->salary}}" name="salary" placeholder="Salary">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Phone</label>
-                                    <input type="text" class="form-control" name="phone" value="{{$$teacher->phone}}" placeholder="phone">
+                                    <input type="text" class="form-control" name="phone" value="{{$teacher->phone}}" placeholder="phone">
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" value="{{$$teacher->email}}" name="email" placeholder="Email">
+                                    <input type="email" class="form-control" value="{{$teacher->email}}" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Address</label>
-                                    <input type="text" class="form-control" name="address" value="{{$$teacher->address}}" placeholder="Address">
+                                    <input type="text" class="form-control" name="address" value="{{$teacher->address}}" placeholder="Address">
                                 </div>
                                 
                            

@@ -21,7 +21,10 @@
                   
                             <div class="modal-header">
                 <h4 class="modal-title text-center">Teacher Details</h4>
-              </div>
+                <div class="text-center py-3">
+                <a class="border-0 btn btn-primary btn-gradient-primary btn-rounded" href="" target="_blank">Assign Course</a> 
+                </div>
+                </div>
                     <div class="row">
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
@@ -34,7 +37,7 @@
 														<p>Phone<span>{{$teacher->phone}}</span></p>
 														<p>Email<span>{{$teacher->email}}</span></p>
 														<p>Address<span>{{$teacher->address}}</span></p>
-													</div>
+												</div>
 												</div>
 											</div>
                                          </div>
@@ -58,5 +61,12 @@
     @component('components.modal-popup')                
     @endcomponent
     @component('components.theme-settings')                
-    @endcomponent
+
+<script>
+            $('#btn-save').on('click', function() {
+               
+          saveRecord(this,"POST","{{route('course-descriptions.store')}}","save-course","Course didn't saved. Please try again");
+            });
+</script>
+@endcomponent
 @endsection

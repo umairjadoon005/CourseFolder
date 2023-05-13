@@ -53,12 +53,13 @@ class TeacherController extends Controller
         $teacher->save();
             */
         //return view('add-teachers.create');
-        User::create([
+       $user=User::create([
             'name' => $request->teacher_name, 
             'email' => $request->email, 
             'password' => Hash::make('123456'),
             'email_verified_at' => '2022-01-02 17:04:58', 
             'created_at' => now()]);
+       $user->assignrole('teacher');
             
         return response()->json('Teacher successfully saved.',200);
     }

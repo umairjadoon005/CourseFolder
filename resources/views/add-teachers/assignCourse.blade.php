@@ -25,24 +25,24 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <form id="assign-course" enctype="multipart/form-data">
+                        <form id="assign-course">
                         @csrf 
                        
                             <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Teacher ID <span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Teacher <span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="hidden"  name="id" value="{{$teacher->id}}">
+                                    <span class="form-control" name="id">{{$teacher->teacher_name}}</span>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                 <div class="form-group">    
                                 <label class="col-form-label"> Course <span class="text-danger">*</span></label>
                                 <select class="form-control" name="course_id">
                                     @foreach($courses as $course)
                                     <option value="{{$course->id}}" >{{$course->course_title}}</option>
                                     @endforeach
-                                </select>
+                                </select>   
                                 </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
   <script>
             $('#btn-save').on('click', function() {
                
-          saveRecord(this,"POST","{{route('add-teachers.store')}}","save-teacher","Teacher didn't saved. Please try again");
+          saveRecord(this,"POST","{{route('teachers.save-teacher-course',$teacher->id)}}","assign-course","Course didn't assigned. Please try again");
             });
 </script>
        

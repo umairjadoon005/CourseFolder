@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Teacher;
+use App\Models\TeacherCourse;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class TeacherController extends Controller
+class TeacherController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -39,8 +41,15 @@ class TeacherController extends Controller
      */
     public function store(Request $request)
     {
-        Teacher::create($request->all());
-       /* $teacher = new Teacher();
+     
+       $user=User::create([
+            'name' => $request->teacher_name, 
+            'email' => $request->email, 
+            'password' => Hash::make('123456'),
+            'email_verified_at' => now(), 
+            'created_at' => now()]);
+            $user->assignrole('teacher');
+            $teacher = new Teacher();
         $teacher->id = $request->id;
         $teacher->teacher_name = $request->teacher_name;
         $teacher->date_of_joining = $request->date_of_joining;
@@ -50,17 +59,8 @@ class TeacherController extends Controller
         $teacher->phone = $request->phone;
         $teacher->email = $request->email;
         $teacher->address = $request->address;
-        $teacher->save();
-            */
-        //return view('add-teachers.create');
-       $user=User::create([
-            'name' => $request->teacher_name, 
-            'email' => $request->email, 
-            'password' => Hash::make('123456'),
-            'email_verified_at' => '2022-01-02 17:04:58', 
-            'created_at' => now()]);
-       $user->assignrole('teacher');
-            
+            $teacher->user_id=$user->id;
+            $teacher->save();
         return response()->json('Teacher successfully saved.',200);
     }
 
@@ -73,7 +73,10 @@ class TeacherController extends Controller
     public function show($id)
     {
         $teacher=Teacher::findOrFail($id);
-        return view('add-teachers.show',compact('teacher'))->render();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', $teacher->user_id)->get();
+        return view('add-teachers.show',compact('teacher','courses'))->render();
     }
 
     /**
@@ -106,7 +109,6 @@ class TeacherController extends Controller
         $teacher->specialization = $request->specialization;
         $teacher->salary = $request->salary;
         $teacher->phone = $request->phone;
-        $teacher->email = $request->email;
         $teacher->address = $request->address;
         $teacher->save();
         
@@ -124,5 +126,19 @@ class TeacherController extends Controller
     {
         Teacher::destroy($id);
         return response()->json('Teacher successfully deleted.',200);
+    }
+
+    public function AssignCourse($id){
+        $teacher=Teacher::findOrFail($id);
+        $courses=Course::where('user_id',auth()->user()->id)->get();
+        return view('add-teachers.assignCourse',compact('teacher','courses'))->render(); 
+    }
+    public function AssignCourseSave(Request $request,$id){
+        $teacherCourse= new TeacherCourse();
+        $teacherCourse->id=$id;
+        $teacherCourse->course_id=$request->course_id;
+        $teacherCourse->save();
+        return response()->json('Course successfully assigned.',200);
+
     }
 }

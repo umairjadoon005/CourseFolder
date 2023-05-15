@@ -7,9 +7,9 @@
             <div class="content container-fluid">
 
                 @component('components.breadcrumb')                
-                    @slot('title') Course Descriptions  @endslot
+                    @slot('title') Courses  @endslot
                     @slot('li_1') Dashboard @endslot
-                    @slot('li_2') Course Descriptions @endslot
+                    @slot('li_2') Courses @endslot
                     @slot('li_3') <i class="feather-smartphone"></i> @endslot
                 @endcomponent
                 <!-- Page Header -->

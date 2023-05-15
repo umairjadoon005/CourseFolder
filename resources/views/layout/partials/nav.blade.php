@@ -17,20 +17,20 @@
 	                  
 	                </div>
 	                <div class="nav-profile-text d-flex flex-column">
-	                  <span class="font-weight-bold mb-2">{{ Auth::user()->name}}</span>
-	                 <!-- <span class="text-white text-small">{{ Auth::user()->name}}</span> -->
+	                  <span class="font-weight-bold mb-2" style="text-transform: capitalize;">{{ Auth::user()->name}}</span>
+	                 <span class="text-white text-small" style="text-transform: capitalize;">{{ Auth::user()->roles->pluck('name')->first()}}</span>
 	                </div>
 	                <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
 	              </a>
 	            </li>
 				@can('add teacher')
 				<li class="{{ Request::is('add-teachers') ? 'active' : '' }}"> 
-					<a href="{{url('add-teachers')}}"><i class="feather-user"></i> <span>Add Teachers</span></a>
+					<a href="{{url('add-teachers')}}"><i class="feather-user"></i> <span>Teachers</span></a>
 				</li>
 				@endcan
 				@can('add course')
 				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
-					<a href="{{url('course-descriptions')}}"><i class="feather-smartphone"></i> <span>Course Description</span></a>
+					<a href="{{url('course-descriptions')}}"><i class="feather-smartphone"></i> <span>Courses</span></a>
 				</li>
 				@endcan
 				@can('add course outline')		

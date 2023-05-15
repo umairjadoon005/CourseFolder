@@ -20,6 +20,9 @@ Route::group(['middleware' => 'web'], function () {
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherController::class,'AssignCourse'])->name('teachers.assign-course');
+Route::post('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherController::class,'AssignCourseSave'])->name('teachers.save-teacher-course');
+
 Route::resource('add-teachers', App\Http\Controllers\TeacherController::class);
 Route::resource('course-descriptions', App\Http\Controllers\CourseController::class);
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);

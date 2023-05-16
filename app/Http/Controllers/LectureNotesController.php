@@ -33,6 +33,7 @@ class LectureNotesController extends BaseController
     {
         $lecture_notes = LectureNotes::join('courses', 'courses.id', '=', 'lecture_notes.course_id')->where('courses.user_id', '=', $this->user->id)
             ->select('lecture_notes.*', 'courses.course_title')->get();
+
         return view('lecture-notes.index', compact('lecture_notes'));
         //
     }
@@ -44,7 +45,10 @@ class LectureNotesController extends BaseController
      */
     public function create()
     {
-        $courses = Course::where('user_id', '=', $this->user->id)->get();
+        //$courses = Course::where('user_id', '=', $this->user->id)->get();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         return view('lecture-notes.create', compact('courses'));
     }
 
@@ -135,7 +139,10 @@ $this->saveAndUpdate($note,$request);
      */
     public function edit($id)
     {
-        $courses = Course::where('user_id', '=', $this->user->id)->get();
+       // $courses = Course::where('user_id', '=', $this->user->id)->get();
+       $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         $lecture_notes = LectureNotes::findOrFail($id);
         return view('lecture-notes.edit', compact('lecture_notes', 'courses'));
     }

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\Result;
+use App\Http\Controllers\Response;
 
 class CourseLogController extends BaseController
 {
@@ -44,7 +45,10 @@ parent::__construct();
      */
     public function create()
     {
-        $courses=Course::where('user_id','=',$this->user->id)->get();
+        //$courses=Course::where('user_id','=',$this->user->id)->get();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         return view('course-log.create',compact('courses'));
     }
 
@@ -81,7 +85,10 @@ parent::__construct();
      */
     public function edit($id)
     {
-        $courses=Course::where('user_id','=',$this->user->id)->get();
+        //$courses=Course::where('user_id','=',$this->user->id)->get();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         $log=CourseLog::findOrFail($id);
         return view('course-log.edit',compact('log','courses'));
     }

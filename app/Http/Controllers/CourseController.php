@@ -29,7 +29,10 @@ class CourseController extends BaseController
      */
     public function index()
     {
-        $courses=Course::where('user_id','=',$this->user->id)->get();
+       // $courses=Course::where('user_id','=',$this->user->id)->get();
+         $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         return view('course-description.index',compact('courses'))->render();
         //
     }

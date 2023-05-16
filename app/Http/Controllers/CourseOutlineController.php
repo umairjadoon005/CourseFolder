@@ -41,7 +41,11 @@ parent::__construct();
      */
     public function create()
     {
-        $courses=Course::where('user_id','=',$this->user->id)->get();
+       // $courses=Course::where('user_id','=',$this->user->id)->get();
+       $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+       
         return view('course-outline.create',compact('courses'));
     }
 
@@ -78,7 +82,10 @@ $this->saveAndUpdate($request,$outline);
      */
     public function edit($id)
     {
-        $courses=Course::where('user_id','=',$this->user->id)->get();
+        //$courses=Course::where('user_id','=',$this->user->id)->get();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         $outline=CourseOutline::findOrFail($id);
         return view('course-outline.edit',compact('outline','courses'));
     }

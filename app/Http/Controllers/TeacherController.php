@@ -131,7 +131,10 @@ class TeacherController extends BaseController
     public function AssignCourse($id){
         $teacher=Teacher::findOrFail($id);
         $courses=Course::where('user_id',auth()->user()->id)->get();
-        return view('add-teachers.assignCourse',compact('teacher','courses'))->render(); 
+        return view('add-teachers.assignCourse',compact('teacher','courses'))->render();
+        
+        
+       
     }
     public function AssignCourseSave(Request $request,$id){
         $teacherCourse= new TeacherCourse();

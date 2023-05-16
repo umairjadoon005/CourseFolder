@@ -56,7 +56,7 @@
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="{{url('profile')}}">My Profile</a>
 						<a class="dropdown-item" href="{{url('edit')}}">Settings</a>
-						<a class="dropdown-item" href="{{url('login')}}">Logout</a>
+						<a class="dropdown-item" href="{{url('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
 					</div>
 				</li>
 			</ul>
@@ -68,7 +68,10 @@
 				<div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="{{url('profile')}}">My Profile</a>
 					<a class="dropdown-item" href="{{url('edit')}}">Settings</a>
-					<a class="dropdown-item" href="{{url('login')}}">Logout</a>
+					<a class="dropdown-item" href="{{url('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+					<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
 				</div>
 			</div>
 			<!-- /Mobile Menu -->

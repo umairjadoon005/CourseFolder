@@ -55,7 +55,7 @@
 					</a>
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="{{url('profile')}}">My Profile</a>
-						<a class="dropdown-item" href="{{url('settings')}}">Settings</a>
+						<a class="dropdown-item" href="{{url('edit')}}">Settings</a>
 						<a class="dropdown-item" href="{{url('login')}}">Logout</a>
 					</div>
 				</li>
@@ -67,7 +67,7 @@
 				<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
 				<div class="dropdown-menu dropdown-menu-right">
 					<a class="dropdown-item" href="{{url('profile')}}">My Profile</a>
-					<a class="dropdown-item" href="{{url('settings')}}">Settings</a>
+					<a class="dropdown-item" href="{{url('edit')}}">Settings</a>
 					<a class="dropdown-item" href="{{url('login')}}">Logout</a>
 				</div>
 			</div>

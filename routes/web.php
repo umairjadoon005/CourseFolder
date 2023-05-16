@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,9 @@ Route::get('/model-solutions/print/{id}', [App\Http\Controllers\ModelSolutionsCo
 Route::get('/profile', [App\Http\Controllers\HomeController::class,'settings'])->name('profile.index');
 Route::post('/profile', [App\Http\Controllers\HomeController::class,'store'])->name('profile.store');
 Route::resource('model-solutions', App\Http\Controllers\ModelSolutionsController::class);
+
+Route::get('/edit', [PasswordController::class, 'edit'])->name('edit');
+Route::put('/edit', [PasswordController::class, 'update'])->name('update');
 
 
 

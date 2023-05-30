@@ -53,16 +53,20 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<p>Course Title <span>{{$course->course_title}}</span></p>
-														<p>Course Code <span>{{$course->course_code}}</span></p>
+													  <p>Course Code <span>{{$course->course_code}}</span></p>
+                            <p>Course Title <span>{{$course->course_title}}</span></p>
 														<p>Credit Hours <span>{{$course->credit_hours}}</span></p>
+                            <p>Program <span>{{$course->program}}</span></p>
+                            <p>Effect from Date <span>{{$course->effect_from_date}}</span></p>
+                            <p>Pre Requisites<span>{{$course->pre_requisites}}</span></p>
+                            <p>Post Requisites<span>{{$course->post_requisites}}</span></p>
+                            <p>Topics<span>{{$course->topics}}</span></p>
+                            <p>Assessments<span>{{$course->assessments}}</span></p>
 														<p>Coordinator <span>{{$course->course_coordinator}}</span></p>
 														<p>Text Book <span>{{$course->text_book}}</span></p>
-														<p>Pre Requisites<span>{{$course->pre_requisites}}</span></p>
-														<p>Topics<span>{{$course->topics}}</span></p>
-														<p>Assessments<span>{{$course->assessments}}</span></p>
-														<p>Reference Material<span>{{$course->reference_material}}</span></p>
-														<p class="mb-0">Course Goals <span>{{$course->course_goals}}</span></p>
+														<p>Course Duration<span>{{$course->course_duration}}</span></p>
+														<p class="mb-0">Instructor's Name <span>{{$course->instructor_name}}</span></p>
+														<p>Topics Covered<span>{{$course->topics_covered}}</span></p>
 													</div>
 												</div>
 											</div>

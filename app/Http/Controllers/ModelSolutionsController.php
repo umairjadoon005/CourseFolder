@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Course;
 use ZipArchive;
 
 class ModelSolutionsController extends BaseController
@@ -46,7 +47,12 @@ parent::__construct();
         $user_id= $this->user->id;
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
         ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
-        return view('model-solutions.create',compact('question_papers'));
+
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+
+        return view('model-solutions.create',compact('question_papers','courses'));
     }
 
     /**
@@ -123,6 +129,9 @@ $this->saveAndUpdate($solution,$request);
     {
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
         ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         $solution=ModelSolutions::findOrFail($id);
         return view('model-solutions.edit',compact('question_papers','solution'));
     }

@@ -51,8 +51,27 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
+                                    <label class="col-form-label">Program</label>
+                                    <input type="text" class="form-control"  name="program" placeholder="Enter Program">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Effect from Date</label>
+                                    <input type="date" class="form-control"  name="effect_from_date" placeholder="Enter Date">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
                                     <label class="col-form-label">Pre Requisites</label>
-                                    <input type="text" class="form-control"  name="pre_requisites" placeholder="Introduction To Computer">
+                                    <input type="text" class="form-control"  name="pre_requisites" placeholder="Enter Pre-requisites">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Post Requisites</label>
+                                    <input type="text" class="form-control"  name="post_requisites" placeholder="Enter Post-requisites">
                                     </div>
                                 </div>
                             </div>
@@ -92,6 +111,26 @@
                                     <textarea type="text" class="form-control" name="course_goals" placeholder="Understand the basics of software engineering and apply its tecniques">
                                     </textarea>
                                 </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Course Duration</label>
+                                    <input type="text" class="form-control"  name="course_duration" placeholder="Enter Course Duration">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Instructor's Name</label>
+                                    <input type="text" class="form-control"  name="instructor_name" placeholder="Enter Instructor's Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Topics Covered</label>
+                                    <input type="text" class="form-control"  name="topics_covered" placeholder="Enter Topics Covered">
+                                    </div>
+                                </div>
+                            </div>
                             </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;

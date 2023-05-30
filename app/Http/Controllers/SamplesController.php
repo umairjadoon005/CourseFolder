@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Course;
 use ZipArchive;
 
 class SamplesController extends BaseController
@@ -50,7 +51,10 @@ class SamplesController extends BaseController
         ->where('courses.user_id','=',$this->user->id)
         ->select('question_papers.*')
         ->get();
-        return view('samples.create',compact('question_papers'));
+        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+        return view('samples.create',compact('question_papers', 'courses'));
     }
 
     /**

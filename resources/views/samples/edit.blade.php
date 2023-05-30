@@ -27,7 +27,7 @@
                         <form id="save-sample" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Paper<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Sample Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <select class="form-control" name="paper_id">
                                         @foreach($question_papers as $paper)
@@ -36,21 +36,21 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" placeholder="Title" value="{{$sample->title}}" name="title">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description</label>
                                     <textarea class="form-control"  name="description" placeholder="Description">{{$sample->description}}</textarea>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Sample</label>
+                                    <label class="col-form-label">Upload Sample(s)</label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="samples_document[]">
                                 </div>
@@ -76,7 +76,7 @@
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="worst_file[]">
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;

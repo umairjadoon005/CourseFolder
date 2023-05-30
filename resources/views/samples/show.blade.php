@@ -27,7 +27,7 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<p>Title<br/>{{$sample->title}}</p>
+														<!-- <p>Title<br/>{{$sample->title}}</p> -->
 														<p>Descripiton <br/>
                                                             {{$sample->description}}</p>
 														<p>Attachments
@@ -37,7 +37,7 @@
                                                         @endforeach
                                                         </p>
 
-                                                        <p>Best File 
+                                                        <!-- <p>Best File 
                                                          @foreach(json_decode($sample->best_file) as $path)
                                                         </br>
                                                          {{$path->name}} <a href="{{route('samples.downloadBest',$sample->id).'?document='.$path->path}}">Download</a>
@@ -56,7 +56,7 @@
                                                         </br>
                                                          {{$path->name}} <a href="{{route('samples.downloadWorst',$sample->id).'?document='.$path->path}}">Download</a>
                                                         @endforeach
-                                                         </p>
+                                                         </p> -->
                            
                                                         
 													</div>

@@ -48,11 +48,30 @@
                                 </div>
                             </div>
                             <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Program</label>
+                                    <input type="text" class="form-control"  name="{{$course->program}}" placeholder="Enter Program">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Effect from Date</label>
+                                    <input type="text" class="form-control"  name="{{$course->effect_from_date}}" placeholder="Enter Date">
+                                    </div>
+                                </div>
+                            <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="col-form-label">Pre Requisites</label>
                                     <input type="text" class="form-control" value="{{$course->pre_requisites}}" name="pre_requisites" placeholder="Introduction To Computer">
                                 </div>
                             </div>
+                            </div>
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Post Requisites</label>
+                                    <input type="text" class="form-control"  name="{{$course->post_requisites}}" placeholder="Enter Post-requisites">
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
@@ -72,7 +91,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <label class="col-form-label">Text Book</label>
+                                    <label class="col-form-label">Textbook</label>
                                     <input type="text" class="form-control" name="textbook" value="{{$course->textbook}}" placeholder="Introduction To Software Engineering">
                                 </div>
                                 <div class="col-sm-6">
@@ -88,12 +107,36 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                            <div class="col-sm-12">
+                                    <label class="col-form-label">Course Duration</label>
+                                    <input type="text" class="form-control" value="{{$course->course_duration}}" name="course_duration" placeholder="Enter Course Duration">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Instructor's Name</label>
+                                    <input type="text" class="form-control"  value="{{$course->instructor_name}}" name="instructor_name" placeholder="Enter Instructor's Name">
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                            <div class="col-sm-6">
+                                    <div class="form-group">
+                                    <label class="col-form-label">Topics Covered</label>
+                                    <input type="text" class="form-control"  value="{{$course->topics_covered}}" name="topics_covered" placeholder="Enter Topics Covered">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            </div>
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Upload Signature</label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" data-bs-dismiss="modal" class="btn btn-secondary btn-rounded">Cancel</button>

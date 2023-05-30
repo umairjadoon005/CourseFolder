@@ -27,7 +27,17 @@
                         <form id="save-solution" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Paper<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Course<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="course_id">
+                                        @foreach($courses as $course)
+                                        <option @if($course->id==$question_papers->course_id) selected @endif value="{{$course->id}}">{{$course->course_title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Paper Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <select class="form-control" name="paper_id">
                                         @foreach($question_papers as $paper)
@@ -36,12 +46,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" placeholder="Title" value="{{$solution->title}}" name="title">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description</label>
@@ -50,7 +60,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Solution</label>
+                                    <label class="col-form-label">Upload Solution(s)</label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="solutions_document[]">
                                 </div>

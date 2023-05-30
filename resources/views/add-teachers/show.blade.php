@@ -30,13 +30,13 @@
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
 														<p>Teacher Name <span>{{$teacher->teacher_name}}</span></p>
-														<p>Date of Joining <span>{{$teacher->date_of_joining}}</span></p>
-														<p>Experience <span>{{$teacher->experience}}</span></p>
+														<!-- <p>Date of Joining <span>{{$teacher->date_of_joining}}</span></p>
+														<p>Experience <span>{{$teacher->experience}}</span></p> -->
 														<p>Specialization <span>{{$teacher->specialization}}</span></p>
-														<p>Salary <span>{{$teacher->salary}}</span></p>
+														<!-- <p>Salary <span>{{$teacher->salary}}</span></p> -->
 														<p>Phone<span>{{$teacher->phone}}</span></p>
 														<p>Email<span>{{$teacher->email}}</span></p>
-														<p>Address<span>{{$teacher->address}}</span></p>
+														<!-- <p>Address<span>{{$teacher->address}}</span></p> -->
 											
                                                         <h3>Assigned Courses</h3>
                                                         <div class="table-responsive">

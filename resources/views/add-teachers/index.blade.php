@@ -40,14 +40,14 @@
                                         <thead>
                                             <tr>
                                                 <th>Teacher Name</th>
-                                                <th>Date of Joining</th>
+                                                <!-- <th>Date of Joining</th> -->
                                                 <th>Experience</th>
                                                 <th>Specialization</th>
-                                                <th>Salary</th>
+                                                <!-- <th>Salary</th> -->
                                                 <th>Phone</th>
                                                 <th>Email</th>
-                                                <th>Address</th>
-                                                <th class="text-end">Actions</th>
+                                                <!-- <th>Address</th> -->
+                                                <!-- <th class="text-end">Actions</th> -->
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -56,15 +56,15 @@
                                                 <td>
                                                     <a href="{{route('add-teachers.show',$teacher->id)}}" target="_blank">{{$teacher->teacher_name}}</a>
                                                 </td>
-                                                <td>{{$teacher->date_of_joining}}</td>
-                                                <td>
+                                                <!-- <td>{{$teacher->date_of_joining}}</td> -->
+                                                <!-- <td>
                                                     {{$teacher->experience}}
-                                                </td>
+                                                </td> -->
                                                 <td>{{$teacher->specialization}}</td>
-                                                <td>{{$teacher->salary}}</td>
+                                                <!-- <td>{{$teacher->salary}}</td> -->
                                                 <td>{{$teacher->phone}}</td>
                                                 <td>{{$teacher->email}}</td>
-                                                <td>{{$teacher->address}}</td>
+                                                <!-- <td>{{$teacher->address}}</td> -->
                                                 <td class="text-center">
                                                     <div class="dropdown dropdown-action">
                                                         <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

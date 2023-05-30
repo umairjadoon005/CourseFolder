@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('courses', function (Blueprint $table) {
-            $table->id();
-            $table->string('course_code');
-            $table->string('course_title');
-            $table->integer('credit_hours')->nullable();
-            $table->foreignIdFor(User::class,'user_id');
-            $table->timestamps();
+        Schema::table('samples', function (Blueprint $table) {
+            $table->dropColumn('title');
         });
     }
 
@@ -31,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('courses');
+        Schema::table('samples', function (Blueprint $table) {
+            //
+        });
     }
 };

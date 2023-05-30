@@ -34,7 +34,7 @@
                                     <input class="form-control" type="text" placeholder="Enter Teacher's Name" name="teacher_name">
                                 </div>
                             </div>
-                            
+                            <!--
                             <div class="row">
                                 <div class="col-md-6">
                                 <div class="form-group">    
@@ -42,6 +42,7 @@
                                     <input class="form-control" type="date" placeholder="Enter Joining Date" name="date_of_joining">
                                 </div>
                                 </div>
+                                
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                     <label class="col-form-label">Experience</label>
@@ -49,12 +50,9 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Specialization</label>
-                                    <input type="text" class="form-control" name="specialization" placeholder="Enter Specialization">
-                                </div>
-                            </div>
+                                
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
@@ -62,6 +60,12 @@
                                     <input type="number" class="form-control" name="salary" placeholder="Enter Salary">
                                 </div>
                                 </div>
+                                -->
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Specialization</label>
+                                    <input type="text" class="form-control" name="specialization" placeholder="Enter Specialization">
+                                </div>
+                            </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                     <label class="col-form-label">Phone</label>
@@ -72,13 +76,13 @@
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Email</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Ener Email">
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email">
                                 </div>
-                                <div class="col-sm-6">
+                                <!-- <div class="col-sm-6">
                                     <label class="col-form-label">Address</label>
                                     <input type="text" class="form-control"  name="address" placeholder="Enter Address">
                                 </div>
-                            </div>
+                            </div> -->
                            
                             </div>
                             <div class="text-center py-3">

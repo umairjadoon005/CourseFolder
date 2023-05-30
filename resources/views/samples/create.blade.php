@@ -27,8 +27,20 @@
                     <div class="col-md-12">
                         <form id="save-sample" enctype="multipart/form-data">
                         @csrf 
+
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Paper<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Course<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12">
+                                    <select class="form-control" name="course_id">
+                                        @foreach($courses as $course)
+                                        <option value="{{$course->id}}">{{$course->course_title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+
+                        <div class="form-group row">
+                                <div class="col-md-12"><label class="col-form-label">Sample Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <select class="form-control" name="paper_id">
                                         @foreach($question_papers as $paper)
@@ -37,12 +49,12 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" placeholder="Title" name="title">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description</label>
@@ -51,7 +63,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Sample</label>
+                                    <label class="col-form-label">Upload Sample(s)</label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="samples_document[]">
                                 </div>
@@ -59,7 +71,7 @@
 
                             <!-- upload best, avg and worst files code goes here-->
 
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Upload Best File</label>
                                     <br>
@@ -81,7 +93,7 @@
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="worst_file[]">
                                 </div>
-                            </div>
+                            </div> -->
 
 
                             <!--   ends here -->

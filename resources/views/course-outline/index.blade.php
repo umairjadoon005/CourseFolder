@@ -37,9 +37,20 @@
                                         <thead>
                                             <tr>
                                                 <th>Course</th>
-                                                <th>Type</th>
-                                                <th>Duration</th>
+                                                <th>Course Type</th>
                                                 <th>Credit Hours</th>
+                                                <th>Course Duration</th>
+                                                <th>Course Structure</th>
+                                                <th>Weekly Tutition Pattern</th>
+                                                <th>Course Style</th>
+                                                <th>Web Link</th>
+                                                <th>Teaching Team</th>
+                                                <th>Course Description</th>
+                                                <th>SLOs</th>
+                                                <th>Tools & Technology</th>
+                                                <th>Tentative Grading Policy</th>
+                                                <th>Attendance</th>
+                                                <th>General Information</th>
                                                 <th>Created At</th>
                                                 <th class="text-end">Actions</th>
                                             </tr>
@@ -52,9 +63,19 @@
                                                 </td>
                                                 <td>{{$outline->course_type}}</td>
                                                 <td>{{$outline->course_duration}} {{$outline->duration_unit}}</td>
-                                                <td>
-                                                    {{$outline->credit_hours}}
-                                                </td>
+                                                <td> {{$outline->credit_hours}}</td>
+                                                <td> {{$outline->course_duration}}</td>
+                                                <td> {{$outline->course_structure}}</td>
+                                                <td> {{$outline->weekly_tution_pattern}}</td>
+                                                <td> {{$outline->course_style}}</td>
+                                                <td> {{$outline->web_link}}</td>
+                                                <td> {{$outline->teaching_team}}</td>
+                                                <td> {{$outline->course_description}}</td>
+                                                <td> {{$outline->slos}}</td>
+                                                <td> {{$outline->tools_and_tech}}</td>
+                                                <td> {{$outline->tentative_grading_policy}}</td>
+                                                <td> {{$outline->attendance}}</td>
+                                                <td> {{$outline->general_info}}</td>
                                                 <td>{{$outline->created_at}}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown dropdown-action">
@@ -62,7 +83,7 @@
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                             <a class="dropdown-item" href="{{route('course-outlines.show',$outline->id)}}" target="_blank">View</a>
                                                             <a class="dropdown-item" href="{{route('course-outlines.edit',$outline->id)}}" target="_blank">Edit</a>
-                                                            <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-outlines.destroy',$outline->id)}}','By deleting outline, you would not be able to revert it.');" href="#">Delete</a>
+                                                            <!-- <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-outlines.destroy',$outline->id)}}','By deleting outline, you would not be able to revert it.');" href="#">Delete</a> -->
                                                         </div>
                                                     </div>
                                                 </td>

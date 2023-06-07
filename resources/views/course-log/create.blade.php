@@ -41,9 +41,20 @@
                             </div>
                             
                             <div class="form-group row">
+                                <div class="col-sm-4"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter Course Title" name="course_title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
+                                    <input class="form-control" type="number" placeholder="Enter Catelog Number" name="catalog_number">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
                                     <input class="form-control" type="date" placeholder="48" name="date">
                                 </div>
+                            </div>
                                 <div class="col-sm-8">
                                     <label class="col-form-label">Duration</label>
                                     <input type="text" class="form-control" name="duration" placeholder="30 Minutes">

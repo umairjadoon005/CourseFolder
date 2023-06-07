@@ -56,7 +56,7 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label class="col-form-label">Specialization</label>
-                                    <input type="text" class="form-control" value="{{$teacher->specialization}}" name="specialization" placeholder="Specialization">
+                                    <input type="text" class="form-control" value="{{$teacher->specialization}}" name="specialization" >
                                 </div>
                             </div>
                             </div>
@@ -69,11 +69,11 @@
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Phone</label>
-                                    <input type="text" class="form-control" name="phone" value="{{$teacher->phone}}" placeholder="phone">
+                                    <input type="text" class="form-control" name="phone" value="{{$teacher->phone}}">
                                 </div>
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Email</label>
-                                    <input type="email" disabled class="form-control" value="{{$teacher->email}}" name="email" placeholder="Email">
+                                    <input type="email" disabled class="form-control" value="{{$teacher->email}}" name="email" >
                                 </div>
                             </div>
                             <!-- <div class="form-group row">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CourseOutlineRequest;
 use App\Models\Course;
 use App\Models\CourseOutline;
+use App\Models\CourseOutlineTopicDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,12 +29,15 @@ parent::__construct();
      */
     public function index()
     {
-        $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')->where('courses.user_id','=',$this->user->id)
+        $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')->
+        join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('teachers.user_id', '=', auth()->user()->id)
+       // ->where('courses.user_id','=',$this->user->id)
         ->select('course_outlines.*','courses.course_title')->get();
         return view('course-outline.index',compact('course_outlines'));
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -44,7 +48,9 @@ parent::__construct();
        // $courses=Course::where('user_id','=',$this->user->id)->get();
        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+        ->where('teachers.user_id', '=', auth()->user()->id)
+        ->select('courses.*')
+        ->get();
        
         return view('course-outline.create',compact('courses'));
     }
@@ -58,7 +64,7 @@ parent::__construct();
     public function store(CourseOutlineRequest $request)
     {
         $outline = new CourseOutline;
-$this->saveAndUpdate($request,$outline);
+        $this->saveAndUpdate($request,$outline);
         return response()->json('Outline successfully saved.',200);
     }
 
@@ -71,7 +77,8 @@ $this->saveAndUpdate($request,$outline);
     public function show($id)
     {
         $outline=CourseOutline::findOrFail($id);
-        return view('course-outline.show',compact('outline'))->render();
+        $outlineDetail = CourseOutlineTopicDetail::where('course_outlines_id',$id)->get();
+        return view('course-outline.show',compact('outline','outlineDetail'))->render();
     }
 
     /**
@@ -105,18 +112,26 @@ $this->saveAndUpdate($request,$outline);
     }
 private function saveAndUpdate($request,$outline){
     $outline->credit_hours = $request->credit_hours;
-    $outline->pre_requisite = $request->pre_requisite;
-    $outline->post_requisite = $request->post_requisite;
     $outline->course_type = $request->course_type;
     $outline->course_duration = $request->course_duration;
-    $outline->duration_unit = $request->duration_unit;
-    $outline->source_structure = $request->source_structure;
-    $outline->course_id = $request->course_id;
     $outline->weekly_tution_pattern = $request->weekly_tution_pattern;
     $outline->course_structure = $request->course_structure;
     $outline->course_style = $request->course_style;
     $outline->web_link = $request->web_link;
     $outline->teaching_team = $request->teaching_team;
+    $outline->course_description = $request->course_description;
+    $outline->slos = $request->slos;
+    $outline->tools_and_tech = $request->tools_and_tech;
+    $outline->tentative_grading_policy = $request->tentative_grading_policy;
+    $outline->attendance = $request->attendance;
+    $outline->general_info = $request->general_info;
+    $outline->course_id = $request->course_id;
+    
+    // $outline->duration_unit = $request->duration_unit;
+    // $outline->source_structure = $request->source_structure;
+    
+   
+   
     $outline->save();
 
 }

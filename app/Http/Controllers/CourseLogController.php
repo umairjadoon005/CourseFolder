@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Models\Result;
 use App\Http\Controllers\Response;
+use App\Http\Controllers\ZipArchive;
 
 class CourseLogController extends BaseController
 {
@@ -107,14 +108,19 @@ parent::__construct();
         return response()->json('Log successfully updated.',200);
     }
 private function saveAndUpdate($request,$log){
-    $log->date = $request->date;
-    $log->topics_covered = $request->topics_covered;
-    $log->duration = $request->duration;
-    // $log->duration_unit = $request->duration_unit;
-    $log->evaluation_instruments = $request->evaluation_instruments;
     $log->course_id = $request->course_id;
+    $log->course_title = $request->course_title;
+    $log->catalog_number = $request->catalog_number;
+    $log->date = $request->date;
+    $log->duration = $request->duration;
+    $log->topics_covered = $request->topics_covered;
+    $log->evaluation_instruments = $request->evaluation_instruments;
     $file_array=$this->UploadFile($request,'log_document');
     $log->signature = json_encode($file_array);
+    $log->save();
+    
+    
+    
     
 
     /** 
@@ -129,7 +135,7 @@ private function saveAndUpdate($request,$log){
      * 
      * 
     */
-    $log->save();
+    
 }
 
 public function Download($id,Request $request)
@@ -161,8 +167,6 @@ public function Download($id,Request $request)
 
     return response()->download(public_path($fileName));
     }
-
-
 
     /**
      * Remove the specified resource from storage.

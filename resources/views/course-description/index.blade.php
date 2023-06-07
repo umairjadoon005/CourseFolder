@@ -36,9 +36,8 @@
                                     <table class="table table-striped table-nowrap custom-table mb-0 datatable">
                                         <thead>
                                             <tr>
-                                                
-                                                <th>Code</th>
                                                 <th>Title</th>
+                                                <th>Code</th>
                                                 <th>Credit Hours</th>
                                                 <th>Program</th>
                                                 <th>Effect from Date</th>
@@ -62,7 +61,7 @@
                                             @foreach($courses as $course)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('course-descriptions.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
+                                                    <a href="{{route('course-description.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
                                                 </td>
                                                 <td>{{$course->course_code}}</td>
                                                 <td>{{$course->credit_hours}}</td>

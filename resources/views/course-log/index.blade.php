@@ -37,6 +37,7 @@
                                         <thead>
                                             <tr>
                                                 <th>Course</th>
+                                                <th>Catalog Number</th>
                                                 <th>Date</th>
                                                 <th>Duration</th>
                                                 <th>Credit Hours</th>
@@ -50,6 +51,7 @@
                                                 <td>
                                                     <a href="{{route('course-descriptions.show',$log->course_id)}}" target="_blank">{{$log->course_title}}</a>
                                                 </td>
+                                                <td>{{$log->catalog_number}}</td>
                                                 <td>{{$log->date}}</td>
                                                 <td>{{$log->duration}}</td>
                                                 <td>

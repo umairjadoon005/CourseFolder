@@ -28,16 +28,29 @@
 					<a href="{{url('add-teachers')}}"><i class="feather-user"></i> <span>Teachers</span></a>
 				</li>
 				@endcan
+				
 				@can('add course')
 				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
 					<a href="{{url('course-descriptions')}}"><i class="feather-smartphone"></i> <span>Courses</span></a>
 				</li>
 				@endcan
+				@can('add course description topic detail')
+				<li class="{{ Request::is('course-description-topic-detail') ? 'active' : '' }}"> 
+					<a href="{{url('course-description-topic-detail')}}"><i class="feather-smartphone"></i> <span>Course Desc Details</span></a>
+				</li>
+				@endcan
+				
 				@can('add course outline')		
 				<li class="{{ Request::is('course-outlines') ? 'active' : '' }}"> 
 					<a href="{{url('course-outlines')}}"><i class="feather-check-square"></i> <span>Course Outline</span></a>
 				</li>
 				@endcan
+				@can('add course outline topic detail')		
+				<li class="{{ Request::is('course-outline-topic-detail') ? 'active' : '' }}"> 
+					<a href="{{url('course-outline-topic-detail')}}"><i class="feather-check-square"></i> <span>Course Outline Details</span></a>
+				</li>
+				@endcan
+
 				@can('add lecture notes')
 				<li class="{{ Request::is('lecture-notes') ? 'active' : '' }}"> 
 					<a href="{{url('lecture-notes')}}"><i class="feather-database"></i> <span>Lecture Notes</span></a>

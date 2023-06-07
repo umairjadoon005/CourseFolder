@@ -39,7 +39,9 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<p>Topics Covered <span>{{$log->topics_covered}}</span></p>
+                          <p>Course Title<span>{{$log->course_title}}</span></p>	
+													<p>Catalog Number <span>{{$log->catalog_number}}</span></p>	
+                          <p>Topics Covered <span>{{$log->topics_covered}}</span></p>
 														<p>Evaluation Instruments <span>{{$log->evaluation_instruments}}</span></p>
                             @foreach(json_decode($log->signature) as $path)
                                                          {{$path->name}} <a href="{{route('logs.download',$log->id).'?document='.$path->path}}">Download</a>

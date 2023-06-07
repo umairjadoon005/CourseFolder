@@ -61,11 +61,13 @@
                                 </div>
                                 </div>
                                 -->
+                            <div class="row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Specialization</label>
                                     <input type="text" class="form-control" name="specialization" placeholder="Enter Specialization">
                                 </div>
                             </div>
+                            <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                     <label class="col-form-label">Phone</label>
@@ -73,10 +75,12 @@
                                 </div>
                                 </div>
                             </div>
+                            <div class="row">
                             <div class="form-group row">
                                 <div class="col-sm-6">
                                     <label class="col-form-label">Email</label>
                                     <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                </div>
                                 </div>
                                 <!-- <div class="col-sm-6">
                                     <label class="col-form-label">Address</label>
@@ -84,7 +88,7 @@
                                 </div>
                             </div> -->
                            
-                            </div>
+                            
                             <div class="text-center py-3">
                               <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" data-bs-dismiss="modal" class="btn btn-secondary btn-rounded">Cancel</button>

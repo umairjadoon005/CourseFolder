@@ -50,15 +50,66 @@
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
 														<p>Course Type <span>{{$outline->course_type}}</span></p>
-														<p>Pre Requisites <span>{{$outline->pre_requisite}}</span></p>
-														<p>Post Requisites <span>{{$outline->post_requisite}}</span></p>
-														<p>Source Structure <span>{{$outline->source_structure}}</span></p>
+														<!-- <p>Course Duration <span>{{$outline->course_duration}}</span></p> -->
+														<p>Course Structure <span>{{$outline->course_structure}}</span></p>
+														<p>Weekly Tuition Pattern <span>{{$outline->weekly_tution_pattern}}</span></p>
                             <p>Course Style <span>{{$outline->course_style}}</span></p>
                             <p>Web Link <span>{{$outline->web_link}}</span></p>
                             <p>Teaching Team <span>{{$outline->teaching_team}}</span></p>
+                            <p>Course Description <span>{{$outline->course_description}}</span></p>
+                            <p>SLOs<span>{{$outline->slos}}</span></p>
+                            <p>Tools & Technology<span>{{$outline->tools_and_tech}}</span></p>
+                            <p>Tentative Grading Policy<span>{{$outline->tentative_grading_policy}}</span></p>
+                            <p>Attendance<span>{{$outline->attendance}}</span></p>
+                            <p>SLOs<span>{{$outline->slos}}</span></p>
+                            <p>General Information<span>{{$outline->general_info}}</span></p>
 													</div>
 												</div>
 											</div>
+                    </div>
+                    <div class= "row">
+                    <div class="page-header pt-3 mb-0 ">
+                    <div class="row">
+                        <div class="col text-end">
+                            <ul class="list-inline-item ps-0">
+                                <li class="list-inline-item">
+                                    <a class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded" target="_blank" href="{{route('course-outline-topic-detail.CreateTopic',$outline->id)}}">Add Outline Details</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    <div class="table-responsive">
+                                    <table class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Week Number</th>
+                                                <th>Topics</th>
+                                                <th class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($outlineDetail as $outline)
+                                            <tr>
+                                              
+                                                <td>{{$outline->week_no}}</td>
+                                                <td>{{$outline->topics}} </td>
+                                                <td class="text-center">
+                                                    <div class="dropdown dropdown-action">
+                                                        <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="{{route('course-outline-topic-detail.show',$outline->id)}}" target="_blank">View</a>
+                                                            <a class="dropdown-item" href="{{route('course-outline-topic-detail.edit',$outline->id)}}" target="_blank">Edit</a>
+                                                            <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-outlines.destroy',$outline->id)}}','By deleting outline, you would not be able to revert it.');" href="#">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                       @endforeach
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
                     </div>
     </div>
     </div>

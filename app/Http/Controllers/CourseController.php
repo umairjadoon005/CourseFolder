@@ -29,7 +29,7 @@ class CourseController extends BaseController
      */
     public function index()
     {
-       // $courses=Course::where('user_id','=',$this->user->id)->get();
+        //$courses=Course::where('user_id','=',$this->user->id)->get();
          $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
         ->where('teachers.user_id', '=', auth()->user()->id)->get();
@@ -96,7 +96,7 @@ class CourseController extends BaseController
     public function update(CourseRequest $request, $id)
     {
         $course = Course::findOrFail($id);
-$this->saveAndUpdate($course,$request);
+        $this->saveAndUpdate($course,$request);
         return response()->json('Course successfully updated.',200);
     }
 
@@ -105,12 +105,18 @@ $this->saveAndUpdate($course,$request);
         $course->course_title = $request->course_title;
         $course->credit_hours = $request->credit_hours;
         $course->pre_requisites = $request->pre_requisites;
+        $course->post_requisites = $request->post_requisites;
         $course->topics = $request->topics;
         $course->assessments = $request->assessments;
         $course->course_coordinator = $request->course_coordinator;
         $course->textbook = $request->textbook;
         $course->reference_material = $request->reference_material;
         $course->course_goals = $request->course_goals;
+        $course->course_duration = $request->course_duration;
+        $course->instructor_name = $request->instructor_name;
+        $course->topics_covered = $request->topics_covered;
+        $course->program = $request->program;
+        $course->effect_from_date = $request->effect_from_date;
         $course->user_id = $this->user->id;
         $course->save();
     }

@@ -17,12 +17,12 @@ return new class extends Migration
         Schema::create('course_outlines', function (Blueprint $table) {
             $table->id();
             $table->integer('credit_hours')->nullable();
-            $table->text('pre_requisite')->nullable();
-            $table->text('post_requisite')->nullable();
+            //$table->text('pre_requisite')->nullable();
+            //$table->text('post_requisite')->nullable();
             $table->string('course_type')->nullable();
             $table->integer('course_duration')->nullable();
-            $table->string('duration_unit')->nullable();
-            $table->text('source_structure')->nullable();
+            //$table->string('duration_unit')->nullable();
+            //$table->text('source_structure')->nullable();
             $table->foreignIdFor(Course::class,'course_id');
             $table->timestamps();
         });

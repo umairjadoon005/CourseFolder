@@ -25,8 +25,14 @@ Route::get('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherControll
 Route::post('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherController::class,'AssignCourseSave'])->name('teachers.save-teacher-course');
 
 Route::resource('add-teachers', App\Http\Controllers\TeacherController::class);
+Route::resource('course-description-topic-detail', App\Http\Controllers\CourseDescriptionTopicDetailController::class);
+//Route::resource('course-description-topic-detail','CourseDescriptionTopicDetailController');
 Route::resource('course-descriptions', App\Http\Controllers\CourseController::class);
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);
+Route::get('course-outline-topic-detail/{id}',[App\Http\Controllers\CourseOutlineTopicDetailController::class,'CreateTopic'])->name('course-outline-topic-detail.CreateTopic');
+Route::resource('course-outline-topic-detail', App\Http\Controllers\CourseOutlineTopicDetailController::class);
+
+//Route::resource('course-outline-topic-detail','CourseDescriptionTopicDetailController');
 Route::get('/samples/download/{id}', [App\Http\Controllers\SamplesController::class,'Download'])->name('samples.download');
 Route::get('/samples/print/{id}', [App\Http\Controllers\SamplesController::class,'Print'])->name('samples.print');
 Route::get('/samples/downloadBest/{id}', [App\Http\Controllers\SamplesController::class,'downloadBest'])->name('samples.downloadBest');

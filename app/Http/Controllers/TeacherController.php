@@ -50,17 +50,19 @@ class TeacherController extends BaseController
             'created_at' => now()]);
             $user->assignrole('teacher');
             $teacher = new Teacher();
+            
         $teacher->id = $request->id;
         $teacher->teacher_name = $request->teacher_name;
-        $teacher->date_of_joining = $request->date_of_joining;
-        $teacher->experience = $request->experience;
         $teacher->specialization = $request->specialization;
-        $teacher->salary = $request->salary;
-        $teacher->phone = $request->phone;
         $teacher->email = $request->email;
-        $teacher->address = $request->address;
-            $teacher->user_id=$user->id;
-            $teacher->save();
+        $teacher->phone = $request->phone;
+        $teacher->user_id=$user->id;
+        $teacher->save();
+        //$teacher->date_of_joining = $request->date_of_joining;
+        //$teacher->experience = $request->experience;
+       // $teacher->salary = $request->salary;
+       //$teacher->address = $request->address;
+            
         return response()->json('Teacher successfully saved.',200);
     }
 
@@ -104,13 +106,15 @@ class TeacherController extends BaseController
         $teacher = Teacher::findOrFail($id);
         $teacher->id = $request->id;
         $teacher->teacher_name = $request->teacher_name;
-        $teacher->date_of_joining = $request->date_of_joining;
-        $teacher->experience = $request->experience;
         $teacher->specialization = $request->specialization;
-        $teacher->salary = $request->salary;
+        $teacher->email = $request->email;
         $teacher->phone = $request->phone;
-        $teacher->address = $request->address;
         $teacher->save();
+        //$teacher->date_of_joining = $request->date_of_joining;
+        //$teacher->experience = $request->experience;
+        //$teacher->salary = $request->salary;
+        //$teacher->address = $request->address;
+       
         
 
         return response()->json('Course successfully updated.',200);

@@ -39,7 +39,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Type<span class="text-danger">*</span></label>
+                                                    <label class="col-form-label">Course Type<span class="text-danger">*</span></label>
                                                     <select class="form-control" name="course_type">
                                                         <option value="Theory+Lab">Theory+Lab</option>
                                                         <option value="Theory">Theory</option>
@@ -56,46 +56,23 @@
                                                     <input class="form-control" type="number" placeholder="48" name="credit_hours">
                                                 </div>
                                             </div>
-                                            <div class="col-sm-8">
-                                                <div class="form-group">
-                                                    <label class="col-form-label">Source Structure</label>
-                                                    <input type="text" class="form-control" name="source_structure" placeholder="Books, notes and online sources">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Pre Requisite</label>
-                                                <input type="text" class="form-control" name="pre_requisite" placeholder="Introduction To Computer">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Post Requisite</label>
-                                                <input type="text" class="form-control" name="post_requisite" placeholder="Software Engineering II">
-                                            </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
                                                 <label class="col-form-label">Course Duration</label>
                                                 <input type="number" class="form-control" name="course_duration" placeholder="1">
                                             </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Duration Unit</label>
-                                                <select name="duration_unit" class="form-control">
-                                                    <option value="Day(s)">Day(s)</option>
-                                                    <option value="Week(s)">Week(s)</option>
-                                                    <option value="Month(s)">Month(s)</option>
-                                                    <option value="Year(s)">Year(s)</option>
-                                                </select>
-                                            </div>
                                         </div>
-                                        <div class="form-group row">
+                                            <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Cource Structure</label>
+                                                    <input type="text" class="form-control" name="cource_structure" placeholder="Books, notes and online sources">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
                                             <div class="col-sm-6">
                                                 <label class="col-form-label">Weekly Tution Pattern</label>
                                                 <input type="text" class="form-control" name="weekly_tution_pattern" placeholder="2 Lectures (90 Minutes each)">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Course Structure</label>
-                                                <input type="text" class="form-control" name="course_structure" placeholder="Presentation by instructors, tasks, quizzes, assignments">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -103,17 +80,73 @@
                                                 <label class="col-form-label">Course Style</label>
                                                 <input type="text" class="form-control" name="course_style" placeholder="The course will be delivered mostly in a classroom environment">
                                             </div>
-                                            <div class="col-sm-6">
+                                        </div>
+                                        <div class="form-group row">
+                                        <div class="col-sm-6">
                                                 <label class="col-form-label">Web Link</label>
                                                 <input type="text" class="form-control" name="web_link" placeholder="http://google.meet/exampleurl">
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
+                                            </div>
+                                            <div class="form-group row">
                                             <div class="col-sm-12">
                                                 <label class="col-form-label">Teaching Team</label>
                                                 <input type="text" class="form-control" name="teaching_team" placeholder="Sir. John Doe">
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                        <div class="col-sm-6">
+                                                <label class="col-form-label">Course Description</label>
+                                                <input type="text" class="form-control" name="course_description" placeholder="Enter Course Description">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                        <div class="col-sm-6">
+                                                <label class="col-form-label">SLOs</label>
+                                                <input type="text" class="form-control" name="slos" placeholder="Enter SLOs">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                        <div class="col-sm-6">
+                                                <label class="col-form-label">Tool & Technology</label>
+                                                <input type="text" class="form-control" name="tools_and_tech" placeholder="Enter Tools and Technology">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Tentative Grading Policy</label>
+                                                <input type="text" class="form-control" name="tentative_grading_policy" placeholder="Enter Tentative Grading Policy">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Attendance</label>
+                                                <input type="text" class="form-control" name="attendance" placeholder="Enter Attendance">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">General Information</label>
+                                                <input type="text" class="form-control" name="general_info" placeholder="Enter General Information">
+                                            </div>
+                                        </div>
+                                        
+                                            <!-- <div class="col-sm-6">
+                                                <label class="col-form-label">Duration Unit</label>
+                                                <select name="duration_unit" class="form-control">
+                                                    <option value="Day(s)">Day(s)</option>
+                                                    <option value="Week(s)">Week(s)</option>
+                                                    <option value="Month(s)">Month(s)</option>
+                                                    <option value="Year(s)">Year(s)</option>
+                                                </select>
+                                            </div> -->
+                                        </div>
+                                        
+                                            
+                                        </div>
+                                        
+                                            
+                                        </div>
+                                        
                                         <div class="text-center py-3">
                                             <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                             <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $permission9 = Permission::create(['name'=>'add teacher']);
         $permission10 = Permission::create(['name'=>'add course']);
         $permission11 = Permission::create(['name'=>'assign course']);
+       
         $role1->givePermissionTo([$permission9, $permission10, $permission11]);
         //$permission->assignRole($role1); //alternate way to assign permission to role1
 
@@ -42,9 +43,12 @@ class DatabaseSeeder extends Seeder
         $permission6 = Permission::create(['name'=>'add lecture notes']);
         $permission7 = Permission::create(['name'=>'add samples']);
         $permission8 = Permission::create(['name'=>'add course logs']);
+        $permission12 = Permission::create(['name'=>'add course description topic detail']);
+        $permission13 = Permission::create(['name'=>'add course outline topic detail']);
 
         //$permissions = Permission::all();
-        $role2->givePermissionTo([$permission1, $permission2, $permission3, $permission4, $permission5, $permission6, $permission7, $permission8]);
+        $role2->givePermissionTo([$permission1, $permission2, $permission3, $permission4,
+         $permission5, $permission6, $permission7, $permission8, $permission12, $permission13]);
         //$role2->givePermissionTo($permissions);
         
         //$role->syncPermissions(['add attendance', 'add model', 'add solutions']);

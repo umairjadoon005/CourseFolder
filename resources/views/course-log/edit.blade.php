@@ -38,7 +38,16 @@
                                 </div>
                                 </div>
                             </div>
-                            
+                            <div class="form-group row">
+                                <div class="col-sm-4"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text"  value="{{$log->course_title}}" name="course_title">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
+                                    <input class="form-control" type="number" value="{{$log->catalog_number}}" name="catalog_number">
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
                                     <input class="form-control" type="date" placeholder="48" value="{{$log->date}}" name="date">

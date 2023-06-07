@@ -39,11 +39,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                    <label class="col-form-label">Type<span class="text-danger">*</span></label>
+                                    <label class="col-form-label">Course Type<span class="text-danger">*</span></label>
                                 <select class="form-control" name="course_type">
                                 <option @if($outline->course_type=="Theory+Lab") selected @endif value="Theory+Lab">Theory+Lab</option>
                                 <option @if($outline->course_type=="Theory") selected @endif value="Theory">Theory</option>
-                                    <option @if($outline->course_type=="Lab") selected @endif value="Lab">Lab</option>
+                                <option @if($outline->course_type=="Lab") selected @endif value="Lab">Lab</option>
                             </select>
                                 </div>
                                 </div>
@@ -53,7 +53,63 @@
                                 <div class="col-sm-4"><label class="col-form-label">Credit Hours<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" placeholder="48" value="{{$outline->credit_hours}}" name="credit_hours">
                                 </div>
-                                <div class="col-sm-8">
+                            </div>
+                            <div class="form-group row">
+                                            <div class="col-sm-6">
+                                                <label class="col-form-label">Course Duration</label>
+                                                <input type="number" class="form-control" name="course_duration" value="{{$outline->course_duration}}" placeholder="1">
+                                            </div>
+                            </div>
+                                     <div class="col-sm-8">
+                                                <div class="form-group">
+                                                    <label class="col-form-label">Cource Structure</label>
+                                                    <input type="text" class="form-control" name="cource_structure"  value="{{$outline->course_structure}}" placeholder="Books, notes and online sources">
+                                                </div>
+                                 </div>
+                                 <div class="col-sm-6">
+                                                <label class="col-form-label">Weekly Tution Pattern</label>
+                                                <input type="text" class="form-control" name="weekly_tution_pattern" value="{{$outline->weekly_tution_pattern}}">
+                                </div>
+                                <div class="col-sm-6">
+                                                <label class="col-form-label">Course Style</label>
+                                                <input type="text" class="form-control" name="course_style" value="{{$outline->course_style}}">
+                                </div>
+                                <div class="col-sm-6">
+                                                <label class="col-form-label">Web Link</label>
+                                                <input type="text" class="form-control" name="web_link" value="{{$outline->web_link}}">
+                                </div>
+                                <div class="col-sm-12">
+                                                <label class="col-form-label">Teaching Team</label>
+                                                <input type="text" class="form-control" name="teaching_team" value="{{$outline->teaching_team}}">
+                                </div>
+                                <div class="col-sm-6">
+                                                <label class="col-form-label">Course Description</label>
+                                                <input type="text" class="form-control" name="course_description" value="{{$outline->course_description}}">
+                                 </div>
+                                 <div class="col-sm-6">
+                                                <label class="col-form-label">SLOs</label>
+                                                <input type="text" class="form-control" name="slos" value="{{$outline->slos}}">
+                                </div>
+                                <div class="col-sm-6">
+                                                <label class="col-form-label">Tool & Technology</label>
+                                                <input type="text" class="form-control" name="tools_and_tech" value="{{$outline->tools_and_tech}}">
+                                </div>
+                                <div class="col-sm-6">
+                                                <label class="col-form-label">Tentative Grading Policy</label>
+                                                <input type="text" class="form-control" name="tentative_grading_policy" value="{{$outline->tentative_grading_policy}}">
+                                 </div>
+                                 <div class="col-sm-6">
+                                                <label class="col-form-label">Attendance</label>
+                                                <input type="text" class="form-control" name="attendance" value="{{$outline->attendance}}">
+                                 </div>
+                                 <div class="col-sm-6">
+                                                <label class="col-form-label">General Information</label>
+                                                <input type="text" class="form-control" name="general_info" value="{{$outline->general_info}}">
+                                 </div>
+
+
+
+                                <!-- <div class="col-sm-8">
                                     <label class="col-form-label">Source Structure</label>
                                     <input type="text" class="form-control" name="source_structure" placeholder="Books, notes and online sources">
                                 </div>
@@ -107,7 +163,7 @@
                                             <div class="col-sm-12">
                                                 <label class="col-form-label">Teaching Team</label>
                                                 <input type="text" class="form-control" name="teaching_team" placeholder="Sir. John Doe">
-                                            </div>
+                                            </div> -->
                                         </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;

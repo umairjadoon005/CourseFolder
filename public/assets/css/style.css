@@ -1473,10 +1473,13 @@ table.dataTable thead>tr>td.sorting {
 
 .mini-sidebar .header-left .mini-sidebar-logo {
 	display: block;
+	
 }
 
 .mini-sidebar .header-left .sidebar-logo {
 	display: none;
+	
+	
 }
 
 .header-left img {

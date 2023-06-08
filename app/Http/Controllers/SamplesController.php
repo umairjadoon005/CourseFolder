@@ -53,7 +53,8 @@ class SamplesController extends BaseController
         ->get();
         $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+        ->where('teachers.user_id', '=', auth()->user()->id)
+        ->select('samples.*','courses.course_title')->get();
         return view('samples.create',compact('question_papers', 'courses'));
     }
 

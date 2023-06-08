@@ -77,7 +77,8 @@ class TeacherController extends BaseController
         $teacher=Teacher::findOrFail($id);
         $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', $teacher->user_id)->get();
+        ->where('teachers.user_id', '=', $teacher->user_id)
+        ->select('teachers.*','courses.course_title')->get();
         return view('add-teachers.show',compact('teacher','courses'))->render();
     }
 

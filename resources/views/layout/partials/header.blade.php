@@ -8,8 +8,9 @@
 			<!-- Logo -->
 			<div class="header-left">
 				<a href="{{url('index')}}" class="logo">
-					<img src="{{ URL::asset('/assets/img/logo.png')}}"  alt="Logo" class="sidebar-logo">
-					<img src="{{ URL::asset('/assets/img/s-logo.png')}}"  alt="Logo" class="mini-sidebar-logo">
+					<!-- <img src="{{ URL::asset('/assets/img/logo.png')}}"  alt="Logo" class="sidebar-logo">
+					<img src="{{ URL::asset('/assets/img/s-logo.png')}}"  alt="Logo" class="mini-sidebar-logo"> -->
+					<img src="{{ URL::asset('/assets/img/aust-logo-new1.png')}}"  alt="Logo" class="sidebar-logo">
 				</a>
 			</div>
 			<!-- /Logo -->

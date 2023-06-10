@@ -65,8 +65,8 @@
                                         </div>
                                             <div class="col-sm-8">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Cource Structure</label>
-                                                    <input type="text" class="form-control" name="cource_structure" placeholder="Books, notes and online sources">
+                                                    <label class="col-form-label">Course Structure</label>
+                                                    <input type="text" class="form-control" name="course_structure" placeholder="Books, notes and online sources">
                                                 </div>
                                             </div>
                                             <div class="form-group row">

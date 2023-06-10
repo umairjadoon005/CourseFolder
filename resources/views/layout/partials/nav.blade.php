@@ -33,6 +33,15 @@
 				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
 					<a href="{{url('course-descriptions')}}"><i class="feather-smartphone"></i> <span>Courses</span></a>
 				</li>
+				@else
+				<li> 
+					<select class="form-control">
+						@foreach(Auth::user()->courses() as $course)
+						<option>Example Course</option>	
+						@endforeach
+				</select>
+				</li>
+				
 				@endcan
 				@can('add course description topic detail')
 				<li class="{{ Request::is('course-description-topic-detail') ? 'active' : '' }}"> 

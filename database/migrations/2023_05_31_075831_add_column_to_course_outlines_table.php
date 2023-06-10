@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('course_outlines', function (Blueprint $table) {
-            $table->string('course_structure')->nullable();
+            // $table->string('course_structure')->nullable();
         });
     }
 

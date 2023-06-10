@@ -61,7 +61,7 @@
                                             @foreach($courses as $course)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('course-description.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
+                                                    <a href="{{route('course-descriptions.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
                                                 </td>
                                                 <td>{{$course->course_code}}</td>
                                                 <td>{{$course->credit_hours}}</td>

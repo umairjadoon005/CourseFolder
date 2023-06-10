@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::table('course_outlines', function (Blueprint $table) {
             //$table->dropColumn('pre-requisite');
             //$table->dropColumn('post-requisite');
-            $table->dropColumn('source_structure');
-            $table->dropColumn('duration_unit');
+            // $table->dropColumn('source_structure');
+            // $table->dropColumn('duration_unit');
 
         });
     }

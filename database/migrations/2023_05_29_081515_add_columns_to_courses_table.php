@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('courses', function (Blueprint $table) {
-            $table->date('effect_from_date');
+            $table->date('effect_from_date')->nullable();
         });
     }
 

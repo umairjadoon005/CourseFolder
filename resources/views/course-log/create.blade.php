@@ -28,7 +28,7 @@
                         <form id="save-log">
                         @csrf 
                         <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                 <div class="form-group">    
                                 <label class="col-form-label">Course<span class="text-danger">*</span></label>  
                                   <select class="form-control" name="course_id">
@@ -41,31 +41,34 @@
                             </div>
                             
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text" placeholder="Enter Course Title" name="course_title">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" placeholder="Enter Catelog Number" name="catalog_number">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Date<span class="text-danger">*</span></label>
                                     <input class="form-control" type="date" placeholder="48" name="date">
                                 </div>
                             </div>
-                                <div class="col-sm-8">
+                            <div class="form-group row">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Duration<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="duration" placeholder="30 Minutes">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Topics Covered<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control"  name="topics_covered"  placeholder="Introduction To Computer">
                                 </div>
-                                <div class="col-sm-6">
+                            </div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Evaluation instruments<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="evaluation_instruments"  placeholder="Software Engineering II">
                                 </div>
@@ -78,33 +81,7 @@
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
                                 </div>
                             </div>
-                            
-                            <!--
 
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Best File</label>
-                                    <br>
-                                    <input type="file" id="file-input" class="form-control" multiple="true" name="best_file[]">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Average File</label>
-                                    <br>
-                                    <input type="file" id="file-input" class="form-control" multiple="true" name="avg_file[]">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Best File</label>
-                                    <br>
-                                    <input type="file" id="file-input" class="form-control" multiple="true" name="worst_file[]">
-                                </div>
-                            </div>
-                            -->
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

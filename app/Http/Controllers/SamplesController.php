@@ -34,8 +34,8 @@ class SamplesController extends BaseController
     {
         $user_id=$this->user->id;
         $samples=Samples::join('question_papers','question_papers.id','=','samples.paper_id')->join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)
-->select('samples.*','question_papers.paper_type')->get();
+        ->where('courses.id', '=', session('default_course'))
+        ->select('samples.*','question_papers.paper_type')->get();
         return view('samples.index',compact('samples'));
     }
 

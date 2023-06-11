@@ -32,8 +32,8 @@ parent::__construct();
     public function index()
     {
         $model_solutions=ModelSolutions::join('question_papers','question_papers.id','=','model_solutions.paper_id')->join('courses','courses.id','=','question_papers.course_id')
-->where('courses.user_id','=',$this->user->id)
-->select('model_solutions.*','question_papers.paper_type')->get();
+        ->where('courses.id', '=', session('default_course'))
+        ->select('model_solutions.*','question_papers.paper_type')->get();
         return view('model-solutions.index',compact('model_solutions'));
     }
 

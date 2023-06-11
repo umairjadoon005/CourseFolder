@@ -2,8 +2,8 @@
     <!-- Page Header -->
     <div class="crms-title row bg-white" style="margin-bottom:10px">
     <div class="col-xs-12" style="text-align:center">
-        <h1>Abbottabad University of Science and Technology</h1>
-        <h3>Havelian </h3>
+        <h3 style=" color:#1f1f1f; font-family: 'Raleway',sans-serif;  font-weight: 700; line-height: 40px; margin: 0 0 24px; text-align: center; text-transform: uppercase; margin:0; padding:0;">Abbottabad University of Science and Technology</h3>
+        <h4 style="margin:0; padding:0; color:#1f1f1f;">Havelian </h4>
         <h5>Ph:13413412423</h5>
     </div></div>
     <div class="crms-title row bg-white" style="margin-bottom:10px">

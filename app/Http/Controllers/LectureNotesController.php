@@ -31,7 +31,8 @@ class LectureNotesController extends BaseController
      */
     public function index()
     {
-        $lecture_notes = LectureNotes::join('courses', 'courses.id', '=', 'lecture_notes.course_id')->where('courses.user_id', '=', $this->user->id)
+            $lecture_notes = LectureNotes::join('courses', 'courses.id', '=', 'lecture_notes.course_id')->
+            where('courses.id', '=', session('default_course'))
             ->select('lecture_notes.*', 'courses.course_title')->get();
 
         return view('lecture-notes.index', compact('lecture_notes'));

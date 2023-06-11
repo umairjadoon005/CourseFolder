@@ -33,7 +33,8 @@ parent::__construct();
      */
     public function index()
     {
-        $course_logs=CourseLog::join('courses','courses.id','=','course_logs.course_id')->where('courses.user_id','=',$this->user->id)
+        $course_logs=CourseLog::join('courses','courses.id','=','course_logs.course_id')
+        ->where('courses.id', '=', session('default_course'))
         ->select('course_logs.*','courses.course_title')->get();
         return view('course-log.index',compact('course_logs'));
         //

@@ -50,7 +50,6 @@
                                                 <th>Reference Material</th>
                                                 <th>Course Goals</th>
                                                 <th>Course Duration</th>
-                                                <th>Course Coordinator</th>
                                                 <th>Instructor's Name</th>
                                                 <th>Topics Covered</th>
                                                 <th>Created At</th>

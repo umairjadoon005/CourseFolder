@@ -42,121 +42,73 @@
                             </div>
                             
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Credit Hours<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Credit Hours<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" placeholder="48" value="{{$outline->credit_hours}}" name="credit_hours">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-12">
                                                 <label class="col-form-label">Course Duration<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" name="course_duration" value="{{$outline->course_duration}}" placeholder="1">
                                             </div>
                             </div>
-                                     <div class="col-sm-8">
+                            <div class="form-group row">
+                                     <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Course Structure<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="course_structure"  value="{{$outline->course_structure}}" placeholder="Books, notes and online sources">
                                                 </div>
-                                 </div>
-                                 <div class="col-sm-6">
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
                                                 <label class="col-form-label">Weekly Tution Pattern<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="weekly_tution_pattern" value="{{$outline->weekly_tution_pattern}}">
-                                </div>
-                                <div class="col-sm-6">
+                                </div></div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                                 <label class="col-form-label">Course Style<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_style" value="{{$outline->course_style}}">
-                                </div>
-                                <div class="col-sm-6">
+                                </div></div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                                 <label class="col-form-label">Web Link<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="web_link" value="{{$outline->web_link}}">
-                                </div>
+                                </div></div>
+                                <div class="form-group row">
                                 <div class="col-sm-12">
                                                 <label class="col-form-label">Teaching Team<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="teaching_team" value="{{$outline->teaching_team}}">
-                                </div>
-                                <div class="col-sm-6">
+                                </div></div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                                 <label class="col-form-label">Course Description<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_description" value="{{$outline->course_description}}">
-                                 </div>
-                                 <div class="col-sm-6">
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
                                                 <label class="col-form-label">SLOs<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="slos" value="{{$outline->slos}}">
-                                </div>
-                                <div class="col-sm-6">
+                                </div></div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                                 <label class="col-form-label">Tool & Technology<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tools_and_tech" value="{{$outline->tools_and_tech}}">
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                                 <label class="col-form-label">Tentative Grading Policy<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tentative_grading_policy" value="{{$outline->tentative_grading_policy}}">
-                                 </div>
-                                 <div class="col-sm-6">
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
                                                 <label class="col-form-label">Attendance<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="attendance" value="{{$outline->attendance}}">
-                                 </div>
-                                 <div class="col-sm-6">
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
                                                 <label class="col-form-label">General Information<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="general_info" value="{{$outline->general_info}}">
-                                 </div>
+                                 </div></div>
 
-
-
-                                <!-- <div class="col-sm-8">
-                                    <label class="col-form-label">Source Structure</label>
-                                    <input type="text" class="form-control" name="source_structure" placeholder="Books, notes and online sources">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <label class="col-form-label">Pre Requisites</label>
-                                    <input type="text" class="form-control"  name="pre_requisites" value="{{$outline->pre_requisites}}" placeholder="Introduction To Computer">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label class="col-form-label">Post Requisites</label>
-                                    <input type="text" class="form-control" name="post_requisites" value="{{$outline->post_requisites}}" placeholder="Software Engineering II">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <label class="col-form-label">Course Duration</label>
-                                    <input type="number" class="form-control" name="course_duration" value="{{$outline->course_duration}}" placeholder="1">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label class="col-form-label">Duration Unit</label>
-<select name="duration_unit" class="form-control">
-<option @if($outline->duration_unit=='Day(s)') selected @endif value="Day(s)">Day(s)</option>
-<option @if($outline->duration_unit=='Week(s)') selected @endif value="Week(s)">Week(s)</option>
-<option @if($outline->duration_unit=='Month(s)') selected @endif value="Month(s)">Month(s)</option>
-<option @if($outline->duration_unit=='Year(s)') selected @endif value="Year(s)">Year(s)</option>
-</select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Weekly Tution Pattern</label>
-                                                <input type="text" class="form-control" name="weekly_tution_pattern" placeholder="2 Lectures (90 Minutes each)">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Course Structure</label>
-                                                <input type="text" class="form-control" name="course_structure" placeholder="Presentation by instructors, tasks, quizzes, assignments">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Course Style</label>
-                                                <input type="text" class="form-control" name="course_style" placeholder="The course will be delivered mostly in a classroom environment">
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <label class="col-form-label">Web Link</label>
-                                                <input type="text" class="form-control" name="web_link" placeholder="http://google.meet/exampleurl">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <label class="col-form-label">Teaching Team</label>
-                                                <input type="text" class="form-control" name="teaching_team" placeholder="Sir. John Doe">
-                                            </div> -->
-                                        </div>
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;
                                 <button type="button" class="btn btn-secondary btn-rounded" data-bs-dismiss="modal">Cancel</button>

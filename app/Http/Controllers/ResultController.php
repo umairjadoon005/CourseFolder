@@ -31,7 +31,7 @@ parent::__construct();
     public function index()
     {
         $results=Result::join('question_papers','question_papers.id','=','results.paper_id')->join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)
+        ->where('courses.id', '=', session('default_course'))
         ->select('results.*','question_papers.paper_type')->get();
         return view('results.index',compact('results'));
     }

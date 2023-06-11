@@ -53,8 +53,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                            <div class="row">
-                                <div class="col-md-6">
+                            
+                                <div class="col-md-12">
                                 <div class="form-group">Content<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text" value="{{course_desc->contents}}" name="contents">
                                 </div>

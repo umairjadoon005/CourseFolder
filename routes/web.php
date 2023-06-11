@@ -23,6 +23,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherController::class,'AssignCourse'])->name('teachers.assign-course');
 Route::post('/teachers/assing-course/{id}', [App\Http\Controllers\TeacherController::class,'AssignCourseSave'])->name('teachers.save-teacher-course');
+Route::post('/courses/default-course', [App\Http\Controllers\CourseController::class,'SetDefaultCourse'])->name('courses.default-course');
 
 Route::resource('add-teachers', App\Http\Controllers\TeacherController::class);
 Route::resource('course-description-topic-detail', App\Http\Controllers\CourseDescriptionTopicDetailController::class);

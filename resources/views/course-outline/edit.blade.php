@@ -28,15 +28,7 @@
                         <form id="save-outline">
                         @csrf 
                         <div class="row">
-                                <div class="col-md-6">
-                                <div class="form-group">    
-                                <label class="col-form-label">Course<span class="text-danger">*</span></label>    <select class="form-control" name="course_id">
-                                        @foreach($courses as $course)
-                                        <option value="{{$course->id}}" @if($course->id==$outline->course_id) selected @endif>{{$course->course_title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                </div>
+                                <input type="hidden" value="{{$outline->course_id}}" name="course_id"/>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                     <label class="col-form-label">Course Type<span class="text-danger">*</span></label>

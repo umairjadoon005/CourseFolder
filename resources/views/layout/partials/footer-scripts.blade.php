@@ -46,6 +46,30 @@ $('body').empty().html(printcontent);
 window.print();
 $('body').html(restorepage);
 }
+
+function setDefaultCourse(){
+    var default_course=$("#default_course").val();
+    var url="{{route('courses.default-course')}}";
+    $.ajax({
+                url: url,
+                type: "post",
+                data:{course_id:default_course},
+                success: function (response, status) {
+                    if (status == "success") {
+                        toastr.success(response);
+                    }
+                    location.reload();
+                },
+                error: function (response) {
+                    var message = "";
+                    if
+                        (response.responseJSON.message == undefined) { message = errorMesage }
+                    else { message = response.responseJSON.message }
+                    toastr.error(message);
+                }
+            });
+ 
+}
 </script>
 <!-- Summernote JS -->
 @if(Route::is(['mail-view','email']))

@@ -25,14 +25,14 @@ parent::__construct();
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')->
-        join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)// COURSES.ID=SESSION(COURSES.ID)
+        $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')
+        // ->
+        // join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        // ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        ->where('courses.id', '=', session('default_course'))// COURSES.ID=SESSION(COURSES.ID)
        // ->where('courses.user_id','=',$this->user->id)
         ->select('course_outlines.*','courses.course_title')->get();
         return view('course-outline.index',compact('course_outlines'));
@@ -41,18 +41,10 @@ parent::__construct();
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-       // $courses=Course::where('user_id','=',$this->user->id)->get();
-       $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)
-        ->select('courses.*')
-        ->get();
-       
-        return view('course-outline.create',compact('courses'));
+        return view('course-outline.create');
     }
 
     /**
@@ -109,11 +101,8 @@ parent::__construct();
     public function edit($id)
     {
         //$courses=Course::where('user_id','=',$this->user->id)->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
         $outline=CourseOutline::findOrFail($id);
-        return view('course-outline.edit',compact('outline','courses'));
+        return view('course-outline.edit',compact('outline'));
     }
 
     /**

@@ -48,6 +48,10 @@ class CourseController extends BaseController
         return view('course-description.create');
     }
 
+    public function SetDefaultCourse(Request $request){
+        session(['default_course'=>$request->course_id]);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

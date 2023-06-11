@@ -1,8 +1,13 @@
  @if(!Route::is(['add-invoice','edit-invoice','bank-settings','invoices-settings','invoice-grid','invoices','invoices-paid','invoices-overdue','invoices-cancelled','invoices-draft','invoices-recurring','social-links','companies','contacts','data-tables','deals-kanban-view','form-basic-inputs','form-input-groups','form-horizontal','form-validation','form-vertical','pagee','leads-dashboard','privacy-policy','projects-dashboard','tables-basic','terms','blank-page','components','faq','form-mask','invoice-grid','invoices','invoices-paid','invoices-overdue','invoices-cancelled','invoices-draft','invoices-recurring','invoices-settings','leads-kanban-view','projects-kanban-view','social-links','tax-settings']))
     <!-- Page Header -->
-
     <div class="crms-title row bg-white" style="margin-bottom:10px">
-        <div class="col p-0">
+    <div class="col-xs-12" style="text-align:center">
+        <h1>Abbottabad University of Science and Technology</h1>
+        <h3>Havelian </h3>
+        <h5>Ph:13413412423</h5>
+    </div></div>
+    <div class="crms-title row bg-white" style="margin-bottom:10px">
+    <div class="col p-0">
             <h3 class="page-title m-0">
             <span class="page-title-icon bg-gradient-primary text-white me-2">
               {{ $li_3 }}

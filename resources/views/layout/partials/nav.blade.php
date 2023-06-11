@@ -35,9 +35,14 @@
 				</li>
 				@else
 				<li> 
+				@if(session('default_course') === null)
+    {{session(['default_course'=>Auth::user()->courses()->first()->id])}}
+@endif
 					<select class="form-control">
 						@foreach(Auth::user()->courses() as $course)
-						<option>Example Course</option>	
+						<option id="default_course" name="default_course" onchange="setDefaultCourse();" @if (session('default_course')==$course->id)
+							selected
+						@endif value="{{$course->id}}">{{$course->course_title}}</option>	
 						@endforeach
 				</select>
 				</li>

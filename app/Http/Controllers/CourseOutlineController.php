@@ -32,7 +32,7 @@ parent::__construct();
         $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')->
         join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)
+        ->where('teachers.user_id', '=', auth()->user()->id)// COURSES.ID=SESSION(COURSES.ID)
        // ->where('courses.user_id','=',$this->user->id)
         ->select('course_outlines.*','courses.course_title')->get();
         return view('course-outline.index',compact('course_outlines'));
@@ -63,6 +63,25 @@ parent::__construct();
      */
     public function store(CourseOutlineRequest $request)
     {
+       
+        $request->validate([
+            'credit_hours'=> 'required',
+            'course_type' => 'required',
+             'course_duration' => 'required',
+             'weekly_tutition_pattern'=> 'required',
+             'course_structure'=> 'required',
+             'course_style'=> 'required',
+             'web_link'=> 'required',
+             'teaching_team'=> 'required',
+             'course_description'=> 'required',
+             'slos'=> 'required',
+             'tools_and_tech'=> 'required',
+             'tentative_grading_policy'=> 'required',
+             'attendance'=> 'required',
+             'general_info'=> 'required',
+            
+            ]);
+
         $outline = new CourseOutline;
         $this->saveAndUpdate($request,$outline);
         return response()->json('Outline successfully saved.',200);
@@ -106,6 +125,24 @@ parent::__construct();
      */
     public function update(CourseOutlineRequest $request, $id)
     {
+        $request->validate([
+            'credit_hours'=> 'required',
+            'course_type' => 'required',
+             'course_duration' => 'required',
+             'weekly_tutition_pattern'=> 'required',
+             'course_structure'=> 'required',
+             'course_style'=> 'required',
+             'web_link'=> 'required',
+             'teaching_team'=> 'required',
+             'course_description'=> 'required',
+             'slos'=> 'required',
+             'tools_and_tech'=> 'required',
+             'tentative_grading_policy'=> 'required',
+             'attendance'=> 'required',
+             'general_info'=> 'required',
+            
+            ]);
+            
         $outline = CourseOutline::findOrFail($id);
    $this->saveAndUpdate($request,$outline);
         return response()->json('Outline successfully updated.',200);

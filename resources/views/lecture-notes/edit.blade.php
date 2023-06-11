@@ -54,13 +54,13 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Description</label>
+                                    <label class="col-form-label">Description<span class="text-danger">*</span></label>
                                     <textarea class="form-control" name="description" value="{{$lecture_notes->description}}" placeholder="Description"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Notes</label>
+                                    <label class="col-form-label">Upload Notes<span class="text-danger">*</span></label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="notes_document[]" >
                                 </div>

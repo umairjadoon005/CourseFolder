@@ -56,6 +56,26 @@ class CourseController extends BaseController
      */
     public function store(CourseRequest $request)
     {
+        
+        $request->validate([
+            'course_title' => 'required',
+             'credit_hours' => 'required',
+             'pre_requisites'=> 'required',
+             'post_requisites'=> 'required',
+             'topics'=> 'required',
+             'assessments'=> 'required',
+             'course_coordinator'=> 'required',
+             'textbook'=> 'required',
+             'reference_material'=> 'required',
+             'course_goals'=> 'required',
+             'course_duration'=> 'required',
+             'instructor_name'=> 'required',
+             'topics_covered'=> 'required',
+             'program'=> 'required',
+             'effect_from_date'=> 'required',
+   
+            ]);
+
         $course = new Course;
         $this->saveAndUpdate($course,$request);
         return response()->json('Course successfully saved.',200);
@@ -96,6 +116,24 @@ class CourseController extends BaseController
      */
     public function update(CourseRequest $request, $id)
     {
+        $request->validate([
+            'course_title' => 'required',
+             'credit_hours' => 'required',
+             'pre_requisites'=> 'required',
+             'post_requisites'=> 'required',
+             'topics'=> 'required',
+             'assessments'=> 'required',
+             'course_coordinator'=> 'required',
+             'textbook'=> 'required',
+             'reference_material'=> 'required',
+             'course_goals'=> 'required',
+             'course_duration'=> 'required',
+             'instructor_name'=> 'required',
+             'topics_covered'=> 'required',
+             'program'=> 'required',
+             'effect_from_date'=> 'required',
+   
+            ]);
         $course = Course::findOrFail($id);
         $this->saveAndUpdate($course,$request);
         return response()->json('Course successfully updated.',200);

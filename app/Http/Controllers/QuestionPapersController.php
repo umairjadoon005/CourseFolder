@@ -59,6 +59,12 @@ class QuestionPapersController extends BaseController
      */
     public function store(QuestionPapersRequest $request)
     {
+      
+        $request->validate([
+            'paper_type'=> 'required',
+            'description' => 'required',
+            ]);
+            
         $paper = new QuestionPapers();
         $this->saveAndUpdate($paper,$request);
         return response()->json('Paper successfully saved.',200);
@@ -130,6 +136,11 @@ class QuestionPapersController extends BaseController
      */
     public function update(QuestionPapersRequest $request, $id)
     {
+        $request->validate([
+            'paper_type'=> 'required',
+            'description' => 'required',
+            ]);
+            
         $paper = QuestionPapers::findOrFail($id);
       $this->saveAndUpdate($paper,$request);
         return response()->json('Paper successfully updated.',200);

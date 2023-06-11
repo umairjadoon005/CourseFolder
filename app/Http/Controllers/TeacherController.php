@@ -41,7 +41,13 @@ class TeacherController extends BaseController
      */
     public function store(Request $request)
     {
-     
+        $request->validate([
+            'teacher_name'=> 'required',
+            'email' => 'required',
+            'specialization' => 'required',
+            'phone' => 'required',
+            ]);
+
        $user=User::create([
             'name' => $request->teacher_name, 
             'email' => $request->email, 
@@ -104,6 +110,13 @@ class TeacherController extends BaseController
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'teacher_name'=> 'required',
+            'email' => 'required',
+            'specialization' => 'required',
+            'phone' => 'required',
+            ]);
+            
         $teacher = Teacher::findOrFail($id);
         $teacher->id = $request->id;
         $teacher->teacher_name = $request->teacher_name;

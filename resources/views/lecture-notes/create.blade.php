@@ -55,13 +55,13 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Description</label>
+                                    <label class="col-form-label">Description<span class="text-danger">*</span></label>
                                     <textarea class="form-control"  name="description" placeholder="Introduction To Computer"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Notes</label>
+                                    <label class="col-form-label">Upload Notes<span class="text-danger">*</span></label>
                                     <br>
                                     <input type="file" class="form-control" multiple="true" id="file-input" name="notes_document[]" >
                                 </div>

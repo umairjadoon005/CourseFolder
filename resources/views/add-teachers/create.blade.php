@@ -63,14 +63,14 @@
                                 -->
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Specialization</label>
+                                    <label class="col-form-label">Specialization<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="specialization" placeholder="Enter Specialization">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                    <label class="col-form-label">Phone</label>
+                                    <label class="col-form-label">Phone<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="phone" placeholder="Enter Phone No">
                                 </div>
                                 </div>
@@ -78,7 +78,7 @@
                             <div class="row">
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <label class="col-form-label">Email</label>
+                                    <label class="col-form-label">Email<span class="text-danger">*</span></label>
                                     <input type="email" class="form-control" name="email" placeholder="Enter Email">
                                 </div>
                                 </div>

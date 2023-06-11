@@ -59,73 +59,73 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Course Duration</label>
+                                                <label class="col-form-label">Course Duration<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" name="course_duration" placeholder="1">
                                             </div>
                                         </div>
                                             <div class="col-sm-8">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Course Structure</label>
+                                                    <label class="col-form-label">Course Structure<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="course_structure" placeholder="Books, notes and online sources">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Weekly Tution Pattern</label>
+                                                <label class="col-form-label">Weekly Tution Pattern<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="weekly_tution_pattern" placeholder="2 Lectures (90 Minutes each)">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Course Style</label>
+                                                <label class="col-form-label">Course Style<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_style" placeholder="The course will be delivered mostly in a classroom environment">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                         <div class="col-sm-6">
-                                                <label class="col-form-label">Web Link</label>
+                                                <label class="col-form-label">Web Link<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="web_link" placeholder="http://google.meet/exampleurl">
                                             </div>
                                             </div>
                                             <div class="form-group row">
                                             <div class="col-sm-12">
-                                                <label class="col-form-label">Teaching Team</label>
+                                                <label class="col-form-label">Teaching Team<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="teaching_team" placeholder="Sir. John Doe">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                         <div class="col-sm-6">
-                                                <label class="col-form-label">Course Description</label>
+                                                <label class="col-form-label">Course Description<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_description" placeholder="Enter Course Description">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                         <div class="col-sm-6">
-                                                <label class="col-form-label">SLOs</label>
+                                                <label class="col-form-label">SLOs<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="slos" placeholder="Enter SLOs">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                         <div class="col-sm-6">
-                                                <label class="col-form-label">Tool & Technology</label>
+                                                <label class="col-form-label">Tool & Technology<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tools_and_tech" placeholder="Enter Tools and Technology">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Tentative Grading Policy</label>
+                                                <label class="col-form-label">Tentative Grading Policy<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tentative_grading_policy" placeholder="Enter Tentative Grading Policy">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Attendance</label>
+                                                <label class="col-form-label">Attendance<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="attendance" placeholder="Enter Attendance">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">General Information</label>
+                                                <label class="col-form-label">General Information<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="general_info" placeholder="Enter General Information">
                                             </div>
                                         </div>

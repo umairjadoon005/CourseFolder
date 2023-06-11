@@ -56,24 +56,24 @@
                                 </div>
                             </div>
                                 <div class="col-sm-8">
-                                    <label class="col-form-label">Duration</label>
+                                    <label class="col-form-label">Duration<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="duration" placeholder="30 Minutes">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6">
-                                    <label class="col-form-label">Topics Covered</label>
+                                    <label class="col-form-label">Topics Covered<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control"  name="topics_covered"  placeholder="Introduction To Computer">
                                 </div>
                                 <div class="col-sm-6">
-                                    <label class="col-form-label">Evaluation instruments</label>
+                                    <label class="col-form-label">Evaluation instruments<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="evaluation_instruments"  placeholder="Software Engineering II">
                                 </div>
                             </div>
 
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Upload Signature</label>
+                                    <label class="col-form-label">Upload Signature<span class="text-danger">*</span></label>
                                     <br>
                                     <input type="file" id="file-input" class="form-control" multiple="true" name="log_document[]">
                                 </div>

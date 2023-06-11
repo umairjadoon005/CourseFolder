@@ -36,7 +36,9 @@
 					</div>
 			</div>
 			<!-- /Header Title -->
-			
+			<div>
+				<!-- <H1> AUST ABBOTTABAD</H1> -->
+			</div>
 			<a id="mobile_btn" class="mobile_btn" href="#sidebar"><i class="fa fa-bars"></i></a>
 			
 			<!-- Header Menu -->

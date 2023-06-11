@@ -60,6 +60,14 @@ class LectureNotesController extends BaseController
      */
     public function store(LectureNotesRequest $request)
     {
+      
+        $request->validate([
+            'lecture_number'=> 'required',
+            'topic' => 'required',
+            'description' => 'required',
+ 
+            ]);
+
         $note = new LectureNotes();
 $this->saveAndUpdate($note,$request);
         return response()->json('Note successfully saved.', 200);
@@ -155,6 +163,13 @@ $this->saveAndUpdate($note,$request);
      */
     public function update(LectureNotesRequest $request, $id)
     {
+        $request->validate([
+            'lecture_number'=> 'required',
+            'topic' => 'required',
+            'description' => 'required',
+ 
+            ]);
+            
         $note = LectureNotes::findOrFail($id);
         $this->saveAndUpdate($note,$request);
         return response()->json('Note successfully updated.', 200);

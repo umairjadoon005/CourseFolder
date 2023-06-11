@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Topics</label>
+                                                <label class="col-form-label">Topics<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" name="topics" value="{{$outlineDetail->week_no}}" >
                                             </div>
                             </div> 

@@ -56,54 +56,54 @@
                             </div>
                             <div class="form-group row">
                                             <div class="col-sm-6">
-                                                <label class="col-form-label">Course Duration</label>
+                                                <label class="col-form-label">Course Duration<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" name="course_duration" value="{{$outline->course_duration}}" placeholder="1">
                                             </div>
                             </div>
                                      <div class="col-sm-8">
                                                 <div class="form-group">
-                                                    <label class="col-form-label">Course Structure</label>
+                                                    <label class="col-form-label">Course Structure<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="course_structure"  value="{{$outline->course_structure}}" placeholder="Books, notes and online sources">
                                                 </div>
                                  </div>
                                  <div class="col-sm-6">
-                                                <label class="col-form-label">Weekly Tution Pattern</label>
+                                                <label class="col-form-label">Weekly Tution Pattern<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="weekly_tution_pattern" value="{{$outline->weekly_tution_pattern}}">
                                 </div>
                                 <div class="col-sm-6">
-                                                <label class="col-form-label">Course Style</label>
+                                                <label class="col-form-label">Course Style<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_style" value="{{$outline->course_style}}">
                                 </div>
                                 <div class="col-sm-6">
-                                                <label class="col-form-label">Web Link</label>
+                                                <label class="col-form-label">Web Link<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="web_link" value="{{$outline->web_link}}">
                                 </div>
                                 <div class="col-sm-12">
-                                                <label class="col-form-label">Teaching Team</label>
+                                                <label class="col-form-label">Teaching Team<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="teaching_team" value="{{$outline->teaching_team}}">
                                 </div>
                                 <div class="col-sm-6">
-                                                <label class="col-form-label">Course Description</label>
+                                                <label class="col-form-label">Course Description<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="course_description" value="{{$outline->course_description}}">
                                  </div>
                                  <div class="col-sm-6">
-                                                <label class="col-form-label">SLOs</label>
+                                                <label class="col-form-label">SLOs<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="slos" value="{{$outline->slos}}">
                                 </div>
                                 <div class="col-sm-6">
-                                                <label class="col-form-label">Tool & Technology</label>
+                                                <label class="col-form-label">Tool & Technology<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tools_and_tech" value="{{$outline->tools_and_tech}}">
                                 </div>
                                 <div class="col-sm-6">
-                                                <label class="col-form-label">Tentative Grading Policy</label>
+                                                <label class="col-form-label">Tentative Grading Policy<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tentative_grading_policy" value="{{$outline->tentative_grading_policy}}">
                                  </div>
                                  <div class="col-sm-6">
-                                                <label class="col-form-label">Attendance</label>
+                                                <label class="col-form-label">Attendance<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="attendance" value="{{$outline->attendance}}">
                                  </div>
                                  <div class="col-sm-6">
-                                                <label class="col-form-label">General Information</label>
+                                                <label class="col-form-label">General Information<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="general_info" value="{{$outline->general_info}}">
                                  </div>
 

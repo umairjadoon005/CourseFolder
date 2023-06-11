@@ -43,59 +43,59 @@
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Description</label>
+                                                    <label class="col-form-label">Description<span class="text-danger">*</span></label>
                                                     <textarea class="form-control" name="description" placeholder="Description">{{$attendance->description}}</textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Student's Roll No</label>
+                                                    <label class="col-form-label">Student's Roll No<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="roll_no" value="{{$attendance->roll_no}}">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Student's Name</label>
+                                                    <label class="col-form-label">Student's Name<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="student_name" value="{{$attendance->student_name}}">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Activity Reference</label>
+                                                    <label class="col-form-label">Activity Reference<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="activity_ref" value="{{$attendance->activity_ref}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Total Attendance</label>
+                                                    <label class="col-form-label">Total Attendance<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="total_attendence" value="{{$attendance->total_attendence}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Total Absents</label>
+                                                    <label class="col-form-label">Total Absents<span class="text-danger">*</span>/label>
                                                     <input type="text" class="form-control" name="total_absents" value="{{$attendance->total_absents}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Percentage</label>
+                                                    <label class="col-form-label">Percentage<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="percentage" value="{{$attendance->percentage}}">
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Status</label>
+                                                    <label class="col-form-label">Status<span class="text-danger">*</span></label>
                                                     <input type="text" class="form-control" name="status" value="{{$attendance->status}}">
                                                 </div>
                                             </div>
                                             
                                             <div class="form-group row">
                                                 <div class="col-sm-12">
-                                                    <label class="col-form-label">Upload Attendance</label>
+                                                    <label class="col-form-label">Upload Attendance<span class="text-danger">*</span></label>
                                                     <br>
                                                     <input type="file" id="file-input" class="form-control" multiple="true" name="attendance_document[]">
                                                 </div>

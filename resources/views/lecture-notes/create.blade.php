@@ -24,13 +24,11 @@
               </div>
 
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
+               
                         <form id="save-note" enctype="multipart/form-data">
                         @csrf 
-                        <div class="row">
-                                <div class="col-sm-6">
-                                <div class="form-group">    
+                        <div class="form-group row">
+                                <div class="col-sm-12"> 
                                 <label class="col-form-label">Course<span class="text-danger">*</span></label>
                                     <select class="form-control" name="course_id">
                                         @foreach($courses as $course)
@@ -39,14 +37,13 @@
                                     </select>
                                 </div>
                                 </div>
-                                <div class="col-sm-6">
-                                <div class="form-group">    
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                 <label class="col-form-label">Lecture Number<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" placeholder="01" name="lecture_number">
                                 </div>
                                 </div>
-                            </div>
-                            
+
                             <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Topic<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">

@@ -30,7 +30,8 @@ class AttendanceController extends BaseController
      */
     public function index()
     {
-        $attendances=Attendance::join('courses','courses.id','=','attendances.course_id')->where('courses.user_id','=',$this->user->id)
+        $attendances=Attendance::join('courses','courses.id','=','attendances.course_id')
+        ->where('courses.id', '=', session('default_course'))
         ->select('attendances.*','courses.course_title')
         ->select('attendances.*','courses.course_title')->get();
         return view('attendance.index',compact('attendances'));

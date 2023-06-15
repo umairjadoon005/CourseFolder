@@ -48,12 +48,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Title" name="title">
-                                </div>
-                            </div> -->
+                            
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description<span class="text-danger">*</span></label>

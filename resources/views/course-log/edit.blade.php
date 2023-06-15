@@ -27,8 +27,8 @@
                     <div class="col-md-12">
                         <form id="save-log">
                         @csrf 
-                        <div class="row">
-                                <div class="col-md-6">
+                        <div class="form-group row">
+                                <div class="col-md-12">
                                 <div class="form-group">    
                                 <label class="col-form-label">Course<span class="text-danger">*</span></label>    <select class="form-control" name="course_id">
                                         @foreach($courses as $course)
@@ -39,30 +39,34 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text"  value="{{$log->course_title}}" name="course_title">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" value="{{$log->catalog_number}}" name="catalog_number">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Date<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Date<span class="text-danger">*</span></label>
                                     <input class="form-control" type="date" placeholder="48" value="{{$log->date}}" name="date">
-                                </div>
-                                <div class="col-sm-8">
+                                </div></div>
+                                <div class="form-group row">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Duration<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="duration" value="{{$log->duration}}" placeholder="30 Minutes">
                                 </div>
                             </div>
+        
                             <div class="form-group row">
-                                <div class="col-sm-6">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Topics Covered<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control"  name="topics_covered" value="{{$log->topics_covered}}" placeholder="Introduction To Computer">
                                 </div>
-                                <div class="col-sm-6">
+                        </div>
+                        <div class="form-group row">
+                                <div class="col-sm-12">
                                     <label class="col-form-label">Evaluation instruments<span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="evaluation_instruments" value="{{$log->evaluation_instruments}}" placeholder="Software Engineering II">
                                 </div>

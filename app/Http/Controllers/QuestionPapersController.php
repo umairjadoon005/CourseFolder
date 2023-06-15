@@ -30,7 +30,8 @@ class QuestionPapersController extends BaseController
      */
     public function index()
     {
-        $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')->where('courses.user_id','=',$this->user->id)
+        $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
+        ->where('courses.id', '=', session('default_course'))
         ->select('question_papers.*','courses.course_title')->get();
         return view('question-papers.index',compact('question_papers'));
         //

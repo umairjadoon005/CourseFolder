@@ -28,7 +28,7 @@
                                     <form id="save-outline">
                                         @csrf
                                         <input type="hidden" name="outline_id" value="{{$id}}"/>
-                                        <div class="row">
+                                        <div class="form-group row">
                                             <div class="col-sm-12">
                                                 <div class="form-group">
                                                     <label class="col-form-label">Week Number<span class="text-danger">*</span></label>

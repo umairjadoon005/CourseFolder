@@ -31,12 +31,12 @@
                         <div class="row">
                           
                             <div class="form-group row">
-                                <div class="col-sm-4"><label class="col-form-label">Week Number<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Week Number<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" placeholder="48" value="{{$outlineDetail->week_no}}" name="week_no">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                            <div class="col-sm-6">
+                                            <div class="col-sm-12">
                                                 <label class="col-form-label">Topics<span class="text-danger">*</span></label>
                                                 <input type="number" class="form-control" name="topics" value="{{$outlineDetail->week_no}}" >
                                             </div>

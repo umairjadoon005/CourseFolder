@@ -22,8 +22,6 @@
               </div>
 
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
                         <form id="save-solution" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group row">
@@ -36,6 +34,7 @@
                                     </select>
                                 </div>
                             </div>
+                    
                         <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Paper Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
@@ -46,12 +45,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Title" value="{{$solution->title}}" name="title">
-                                </div>
-                            </div> -->
+                            
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description<span class="text-danger">*</span></label>

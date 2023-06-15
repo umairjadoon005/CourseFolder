@@ -82,6 +82,44 @@
 													</div>
 												</div>
 											</div>
+          
+                    </div>
+                    <div class="table-responsive">
+                    <table class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Week Number</th>
+                                                <th>Lecture Number</th>
+                                                <th>Contents</th>
+                                                <th class="text-end">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($course_desc as $coursedesc)
+                                            <tr>
+                                                <!-- <td>
+                                                    <a href="{{route('course-description.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
+                                                </td> -->
+                                                <td>{{$coursedesc->week_no}}</td>
+                                                <td>{{$coursedesc->lecture_no}}</td>
+                                                <td>{{$coursedesc->contents}}</td>
+                                                <td class="text-center">
+                                                    <div class="dropdown dropdown-action">
+                                                        <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <a class="dropdown-item" href="{{route('course-description-topic-detail.edit',$coursedesc->id)}}" target="_blank">Edit</a>
+                                                            <a class="dropdown-item" href="{{route('course-description-topic-detail.show',$coursedesc->id)}}" target="_blank">Show</a>
+                                                            <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-description-topic-detail.destroy',$coursedesc->id)}}','By deleting course details, you would not be able to revert it');" href="#">Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                       @endforeach
+                                          
+                                        </tbody>
+                                    </table>
+
+
                     </div>
     </div>
 

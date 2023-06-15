@@ -8,6 +8,7 @@ use App\Models\LectureNotes;
 use App\Models\QuestionPapers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CourseDescriptionTopicDetail;
 
 class CourseController extends BaseController
 {
@@ -78,6 +79,8 @@ class CourseController extends BaseController
         $notes_count=LectureNotes::where('course_id','=',$id)->count();
         $papers_count=QuestionPapers::where('course_id','=',$id)->count();
         return view('course-description.show',compact('course','notes_count','papers_count'))->render();
+
+    
     }
 
     /**

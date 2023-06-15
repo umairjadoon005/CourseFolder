@@ -92,7 +92,6 @@
                                         <tbody>
                                             @foreach($outlineDetail as $outline)
                                             <tr>
-                                                
                                                 <td>{{$outline->week_no}}</td>
                                                 <td>{{$outline->topics}} </td>
                                                 <td class="text-center">

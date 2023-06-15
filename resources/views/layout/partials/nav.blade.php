@@ -53,7 +53,11 @@
 					<a href="{{url('course-description-topic-detail')}}"><i class="feather-smartphone"></i> <span>Course Desc Details</span></a>
 				</li>
 				@endcan -->
-				
+				@can('view courses')
+				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
+					<a href="{{url('course-descriptions', session('default_course'))}}"><i class="feather-user"></i> <span>View Courses</span></a>
+				</li>
+				@endcan
 				@can('add course outline')		
 				<li class="{{ Request::is('course-outlines') ? 'active' : '' }}"> 
 					<a href="{{url('course-outlines')}}"><i class="feather-check-square"></i> <span>Course Outline</span></a>

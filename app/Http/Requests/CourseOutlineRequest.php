@@ -21,8 +21,20 @@ class CourseOutlineRequest extends FormRequest{
         return [
             'course_id' => 'required',
             'course_type' => 'required',
-            'credit_hours' => 'required',
-            'weekly_tution_pattern' => 'required',
+            'credit_hours'=> 'required',
+            'course_type' => 'required',
+             'course_duration' => 'required',
+             'weekly_tutition_pattern'=> 'required',
+             'course_structure'=> 'required',
+             'course_style'=> 'required',
+             'web_link'=> 'required',
+             'teaching_team'=> 'required',
+             'course_description'=> 'required',
+             'slos'=> 'required',
+             'tools_and_tech'=> 'required',
+             'tentative_grading_policy'=> 'required',
+             'attendance'=> 'required',
+             'general_info'=> 'required',
         ];
     }
 }

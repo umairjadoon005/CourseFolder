@@ -62,17 +62,6 @@ parent::__construct();
      */
     public function store(CourseLogRequest $request)
     {
-       
-        $request->validate([
-            'course_title' => 'required',
-             'catalog_number' => 'required',
-             'date'=> 'required',
-             'duration'=> 'required',
-             'topics_covered'=> 'required',
-             'evaluation_instruments'=> 'required',
-            ]);
-
-
 
         $outline = new CourseLog;
         $this->saveAndUpdate($request,$outline);
@@ -117,14 +106,7 @@ parent::__construct();
      */
     public function update(CourseLogRequest $request, $id)
     {
-        $request->validate([
-            'course_title' => 'required',
-             'catalog_number' => 'required',
-             'date'=> 'required',
-             'duration'=> 'required',
-             'topics_covered'=> 'required',
-             'evaluation_instruments'=> 'required',
-            ]);
+     
         $log = CourseLog::findOrFail($id);
    $this->saveAndUpdate($request,$log);
         return response()->json('Log successfully updated.',200);

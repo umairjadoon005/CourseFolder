@@ -63,11 +63,6 @@ parent::__construct();
      */
     public function store(ModelSolutionsRequest $request)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
- 
-            ]);
 
         $solution = new ModelSolutions();
 $this->saveAndUpdate($solution,$request);
@@ -150,11 +145,7 @@ $this->saveAndUpdate($solution,$request);
      */
     public function update(ModelSolutionsRequest $request, $id)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
- 
-            ]);
+        
             
         $solution = ModelSolutions::findOrFail($id);
 $this->saveAndUpdate($solution,$request);

@@ -57,11 +57,7 @@ parent::__construct();
      */
     public function store(ResultsRequest $request)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
-            ]);
-
+        
         $result = new Result();
 $this->saveAndUpdate($result,$request);
         return response()->json('Result successfully saved.',200);
@@ -140,10 +136,6 @@ $this->saveAndUpdate($result,$request);
      */
     public function update(ResultsRequest $request, $id)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
-            ]);
         $result = Result::findOrFail($id);
 $this->saveAndUpdate($result,$request);
         return response()->json('Result successfully updated.',200);

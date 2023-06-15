@@ -29,11 +29,7 @@
                                         @csrf
                                         <div class="row">
                                             <div class="form-group row">
-                                                <label class="col-form-label">Course<span class="text-danger">*</span></label> <select class="form-control" name="course_id">
-                                                    @foreach($courses as $course)
-                                                    <option value="{{$course->id}}" @if($course->id==$attendance->course_id) selected @endif>{{$course->course_title}}</option>
-                                                    @endforeach
-                                                </select>
+                                            <input type="hidden" name="course_id" value="{{$attendance->course_id)}}">
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>

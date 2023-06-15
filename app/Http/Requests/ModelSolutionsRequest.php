@@ -23,6 +23,7 @@ class ModelSolutionsRequest extends FormRequest{
             'title' => 'required',
             'solutions_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
             'solutions_document' => 'required|max:5',
+            'description' => 'required',
         ];
     }
     public function messages()

@@ -28,15 +28,7 @@
                         <form id="save-log">
                         @csrf 
                         <div class="form-group row">
-                                <div class="col-md-12">
-                                <div class="form-group">    
-                                <label class="col-form-label">Course<span class="text-danger">*</span></label>    <select class="form-control" name="course_id">
-                                        @foreach($courses as $course)
-                                        <option value="{{$course->id}}" @if($course->id==$log->course_id) selected @endif>{{$course->course_title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                </div>
+                          <input type="hidden" name="course_id" value="{{$log->course_id)}}">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>

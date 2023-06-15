@@ -21,11 +21,15 @@ class CourseLogRequest extends FormRequest{
         return [
             'course_id' => 'required',
             'date' => 'required',
-            // 'start_time' => 'required',
-            // 'end_time' => 'required',
-            'topics_covered' => 'required',
+        
             'log_document' => 'required|max:1',
-    'lolg_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx,png,jpg,jpeg,gif|max:5120'
+    'lolg_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx,png,jpg,jpeg,gif|max:5120',
+    'course_title' => 'required',
+    'catalog_number' => 'required',
+    
+    'duration'=> 'required',
+    'topics_covered'=> 'required',
+    'evaluation_instruments'=> 'required',
         ];
     }
     public function messages()

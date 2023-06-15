@@ -62,10 +62,6 @@ class SamplesController extends BaseController
      */
     public function store(SamplesRequest $request)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
-            ]);
         $sample = new Samples();
        $this->saveAndUpdate($sample,$request);
         return response()->json('Sample successfully saved.',200);
@@ -286,10 +282,7 @@ private function saveAndUpdate($sample,$request){
      */
     public function update(SamplesRequest $request, $id)
     {
-        $request->validate([
-            'title'=> 'required',
-            'description' => 'required',
-            ]);
+       
         $sample = Samples::findOrFail($id);
         $this->saveAndUpdate($sample,$request);
         return response()->json('Sample successfully updated.',200);

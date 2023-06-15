@@ -27,14 +27,7 @@
                         <form id="save-paper" enctype="multipart/form-data">
                         @csrf 
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Course<span class="text-danger">*</span></label></div>
-                                <div class="col-md-12">
-                                    <select class="form-control" name="course_id">
-                                        @foreach($courses as $course)
-                                        <option value="{{$course->id}}">{{$course->course_title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                        <input type="hidden" name="course_id" value="{{session('default_course')}}">
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Paper Type<span class="text-danger">*</span></label></div>

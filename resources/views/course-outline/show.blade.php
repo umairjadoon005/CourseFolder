@@ -50,6 +50,7 @@
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
 														<p>Course Type <span>{{$outline->course_type}}</span></p>
+														<p>Pre Requisite <span>{{$outline->course->pre_requisites}}</span></p>
 														<!-- <p>Course Duration <span>{{$outline->course_duration}}</span></p> -->
 														<p>Course Structure <span>{{$outline->course_structure}}</span></p>
 														<p>Weekly Tuition Pattern <span>{{$outline->weekly_tution_pattern}}</span></p>
@@ -91,7 +92,7 @@
                                         <tbody>
                                             @foreach($outlineDetail as $outline)
                                             <tr>
-                                              
+                                                
                                                 <td>{{$outline->week_no}}</td>
                                                 <td>{{$outline->topics}} </td>
                                                 <td class="text-center">

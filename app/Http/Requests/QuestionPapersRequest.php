@@ -22,7 +22,8 @@ class QuestionPapersRequest extends FormRequest{
             'course_id' => 'required',
             'paper_type' => 'required',
             'papers_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'papers_document'=> 'required|max:5.'
+            'papers_document'=> 'required|max:5.',
+            'description' => 'required',
         ];
     }
     public function messages()

@@ -26,16 +26,7 @@
                
                         <form id="save-note" enctype="multipart/form-data">
                         @csrf 
-                        <div class="form-group row">
-                                <div class="col-sm-12">  
-                                <label class="col-form-label">Course<span class="text-danger">*</span></label>
-                                    <select class="form-control"  name="course_id">
-                                        @foreach($courses as $course)
-                                        <option  @if($course->id==$lecture_notes->course_id) selected @endif value="{{$course->id}}">{{$course->course_title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                </div>
+                   <input type="hidden" name="course_id" value="{{$lecture_notes->course_id}}"/>
                                 <div class="form-group row">
                                 <div class="col-sm-12">   
                                 <label class="col-form-label">Lecture Number<span class="text-danger">*</span></label>

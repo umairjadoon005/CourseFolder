@@ -23,7 +23,9 @@ class LectureNotesRequest extends FormRequest{
             'lecture_number' => 'required',
             'topic' => 'required',
             'notes_document' => 'required|max:5',
-    'notes_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120'
+    'notes_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
+    'description' => 'required',
+ 
         ];
     }
     public function messages()

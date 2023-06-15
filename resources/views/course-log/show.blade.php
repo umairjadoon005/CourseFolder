@@ -39,6 +39,8 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
+                          <p>Pre Requisites<span>{{$log->$course->pre_requisites}}</span></p>
+                            <p>Post Requisites<span>{{$log->$course->post_requisites}}</span></p>
                           <p>Course Title<span>{{$log->course_title}}</span></p>	
 													<p>Catalog Number <span>{{$log->catalog_number}}</span></p>	
                           <p>Topics Covered <span>{{$log->topics_covered}}</span></p>

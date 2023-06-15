@@ -56,23 +56,7 @@ parent::__construct();
     public function store(CourseOutlineRequest $request)
     {
        
-        $request->validate([
-            'credit_hours'=> 'required',
-            'course_type' => 'required',
-             'course_duration' => 'required',
-             'weekly_tutition_pattern'=> 'required',
-             'course_structure'=> 'required',
-             'course_style'=> 'required',
-             'web_link'=> 'required',
-             'teaching_team'=> 'required',
-             'course_description'=> 'required',
-             'slos'=> 'required',
-             'tools_and_tech'=> 'required',
-             'tentative_grading_policy'=> 'required',
-             'attendance'=> 'required',
-             'general_info'=> 'required',
-            
-            ]);
+       
 
         $outline = new CourseOutline;
         $this->saveAndUpdate($request,$outline);
@@ -114,23 +98,6 @@ parent::__construct();
      */
     public function update(CourseOutlineRequest $request, $id)
     {
-        $request->validate([
-            'credit_hours'=> 'required',
-            'course_type' => 'required',
-             'course_duration' => 'required',
-             'weekly_tutition_pattern'=> 'required',
-             'course_structure'=> 'required',
-             'course_style'=> 'required',
-             'web_link'=> 'required',
-             'teaching_team'=> 'required',
-             'course_description'=> 'required',
-             'slos'=> 'required',
-             'tools_and_tech'=> 'required',
-             'tentative_grading_policy'=> 'required',
-             'attendance'=> 'required',
-             'general_info'=> 'required',
-            
-            ]);
             
         $outline = CourseOutline::findOrFail($id);
    $this->saveAndUpdate($request,$outline);
@@ -153,9 +120,7 @@ private function saveAndUpdate($request,$outline){
     $outline->general_info = $request->general_info;
     $outline->course_id = $request->course_id;
     
-    // $outline->duration_unit = $request->duration_unit;
-    // $outline->source_structure = $request->source_structure;
-    
+   
    
    
     $outline->save();

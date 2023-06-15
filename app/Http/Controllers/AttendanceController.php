@@ -61,20 +61,6 @@ class AttendanceController extends BaseController
     public function store(AttendanceRequest $request)
     {
  
-        $request->validate([
-            'title' => 'required',
-             'description' => 'required',
-             'roll_no'=> 'required',
-             'student_name'=> 'required',
-             'activity_ref'=> 'required',
-             'total_attendence'=> 'required',
-             'total_attendence'=> 'required',
-             'total_absents'=> 'required',
-             'percentage'=> 'required',
-             'status'=> 'required',
-             
-            ]);
-
         $attendance = new Attendance();
         $this->saveAndUpdate($attendance,$request);
         return response()->json('Attendance successfully saved.',200);
@@ -147,21 +133,6 @@ class AttendanceController extends BaseController
      */
     public function update(AttendanceRequest $request, $id)
     {
-
-        $request->validate([
-             'title' => 'required',
-             'description' => 'required',
-             'roll_no'=> 'required',
-             'student_name'=> 'required',
-             'activity_ref'=> 'required',
-             'total_attendence'=> 'required',
-             'total_attendence'=> 'required',
-             'total_absents'=> 'required',
-             'percentage'=> 'required',
-             'status'=> 'required',
-             
-            ]);
-
 
         $attendance = Attendance::findOrFail($id);
       $this->saveAndUpdate($attendance,$request);

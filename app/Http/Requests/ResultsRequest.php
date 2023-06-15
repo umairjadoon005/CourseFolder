@@ -22,7 +22,8 @@ class ResultsRequest extends FormRequest{
             'paper_id' => 'required',
             'title' => 'required',
             'result_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'result_document'=> 'required|max:5.'
+            'result_document'=> 'required|max:5.',
+            'description' => 'required',
         ];
     }
     public function messages()

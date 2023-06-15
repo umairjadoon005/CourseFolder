@@ -47,8 +47,8 @@ class QuestionPapersController extends BaseController
         //$courses=Course::where('user_id','=',$this->user->id)->get();
         $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)
-        ->select('question_papers.*','courses.course_title')->get();
+        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+       
         return view('question-papers.create',compact('courses'));
     }
 
@@ -61,10 +61,7 @@ class QuestionPapersController extends BaseController
     public function store(QuestionPapersRequest $request)
     {
       
-        $request->validate([
-            'paper_type'=> 'required',
-            'description' => 'required',
-            ]);
+        
             
         $paper = new QuestionPapers();
         $this->saveAndUpdate($paper,$request);
@@ -137,11 +134,7 @@ class QuestionPapersController extends BaseController
      */
     public function update(QuestionPapersRequest $request, $id)
     {
-        $request->validate([
-            'paper_type'=> 'required',
-            'description' => 'required',
-            ]);
-            
+    
         $paper = QuestionPapers::findOrFail($id);
       $this->saveAndUpdate($paper,$request);
         return response()->json('Paper successfully updated.',200);

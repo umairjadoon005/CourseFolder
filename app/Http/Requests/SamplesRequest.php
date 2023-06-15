@@ -22,7 +22,9 @@ class SamplesRequest extends FormRequest{
             'paper_id' => 'required',
             'title' => 'required',
             'samples_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'samples_document'=> 'required|max:5.'
+            'samples_document'=> 'required|max:5.',
+            
+            'description' => 'required',
 
         ];
     }

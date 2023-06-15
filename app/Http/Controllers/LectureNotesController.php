@@ -47,10 +47,11 @@ class LectureNotesController extends BaseController
     public function create()
     {
         //$courses = Course::where('user_id', '=', $this->user->id)->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
-        return view('lecture-notes.create', compact('courses'));
+        // $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
+        // //->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
+        // ->where('teachers.user_id', '=', auth()->user()->id)->get();
+        //->select('lecture-notes.*','courses.course_title')->get();
+        return view('lecture-notes.create');
     }
 
     /**
@@ -62,13 +63,7 @@ class LectureNotesController extends BaseController
     public function store(LectureNotesRequest $request)
     {
       
-        $request->validate([
-            'lecture_number'=> 'required',
-            'topic' => 'required',
-            'description' => 'required',
- 
-            ]);
-
+       
         $note = new LectureNotes();
 $this->saveAndUpdate($note,$request);
         return response()->json('Note successfully saved.', 200);
@@ -149,11 +144,9 @@ $this->saveAndUpdate($note,$request);
     public function edit($id)
     {
        // $courses = Course::where('user_id', '=', $this->user->id)->get();
-       $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+ 
         $lecture_notes = LectureNotes::findOrFail($id);
-        return view('lecture-notes.edit', compact('lecture_notes', 'courses'));
+        return view('lecture-notes.edit', compact('lecture_notes'));
     }
 
     /**
@@ -164,13 +157,7 @@ $this->saveAndUpdate($note,$request);
      */
     public function update(LectureNotesRequest $request, $id)
     {
-        $request->validate([
-            'lecture_number'=> 'required',
-            'topic' => 'required',
-            'description' => 'required',
- 
-            ]);
-            
+       
         $note = LectureNotes::findOrFail($id);
         $this->saveAndUpdate($note,$request);
         return response()->json('Note successfully updated.', 200);

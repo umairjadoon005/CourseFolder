@@ -29,14 +29,7 @@
                         @csrf 
                         <div class="row">
                                 <div class="col-md-12">
-                                <div class="form-group">    
-                                <label class="col-form-label">Course<span class="text-danger">*</span></label>   
-                                 <select class="form-control" name="course_id">
-                                        @foreach($courses as $course)
-                                        <option value="{{$course->id}}" >{{$course->course_title}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
+                                <input type="hidden" name="course_id" value="{{session('default_course')}}">
                                 </div>
                              
                             </div>

@@ -29,7 +29,7 @@
                                         @csrf
                                         <div class="row">
                                             <div class="form-group row">
-                                            <input type="hidden" name="course_id" value="{{$attendance->course_id)}}">
+                                            <input type="hidden" name="course_id" value="{{$attendance->course_id}}">
                                             </div>
                                             <div class="form-group row">
                                                 <div class="col-md-12"><label class="col-form-label">Title<span class="text-danger">*</span></label></div>

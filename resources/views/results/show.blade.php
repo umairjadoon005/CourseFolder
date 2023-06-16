@@ -18,7 +18,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
 <div class="modal-header">
-                <h4 class="modal-title text-center">Model Solution Details</h4>
+                <h4 class="modal-title text-center">Results Details</h4>
               </div>
     
       <div class="modal-body">
@@ -26,13 +26,13 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<p>Title<br/>{{$solution->title}}</p>
+														<p>Title<br/>{{$result->title}}</p>
 														<p>Descripiton <br/>
-                                                            {{$solution->description}}</p>
+                                                            {{$result->description}}</p>
 														<p>Attachments
-                                                        @foreach(json_decode($solution->document_path) as $path)
+                                                        @foreach(json_decode($result->document_path) as $path)
                                                         <br/>
-                                                        {{$path->name}} <a href="{{route('paper-solutions.download',$solution->id).'?document='.$path->path}}">Download</a>
+                                                        {{$path->name}} <a href="{{route('results.download',$result->id).'?document='.$path->path}}">Download</a>
                                                         @endforeach
 
                                                         </p>

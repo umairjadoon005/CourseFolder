@@ -45,11 +45,8 @@ class AttendanceController extends BaseController
      */
     public function create()
     {
-       // $courses=Course::where('user_id','=',$this->user->id)->get();
-       $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
-        return view('attendance.create',compact('courses'));
+     
+        return view('attendance.create');
     }
 
     /**
@@ -117,12 +114,9 @@ class AttendanceController extends BaseController
     public function edit($id)
     {
         //$courses=Course::where('user_id','=',$this->user->id)->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
-
+   
         $attendance=Attendance::findOrFail($id);
-        return view('attendance.edit',compact('attendance','courses'));
+        return view('attendance.edit',compact('attendance'));
     }
 
     /**

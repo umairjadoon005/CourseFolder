@@ -45,7 +45,7 @@ parent::__construct();
     {
         $user_id= $this->user->id;
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
+        ->where('courses.id','=',session('default_course'))->select('question_papers.*')->get();
         return view('results.create',compact('question_papers'));
     }
 
@@ -123,7 +123,7 @@ $this->saveAndUpdate($result,$request);
     public function edit($id)
     {
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
+        ->where('courses.id','=',session('default_course'))->select('question_papers.*')->get();
         $result=Result::findOrFail($id);
         return view('results.edit',compact('question_papers','result'));
     }

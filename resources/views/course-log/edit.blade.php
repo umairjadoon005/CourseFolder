@@ -28,7 +28,7 @@
                         <form id="save-log">
                         @csrf 
                         <div class="form-group row">
-                          <input type="hidden" name="course_id" value="{{$log->course_id)}}">
+                          <input type="hidden" name="course_id" value="{{$log->course_id}}">
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>

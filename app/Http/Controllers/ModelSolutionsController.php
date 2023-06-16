@@ -46,13 +46,10 @@ parent::__construct();
     {
         $user_id= $this->user->id;
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
+        ->where('courses.id','=',session('default_course'))->select('question_papers.*')->get();
 
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
 
-        return view('model-solutions.create',compact('question_papers','courses'));
+        return view('model-solutions.create',compact('question_papers'));
     }
 
     /**
@@ -70,7 +67,7 @@ $this->saveAndUpdate($solution,$request);
     }
 
     private function saveAndUpdate($solution,$request){
-        $solution->title = $request->title;
+        // $solution->title = $request->title;
         $solution->description = $request->description;
         $file_array= $this->UploadFile($request,'solutions_document');
         $solution->document_path = json_encode($file_array);
@@ -129,10 +126,7 @@ $this->saveAndUpdate($solution,$request);
     public function edit($id)
     {
         $question_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
-        ->where('courses.user_id','=',$this->user->id)->select('question_papers.*')->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+        ->where('courses.id','=',session('default_course'))->select('question_papers.*')->get();
         $solution=ModelSolutions::findOrFail($id);
         return view('model-solutions.edit',compact('question_papers','solution'));
     }

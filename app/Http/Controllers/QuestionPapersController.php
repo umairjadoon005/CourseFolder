@@ -44,12 +44,7 @@ class QuestionPapersController extends BaseController
      */
     public function create()
     {
-        //$courses=Course::where('user_id','=',$this->user->id)->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
-       
-        return view('question-papers.create',compact('courses'));
+        return view('question-papers.create');
     }
 
     /**
@@ -118,12 +113,9 @@ class QuestionPapersController extends BaseController
      */
     public function edit($id)
     {
-        //$courses=Course::where('user_id','=',$this->user->id)->get();
-        $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
-        ->where('teachers.user_id', '=', auth()->user()->id)->get();
+       
         $question_papers=QuestionPapers::findOrFail($id);
-        return view('question-papers.edit',compact('question_papers','courses'));
+        return view('question-papers.edit',compact('question_papers'));
     }
 
     /**

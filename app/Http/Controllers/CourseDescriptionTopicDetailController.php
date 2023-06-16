@@ -44,7 +44,7 @@ class CourseDescriptionTopicDetailController extends Controller
             ]);
 
             $course_desc = new CourseDescriptionTopicDetail();
-            $this->saveAndUpdate($course_desc, $request,);
+            $this->saveAndUpdate($course_desc, $request);
             return response()->json('Course description record has successfully been saved.',200);
     }
 
@@ -94,6 +94,7 @@ class CourseDescriptionTopicDetailController extends Controller
 
     private function saveAndUpdate($course_desc,$request){
 
+        $course_desc->course_id = $request->course_id;
         $course_desc->week_no = $request->week_no;
         $course_desc->lecture_no = $request->lecture_no;
         $course_desc->contents = $request->contents;

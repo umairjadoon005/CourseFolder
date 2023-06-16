@@ -78,7 +78,8 @@ class CourseController extends BaseController
         $course=Course::findOrFail($id);
         $notes_count=LectureNotes::where('course_id','=',$id)->count();
         $papers_count=QuestionPapers::where('course_id','=',$id)->count();
-        return view('course-description.show',compact('course','notes_count','papers_count'))->render();
+        $course_desc = \App\Models\CourseDescriptionTopicDetail::where('course_id',$id)->get();   
+        return view('course-description.show',compact('course','course_desc','notes_count','papers_count'))->render();
 
     
     }

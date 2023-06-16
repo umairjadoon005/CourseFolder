@@ -12,18 +12,6 @@
                     @slot('li_2') Courses @endslot
                     @slot('li_3') <i class="feather-smartphone"></i> @endslot
                 @endcomponent
-                <div class="page-header pt-3 mb-0 ">
-                    <div class="row">
-                    
-                        <div class="col text-end">
-                            <ul class="list-inline-item ps-0">
-                                <li class="list-inline-item">
-                                    <a class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded" target="_blank" href="{{route('course-description-topic-detail.create')}}">Add Course Details</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
                 
                 <!-- Content Starts -->
                 <div class="row">
@@ -84,6 +72,19 @@
 											</div>
           
                     </div>
+                    <div class="page-header pt-3 mb-0 ">
+                    <div class="row">
+                    
+                        <div class="col text-end">
+                            <ul class="list-inline-item ps-0">
+                                <li class="list-inline-item">
+                                    <a class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded" target="_blank" href="{{route('course-description-topic-detail.create')}}">Add Course Details</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                     <div class="table-responsive">
                     <table class="table table-striped table-nowrap custom-table mb-0 datatable">
                                         <thead>
@@ -98,7 +99,7 @@
                                             @foreach($course_desc as $coursedesc)
                                             <tr>
                                                 <!-- <td>
-                                                    <a href="{{route('course-description.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
+                                                    <a href="{{route('course-descriptions.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
                                                 </td> -->
                                                 <td>{{$coursedesc->week_no}}</td>
                                                 <td>{{$coursedesc->lecture_no}}</td>

@@ -86,27 +86,38 @@
                                  </div></div>
                                  <div class="form-group row">
                                  <div class="col-sm-12">
-                                                <label class="col-form-label">SLOs<span class="text-danger">*</span></label>
+                                                <label class="col-form-label">Student Learning Objectives<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="slos" value="{{$outline->slos}}">
                                 </div></div>
                                 <div class="form-group row">
                                 <div class="col-sm-12">
                                                 <label class="col-form-label">Tool & Technology<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="tools_and_tech" value="{{$outline->tools_and_tech}}">
-                                </div>
-                                <div class="col-sm-12">
-                                                <label class="col-form-label">Tentative Grading Policy<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="tentative_grading_policy" value="{{$outline->tentative_grading_policy}}">
-                                 </div></div>
+                                </div></div>
                                  <div class="form-group row">
                                  <div class="col-sm-12">
-                                                <label class="col-form-label">Attendance<span class="text-danger">*</span></label>
+                                                <label class="col-form-label">Attendance Requirements<span class="text-danger">*</span></label>
                                                 <input type="text" class="form-control" name="attendance" value="{{$outline->attendance}}">
                                  </div></div>
                                  <div class="form-group row">
                                  <div class="col-sm-12">
                                                 <label class="col-form-label">General Information<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="general_info" value="{{$outline->general_info}}">
+                                                <textarea type="text" class="form-control" name="general_info">{{$outline->general_info}}</textarea>
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">TextBooks<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="textbook">{{$outline->textbook}}</textarea>
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">Objectives<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="objectives">{{$outline->objectives}}</textarea>
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">Other Resources<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="other_resources">{{$outline->other_resources}}</textarea>
                                  </div></div>
 
                             <div class="text-center py-3">

@@ -22,8 +22,7 @@ class SamplesRequest extends FormRequest{
             'paper_id' => 'required',
             'title' => 'required',
             'samples_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'samples_document'=> 'required|max:5.',
-            
+            'samples_document'=> 'required|max:10',
             'description' => 'required',
 
         ];
@@ -31,7 +30,7 @@ class SamplesRequest extends FormRequest{
     public function messages()
     {
         return [
-            'samples_document'=> 'Maximum 5 files allowed.'
+            'samples_document'=> 'Maximum 10 files allowed.'
         ];
     }
 }

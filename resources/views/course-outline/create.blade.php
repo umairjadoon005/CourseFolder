@@ -93,8 +93,8 @@
                                         </div>
                                         <div class="form-group row">
                                         <div class="col-sm-12">
-                                                <label class="col-form-label">SLOs<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="slos" placeholder="Enter SLOs">
+                                                <label class="col-form-label">Student Learning Objectives<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" name="slos" placeholder="Enter Student Learning Objectives">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -103,34 +103,39 @@
                                                 <input type="text" class="form-control" name="tools_and_tech" placeholder="Enter Tools and Technology">
                                             </div>
                                         </div>
+                                       
                                         <div class="form-group row">
                                             <div class="col-sm-12">
-                                                <label class="col-form-label">Tentative Grading Policy<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="tentative_grading_policy" placeholder="Enter Tentative Grading Policy">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <label class="col-form-label">Attendance<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="attendance" placeholder="Enter Attendance">
+                                                <label class="col-form-label">Attendance Requirements<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="attendance" placeholder="Enter Attendance">Students are encouraged and expected to attend all lectures, lab sessions, or any other activity related to the course. Moreover, students are responsible for their attendance and they must meet the minimum attendance requirement policy of the Department for appearing in final term exam.</textarea>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-12">
                                                 <label class="col-form-label">General Information<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" name="general_info" placeholder="Enter General Information">
+                                                <textarea rows="3" class="form-control" name="general_info" placeholder="Enter General Information">Students are required to be familiar with the University’s code of conduct, and to abide by its terms and conditions.
+Students must provide proper references to acknowledge other’s works/ideas. Students are required to follow American Psychological Association (APA) style of referencing or any other style recommended by the department. 
+In order to avoid plagiarism, students are required to follow the guidelines provided by the Department/University. 
+Students may use any sources (acknowledged) other than the assignments of fellow students.
+</textarea>
                                             </div>
                                         </div>
                                         
-                                            <!-- <div class="col-sm-6">
-                                                <label class="col-form-label">Duration Unit</label>
-                                                <select name="duration_unit" class="form-control">
-                                                    <option value="Day(s)">Day(s)</option>
-                                                    <option value="Week(s)">Week(s)</option>
-                                                    <option value="Month(s)">Month(s)</option>
-                                                    <option value="Year(s)">Year(s)</option>
-                                                </select>
-                                            </div> -->
+                                        <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">TextBooks<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="textbook"></textarea>
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">Objectives<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="objectives"></textarea>
+                                 </div></div>
+                                 <div class="form-group row">
+                                 <div class="col-sm-12">
+                                                <label class="col-form-label">Other Resources<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="other_resources"></textarea>
+                                 </div></div>
                                         </div>
                                         
                                             

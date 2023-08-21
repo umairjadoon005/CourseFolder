@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('course_outline_topic_details', function (Blueprint $table) {
             $table->id();     
             $table->foreignIdFor(CourseOutline::class,'course_outlines_id')->constraint('course_outlines');
-            $table->integer('week_no')->nullable();
+            $table->string('week_no',100)->nullable();
             $table->text('topics')->nullable();
             $table->timestamps();
         });

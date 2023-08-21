@@ -26,17 +26,26 @@
                     <div class="col-md-12">
                         <form id="save-sample" enctype="multipart/form-data">
                         @csrf 
+                        <div class="col-md-12">
+                                <input type="hidden" name="course_id" value="{{session('default_course')}}">
+                                </div>
                         <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Sample Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <select class="form-control" name="paper_id">
-                                        @foreach($question_papers as $paper)
-                                        <option @if($sample->paper_id==$paper->id) selected @endif value="{{$paper->id}}">{{$paper->paper_type}}</option>
-                                        @endforeach
+                                    <select class="form-control" name="sample_type">
+                                        <option @if($sample->sample_type=="Quiz") selected @endif value="Quiz">Quiz</option>
+                                        <option @if($sample->sample_type=="Assignment") selected @endif value="Assignment">Assignment</option>
+                                        <option @if($sample->sample_type=="Mid Term") selected @endif value="Mid Term">Mid Term</option>
+                                        <option @if($sample->sample_type=="Final Term") selected @endif value="Final Term">Final Term</option>
                                     </select>
                                 </div>
                             </div>
-                          
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Sample Type<span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control"  name="sample_type" placeholder="Sample Type" value="{{$sample->sample_type}}"/>
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description<span class="text-danger">*</span></label>

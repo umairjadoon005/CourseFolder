@@ -36,6 +36,7 @@
                                     <table class="table table-striped table-nowrap custom-table mb-0 datatable">
                                         <thead>
                                             <tr>
+                                                <th>Paper</th>
                                                 <th>Sample Type</th>
                                                 <!-- <th>Title</th> -->
                                                 <th>Document(s)</th>
@@ -49,7 +50,7 @@
                                                 <td>
                                                     <a href="{{route('question-papers.show',$sample->paper_id)}}" target="_blank">{{$sample->paper_type}}</a>
                                                 </td>
-                                                <!-- <td>{{$sample->title}}</td> -->
+                                                <td>{{$sample->sample_type}}</td>
                                                 <td>
                                                   {{count(json_decode($sample->document_path))}} File(s) <a href="{{route('samples.download',$sample->id)}}">Download Zip</a>
                                                 </td>

@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('course_description_topic_details', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Course::class,'course_id')->constraint('courses');
-            $table->integer('week_no')->nullable();
-            $table->integer('lecture_no')->nullable();
+            $table->string('week_no',100)->nullable();
+            $table->string('lecture_no',100)->nullable();
             $table->text('contents')->nullable();
             $table->timestamps();
 

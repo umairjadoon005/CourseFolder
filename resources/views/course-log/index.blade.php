@@ -36,11 +36,8 @@
                                     <table class="table table-striped table-nowrap custom-table mb-0 datatable">
                                         <thead>
                                             <tr>
-                                                <th>Course</th>
+                                                <th>Log Title</th>
                                                 <th>Catalog Number</th>
-                                                <th>Date</th>
-                                                <th>Duration</th>
-                                                <th>Credit Hours</th>
                                                 <th>Created At</th>
                                                 <th class="text-end">Actions</th>
                                             </tr>
@@ -49,14 +46,9 @@
                                             @foreach($course_logs as $log)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('course-descriptions.show',$log->course_id)}}" target="_blank">{{$log->course_title}}</a>
+                                                    {{$log->course_title}}
                                                 </td>
                                                 <td>{{$log->catalog_number}}</td>
-                                                <td>{{$log->date}}</td>
-                                                <td>{{$log->duration}}</td>
-                                                <td>
-                                                    {{$log->topics_covered}}
-                                                </td>
                                                 <td>{{$log->created_at}}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown dropdown-action">

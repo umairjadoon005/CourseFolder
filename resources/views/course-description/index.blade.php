@@ -41,17 +41,6 @@
                                                 <th>Credit Hours</th>
                                                 <th>Program</th>
                                                 <th>Effect from Date</th>
-                                                <th>Pre-requisites</th>
-                                                <th>Post-requisites</th>
-                                                <th>Topics</th>
-                                                <th>Assessments</th>
-                                                <th>Course Coordinator</th>
-                                                <th>Text Book</th>
-                                                <th>Reference Material</th>
-                                                <th>Course Goals</th>
-                                                <th>Course Duration</th>
-                                                <th>Instructor's Name</th>
-                                                <th>Topics Covered</th>
                                                 <th>Created At</th>
                                                 <th class="text-end">Actions</th>
                                             </tr>
@@ -66,17 +55,6 @@
                                                 <td>{{$course->credit_hours}}</td>
                                                 <td>{{$course->program}}</td>
                                                 <td>{{$course->effect_from_date}}</td>
-                                                <td>{{$course->pre_requisites}}</td>
-                                                <td>{{$course->post_requisites}}</td>
-                                                <td>{{$course->topics}}</td>
-                                                <td>{{$course->assessments}}</td>
-                                                <td>{{$course->course_coordinator}}</td>
-                                                <td>{{$course->textbook}}</td>
-                                                <td>{{$course->reference_material}}</td>
-                                                <td>{{$course->course_goals}}</td>
-                                                <td>{{$course->course_duration}}</td>
-                                                <td>{{$course->instructor_name}}</td>
-                                                <td>{{$course->topics_covered}}</td>
                                                 <td>{{$course->created_at}}</td>
                                                 
                                                 <td class="text-center">

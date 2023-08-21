@@ -62,6 +62,7 @@ class TeacherController extends BaseController
         $teacher->specialization = $request->specialization;
         $teacher->email = $request->email;
         $teacher->phone = $request->phone;
+        $teacher->department = $request->department;
         $teacher->user_id=$user->id;
         $teacher->save();
         //$teacher->date_of_joining = $request->date_of_joining;
@@ -84,7 +85,7 @@ class TeacherController extends BaseController
         $courses = Course::join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
         ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
         ->where('teachers.user_id', '=', $teacher->user_id)
-        ->select('teachers.*','courses.course_title')->get();
+        ->select('courses.*')->get();
         return view('add-teachers.show',compact('teacher','courses'))->render();
     }
 
@@ -123,6 +124,7 @@ class TeacherController extends BaseController
         $teacher->specialization = $request->specialization;
         $teacher->email = $request->email;
         $teacher->phone = $request->phone;
+        $teacher->department = $request->department;
         $teacher->save();
         //$teacher->date_of_joining = $request->date_of_joining;
         //$teacher->experience = $request->experience;
@@ -155,6 +157,9 @@ class TeacherController extends BaseController
        
     }
     public function AssignCourseSave(Request $request,$id){
+        if(TeacherCourse::where(['id'=>$id,'course_id'=>$request->course_id])->count()>0){
+        throw new \Exception('Course already assigned.');
+        }
         $teacherCourse= new TeacherCourse();
         $teacherCourse->id=$id;
         $teacherCourse->course_id=$request->course_id;

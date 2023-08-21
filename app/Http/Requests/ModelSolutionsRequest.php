@@ -22,14 +22,14 @@ class ModelSolutionsRequest extends FormRequest{
             'paper_id' => 'required',
             // 'title' => 'required',
             'solutions_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'solutions_document' => 'required|max:5',
+            'solutions_document' => 'required|max:10',
             'description' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'solutions_document'=> 'Maximum 5 files allowed.'
+            'solutions_document'=> 'Maximum 10 files allowed.'
         ];
     }
 }

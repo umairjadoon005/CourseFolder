@@ -38,9 +38,9 @@
 				@if(session('default_course') === null)
    				 {{session(['default_course'=>Auth::user()->courses()->first()->id])}}
 				@endif
-					<select class="form-control">
+					<select class="form-control" id="default_course" name="default_course" onchange="setDefaultCourse();">
 						@foreach(Auth::user()->courses() as $course)
-						<option id="default_course" name="default_course" onchange="setDefaultCourse();" @if (session('default_course')==$course->id)
+						<option  @if (session('default_course')==$course->id)
 							selected
 						@endif value="{{$course->id}}">{{$course->course_title}}</option>	
 						@endforeach
@@ -55,7 +55,7 @@
 				@endcan -->
 				@can('view courses')
 				<li class="{{ Request::is('course-descriptions') ? 'active' : '' }}"> 
-					<a href="{{url('course-descriptions', session('default_course'))}}"><i class="feather-user"></i> <span>View Courses</span></a>
+					<a href="{{url('course-descriptions', session('default_course'))}}"><i class="feather-user"></i> <span>Course Description</span></a>
 				</li>
 				@endcan
 				@can('add course outline')		

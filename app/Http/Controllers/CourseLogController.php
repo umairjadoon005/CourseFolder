@@ -74,7 +74,8 @@ parent::__construct();
      public function show($id)
     {
         $log=CourseLog::findOrFail($id);
-        return view('course-log.show',compact('log'))->render();
+        $log_details = \App\Models\CourseLogDetail::where('course_log_id',$id)->get();
+        return view('course-log.show',compact('log','log_details'))->render();
     }
 
     /**
@@ -108,10 +109,6 @@ private function saveAndUpdate($request,$log){
     $log->course_id = $request->course_id;
     $log->course_title = $request->course_title;
     $log->catalog_number = $request->catalog_number;
-    $log->date = $request->date;
-    $log->duration = $request->duration;
-    $log->topics_covered = $request->topics_covered;
-    $log->evaluation_instruments = $request->evaluation_instruments;
     $file_array=$this->UploadFile($request,'log_document');
     $log->signature = json_encode($file_array);
     $log->save();

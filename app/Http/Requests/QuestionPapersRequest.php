@@ -22,14 +22,14 @@ class QuestionPapersRequest extends FormRequest{
             'course_id' => 'required',
             'paper_type' => 'required',
             'papers_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'papers_document'=> 'required|max:5.',
+            'papers_document'=> 'required|max:10',
             'description' => 'required',
         ];
     }
     public function messages()
     {
         return [
-            'papers_document'=> 'Maximum 5 files allowed.'
+            'papers_document'=> 'Maximum 10 files allowed.'
         ];
     }
 }

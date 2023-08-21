@@ -31,36 +31,13 @@
                           <input type="hidden" name="course_id" value="{{$log->course_id}}">
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-12"><label class="col-form-label">Course Title<span class="text-danger">*</span></label>
+                                <div class="col-sm-12"><label class="col-form-label">Log Title<span class="text-danger">*</span></label>
                                     <input class="form-control" type="text"  value="{{$log->course_title}}" name="course_title">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12"><label class="col-form-label">Catelog Number<span class="text-danger">*</span></label>
                                     <input class="form-control" type="number" value="{{$log->catalog_number}}" name="catalog_number">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12"><label class="col-form-label">Date<span class="text-danger">*</span></label>
-                                    <input class="form-control" type="date" placeholder="48" value="{{$log->date}}" name="date">
-                                </div></div>
-                                <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Duration<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="duration" value="{{$log->duration}}" placeholder="30 Minutes">
-                                </div>
-                            </div>
-        
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Topics Covered<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control"  name="topics_covered" value="{{$log->topics_covered}}" placeholder="Introduction To Computer">
-                                </div>
-                        </div>
-                        <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label class="col-form-label">Evaluation instruments<span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="evaluation_instruments" value="{{$log->evaluation_instruments}}" placeholder="Software Engineering II">
                                 </div>
                             </div>
                             <div class="form-group row">

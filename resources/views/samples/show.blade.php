@@ -27,7 +27,7 @@
                     <div class="invoice-total-card">
 												<div class="invoice-total-box">
 													<div class="invoice-total-inner">
-														<!-- <p>Title<br/>{{$sample->title}}</p> -->
+														<p>Sample Type<br/>{{$sample->sample_type}}</p>
 														<p>Descripiton <br/>
                                                             {{$sample->description}}</p>
 														<p>Attachments

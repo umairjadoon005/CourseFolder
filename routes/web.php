@@ -27,7 +27,12 @@ Route::post('/courses/default-course', [App\Http\Controllers\CourseController::c
 
 Route::resource('add-teachers', App\Http\Controllers\TeacherController::class);
 Route::resource('course-description-topic-detail', App\Http\Controllers\CourseDescriptionTopicDetailController::class);
+Route::get('course-log-details/{id}',[App\Http\Controllers\CourseLogDetailController::class,'CreateTopic'])->name('course-log-details.CreateTopic');
+
+Route::resource('course-log-details', App\Http\Controllers\CourseLogDetailController::class);
 //Route::resource('course-description-topic-detail','CourseDescriptionTopicDetailController');
+Route::get('edit-description/{id}', [App\Http\Controllers\CourseController::class,'editDescription'])->name('edit-description');
+Route::put('update-description/{id}', [App\Http\Controllers\CourseController::class,'updateDescription'])->name('updateDescription');
 Route::resource('course-descriptions', App\Http\Controllers\CourseController::class);
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);
 Route::get('course-outline-topic-detail/{id}',[App\Http\Controllers\CourseOutlineTopicDetailController::class,'CreateTopic'])->name('course-outline-topic-detail.CreateTopic');
@@ -64,7 +69,4 @@ Route::resource('model-solutions', App\Http\Controllers\ModelSolutionsController
 
 Route::get('/edit', [PasswordController::class, 'edit'])->name('edit');
 Route::put('/edit', [PasswordController::class, 'update'])->name('update');
-
-
-
 });

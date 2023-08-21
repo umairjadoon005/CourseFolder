@@ -20,22 +20,15 @@ class CourseLogRequest extends FormRequest{
     {
         return [
             'course_id' => 'required',
-            'date' => 'required',
-        
-            'log_document' => 'required|max:1',
-    'lolg_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx,png,jpg,jpeg,gif|max:5120',
-    'course_title' => 'required',
-    'catalog_number' => 'required',
-    
-    'duration'=> 'required',
-    'topics_covered'=> 'required',
-    'evaluation_instruments'=> 'required',
+            'log_document' => 'required|max:10',
+            'log_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx,png,jpg,jpeg,gif|max:5120',
+            'catalog_number' => 'required'
         ];
     }
     public function messages()
     {
         return [
-            'notes_document.max'=> 'Maximum 1 files allowed.'
+            'log_document.max'=> 'Maximum 10 files allowed.'
         ];
     }
 }

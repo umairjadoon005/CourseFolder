@@ -8,7 +8,7 @@
 				
 					<!-- Account Logo -->
 					<div class="account-logo">
-						<a href="index.html"><img src="assets/img/logo.png"></a>
+						<a href="index.html"><img src="{{asset('assets/img/icon1.png')}}"></a>
 					</div>
 					<!-- /Account Logo -->
 					

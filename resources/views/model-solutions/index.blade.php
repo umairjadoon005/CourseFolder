@@ -36,7 +36,7 @@
                                     <table class="table table-striped table-nowrap custom-table mb-0 datatable">
                                         <thead>
                                             <tr>
-                                                <th>Paper</th>
+                                                <th>Solution Type</th>
                                                 <th>Title</th>
                                                 <th>Document(s)</th>
                                                 <th>Created At</th>
@@ -47,7 +47,7 @@
                                             @foreach($model_solutions as $solution)
                                             <tr>
                                                 <td>
-                                                    <a href="{{route('question-papers.show',$solution->paper_id)}}" target="_blank">{{$solution->paper_type}}</a>
+{{$solution->solution_type}}
                                                 </td>
                                                 <td>{{$solution->title}}</td>
                                                 <td>

@@ -22,7 +22,7 @@ class LectureNotesRequest extends FormRequest{
             'course_id' => 'required',
             'lecture_number' => 'required',
             'topic' => 'required',
-            'notes_document' => 'required|max:5',
+            'notes_document' => 'required|max:10',
     'notes_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
     'description' => 'required',
  
@@ -31,7 +31,7 @@ class LectureNotesRequest extends FormRequest{
     public function messages()
     {
         return [
-            'notes_document.max'=> 'Maximum 5 files allowed.'
+            'notes_document.max'=> 'Maximum 10 files allowed.'
         ];
     }
 }

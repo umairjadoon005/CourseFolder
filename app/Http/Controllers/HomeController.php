@@ -49,8 +49,7 @@ $total_courses=Course::where('user_id','=',$this->user->id)->count();
 $total_notes=LectureNotes::join('courses','courses.id','=','lecture_notes.course_id')
 ->where('courses.user_id','=',$this->user->id)->count();
 $total_solutions=ModelSolutions::
-join('question_papers','question_papers.id','=','model_solutions.paper_id')
-->join('courses','courses.id','=','question_papers.course_id')
+join('courses','courses.id','=','model_solutions.course_id')
 ->where('courses.user_id','=',$this->user->id)->count();
 $total_papers=QuestionPapers::join('courses','courses.id','=','question_papers.course_id')
 ->where('courses.user_id','=',$this->user->id)->count();

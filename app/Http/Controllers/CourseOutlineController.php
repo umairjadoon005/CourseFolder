@@ -29,11 +29,7 @@ parent::__construct();
     public function index()
     {
         $course_outlines=CourseOutline::join('courses','courses.id','=','course_outlines.course_id')
-        // ->
-        // join('teacher_courses', 'courses.id', '=', 'teacher_courses.course_id')
-        // ->join('teachers', 'teachers.id', '=', 'teacher_courses.id')
         ->where('courses.id', '=', session('default_course'))// COURSES.ID=SESSION(COURSES.ID)
-       // ->where('courses.user_id','=',$this->user->id)
         ->select('course_outlines.*','courses.course_title')->get();
         return view('course-outline.index',compact('course_outlines'));
         //
@@ -119,7 +115,9 @@ private function saveAndUpdate($request,$outline){
     $outline->attendance = $request->attendance;
     $outline->general_info = $request->general_info;
     $outline->course_id = $request->course_id;
-    
+    $outline->textbook=$request->textbook;
+    $outline->other_resources=$request->other_resources;
+    $outline->objectives=$request->objectives;
    
    
    

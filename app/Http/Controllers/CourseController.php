@@ -51,6 +51,7 @@ class CourseController extends BaseController
 
     public function SetDefaultCourse(Request $request){
         session(['default_course'=>$request->course_id]);
+
     }
 
     /**
@@ -96,6 +97,12 @@ class CourseController extends BaseController
         return view('course-description.edit',compact('course'));
     }
 
+    public function editDescription($id)
+    {
+        $course=Course::findOrFail($id);
+        return view('course-description.editDescription',compact('course'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -111,10 +118,9 @@ class CourseController extends BaseController
         return response()->json('Course successfully updated.',200);
     }
 
-    private function saveAndUpdate($course,$request){
-        $course->course_code = $request->course_code;
-        $course->course_title = $request->course_title;
-        $course->credit_hours = $request->credit_hours;
+    public function updateDescription(Request $request, $id)
+    {
+        $course = Course::findOrFail($id);
         $course->pre_requisites = $request->pre_requisites;
         $course->post_requisites = $request->post_requisites;
         $course->topics = $request->topics;
@@ -126,6 +132,15 @@ class CourseController extends BaseController
         $course->course_duration = $request->course_duration;
         $course->instructor_name = $request->instructor_name;
         $course->topics_covered = $request->topics_covered;
+        $course->save();
+        return response()->json('Course successfully updated.',200);
+    }
+
+        
+    private function saveAndUpdate($course,$request){
+        $course->course_code = $request->course_code;
+        $course->course_title = $request->course_title;
+        $course->credit_hours = $request->credit_hours;
         $course->program = $request->program;
         $course->effect_from_date = $request->effect_from_date;
         $course->user_id = $this->user->id;

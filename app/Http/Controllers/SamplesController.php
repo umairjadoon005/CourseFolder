@@ -33,7 +33,7 @@ class SamplesController extends BaseController
     public function index()
     {
         $user_id=$this->user->id;
-        $samples=Samples::join('question_papers','question_papers.id','=','samples.paper_id')->join('courses','courses.id','=','question_papers.course_id')
+        $samples=Samples::join('courses','courses.id','=','samples.course_id')
         ->where('courses.id', '=', session('default_course'))
         ->select('samples.*','question_papers.paper_type')->get();
         return view('samples.index',compact('samples'));
@@ -68,20 +68,21 @@ class SamplesController extends BaseController
     }
 
 private function saveAndUpdate($sample,$request){
-    $sample->title = $request->title;
+    // $sample->title = $request->title;
+    $sample->sample_type = $request->sample_type;
     $sample->description = $request->description;
     $file_array=$this->UploadFile($request,'samples_document');
     $sample->document_path = json_encode($file_array);
-    $sample->paper_id = $request->paper_id;
+    $sample->course_id = $request->course_id;
 
-    $file_array = $this->UploadFile($request,'best_file');
-    $sample->best_file = json_encode($file_array);
+    // $file_array = $this->UploadFile($request,'best_file');
+    // $sample->best_file = json_encode($file_array);
 
-    $file_array = $this->UploadFile($request,'avg_file');
-    $sample->avg_file = json_encode($file_array);
+    // $file_array = $this->UploadFile($request,'avg_file');
+    // $sample->avg_file = json_encode($file_array);
 
-    $file_array = $this->UploadFile($request,'worst_file');
-    $sample->worst_file = json_encode($file_array);
+    // $file_array = $this->UploadFile($request,'worst_file');
+    // $sample->worst_file = json_encode($file_array);
 
 
 

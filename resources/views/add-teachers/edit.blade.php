@@ -45,7 +45,12 @@
                                     <input type="text" class="form-control" value="{{$teacher->specialization}}" name="specialization" >
                                 </div>
                             </div>
-                    
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Email<span class="text-danger">*</span></label>
+                                    <input type="email" disabled class="form-control" value="{{$teacher->email}}" name="email" >
+                                </div>
+                            </div>                    
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Phone<span class="text-danger">*</span></label>
@@ -54,8 +59,8 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Email<span class="text-danger">*</span></label>
-                                    <input type="email" disabled class="form-control" value="{{$teacher->email}}" name="email" >
+                                    <label class="col-form-label">Department<span class="text-danger"></span></label>
+                                    <input type="text" class="form-control" value="{{$teacher->department}}" name="department" >
                                 </div>
                             </div>
                           

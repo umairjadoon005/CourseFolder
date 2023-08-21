@@ -56,7 +56,7 @@ function setDefaultCourse(){
                 data:{course_id:default_course},
                 success: function (response, status) {
                     if (status == "success") {
-                        toastr.success(response);
+                        toastr.success("Course successfully changed.");
                     }
                     location.reload();
                 },

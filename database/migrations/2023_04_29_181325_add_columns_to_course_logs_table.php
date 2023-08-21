@@ -14,9 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('course_logs', function (Blueprint $table) {
-            $table->string('best_file')->nullable();
-            $table->string('avg_file')->nullable();
-            $table->string('worst_file')->nullable();
+           
         });
     }
 

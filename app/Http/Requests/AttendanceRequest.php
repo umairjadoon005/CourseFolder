@@ -22,7 +22,7 @@ class AttendanceRequest extends FormRequest{
             'course_id' => 'required',
             'title' => 'required',
             'attendance_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'attendance_document'=> 'required|max:5',
+            'attendance_document'=> 'required|max:10',
              'description' => 'required',
              'roll_no'=> 'required|numeric',
              'student_name'=> 'required',
@@ -36,7 +36,7 @@ class AttendanceRequest extends FormRequest{
     public function messages()
     {
         return [
-            'attendance_document'=> 'Maximum 5 files allowed.'
+            'attendance_document'=> 'Maximum 10 files allowed.'
         ];
     }
 }

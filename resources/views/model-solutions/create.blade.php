@@ -34,16 +34,16 @@
                                 
                             
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Paper Type<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Solution Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <select class="form-control" name="paper_id">
-                                        @foreach($question_papers as $paper)
-                                        <option value="{{$paper->id}}">{{$paper->paper_type}}</option>
-                                        @endforeach
+                                <select class="form-control" name="solution_type">
+                                        <option value="Quiz">Quiz</option>
+                                        <option value="Assignment">Assignment</option>
+                                        <option value="Mid Term">Mid Term</option>
+                                        <option value="Final Term">Final Term</option>
                                     </select>
                                 </div>
                             </div>
-                            
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Description<span class="text-danger">*</span></label>

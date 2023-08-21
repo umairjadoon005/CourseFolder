@@ -43,6 +43,7 @@
                                                 <th>Specialization</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
+                                                <th>Department</th>
                                                 <th class="text-end">Actions</th> 
                                             </tr>
                                         </thead>
@@ -55,6 +56,7 @@
                                                 <td>{{$teacher->specialization}}</td>
                                                 <td>{{$teacher->email}}</td>
                                                 <td>{{$teacher->phone}}</td>
+                                                <td>{{$teacher->department}}</td>
                                                 <td class="text-center">
                                                     <div class="dropdown dropdown-action">
                                                         <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

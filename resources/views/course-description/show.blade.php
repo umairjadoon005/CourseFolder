@@ -21,7 +21,12 @@
                   
                             <div class="modal-header">
                 <h4 class="modal-title text-center">Course Details</h4>
-              </div>
+                @can('view courses')
+                <div class="modal-actions"> <a class="btn btn-info" style="float:right; color:white" href="{{route('edit-description',$course->id)}}">Update Course Description
+</a></div>  
+@endcan
+
+</div>
     
       <div class="modal-body">
         <!-- <div class="col-md-12">

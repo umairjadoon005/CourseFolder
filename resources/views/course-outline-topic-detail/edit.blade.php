@@ -32,13 +32,13 @@
                           
                             <div class="form-group row">
                                 <div class="col-sm-12"><label class="col-form-label">Week Number<span class="text-danger">*</span></label>
-                                    <input class="form-control" type="number" placeholder="48" value="{{$outlineDetail->week_no}}" name="week_no">
+                                    <input class="form-control" type="text"  value="{{$outlineDetail->week_no}}" name="week_no">
                                 </div>
                             </div>
                             <div class="form-group row">
                                             <div class="col-sm-12">
                                                 <label class="col-form-label">Topics<span class="text-danger">*</span></label>
-                                                <input type="number" class="form-control" name="topics" value="{{$outlineDetail->week_no}}" >
+                                                <textarea class="form-control" name="topics" rows="3">{{$outlineDetail->topics}}</textarea>
                                             </div>
                             </div> 
                             <div class="text-center py-3">

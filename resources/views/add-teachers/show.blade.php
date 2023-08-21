@@ -34,8 +34,9 @@
 														<p>Experience <span>{{$teacher->experience}}</span></p> -->
 														<p>Specialization <span>{{$teacher->specialization}}</span></p>
 														<!-- <p>Salary <span>{{$teacher->salary}}</span></p> -->
-														<p>Phone<span>{{$teacher->phone}}</span></p>
 														<p>Email<span>{{$teacher->email}}</span></p>
+                                                        <p>Phone<span>{{$teacher->phone}}</span></p>
+                                                        <p>Department<span>{{$teacher->department}}</span></p>
 														<!-- <p>Address<span>{{$teacher->address}}</span></p> -->
 											
                                                         <h3>Assigned Courses</h3>
@@ -46,8 +47,8 @@
                                                 <th>Title</th>
                                                 <th>Code</th>
                                                 <th>Credit Hours</th>
-                                                <th>Coordinator</th>
-                                                <th>Text Book</th>
+                                                <th>Program</th>
+                                                <th>Effective From Date</th>
                                                 <th>Created At</th>
                                             </tr>
                                         </thead>
@@ -61,8 +62,8 @@
                                                 <td>
                                                     {{$course->credit_hours}}
                                                 </td>
-                                                <td>{{$course->course_coordinator}}</td>
-                                                <td>{{$course->textbook}}</td>
+                                                <td>{{$course->program}}</td>
+                                                <td>{{$course->effect_from_date}}</td>
                                                 <td>{{$course->created_at}}</td>
                                             </tr>
                                        @endforeach

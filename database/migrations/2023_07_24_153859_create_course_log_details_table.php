@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Course;
-use App\Models\QuestionPapers;
+use App\Models\CourseLog;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,13 +14,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('model_solutions', function (Blueprint $table) {
+        Schema::create('course_log_details', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('solution_type')->nullable();
-            $table->text('description')->nullable();
-            $table->text('document_path')->nullable();
-            $table->foreignIdFor(Course::class,'course_id');
+            $table->foreignIdFor(CourseLog::class);
+            $table->date('log_date');
+            $table->string('lecture_number');
+            $table->text('topics_covered')->nullable();
+            $table->string('duration')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('model_solutions');
+        Schema::dropIfExists('course_log_details');
     }
 };

@@ -37,13 +37,13 @@
                         <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Week Number<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="number" value="{{$course_desc->week_no}}" name="week_no">
+                                    <input class="form-control" type="text" value="{{$course_desc->week_no}}" name="week_no">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-12"><label class="col-form-label">Lecture Number<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
-                                    <input class="form-control" type="number" value="{{$course_desc->lecture_no}}" name="lecture_no">
+                                    <input class="form-control" type="text" value="{{$course_desc->lecture_no}}" name="lecture_no">
                                 </div>
                             </div>
                             <div class="form-group row">

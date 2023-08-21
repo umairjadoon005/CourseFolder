@@ -41,6 +41,13 @@
                                     <input type="text" class="form-control" name="specialization" placeholder="Enter Specialization">
                                 </div>
                             </div>
+                           
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="col-form-label">Email<span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                </div>
+                                    </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <label class="col-form-label">Phone<span class="text-danger">*</span></label>
@@ -49,13 +56,13 @@
                                 </div>
                             
                            
+                                 
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <label class="col-form-label">Email<span class="text-danger">*</span></label>
-                                    <input type="email" class="form-control" name="email" placeholder="Enter Email">
+                                    <label class="col-form-label">Department<span class="text-danger"></span></label>
+                                    <input type="text" class="form-control" name="department" placeholder="Enter Department">
                                 </div>
                                     </div>
-                                 
     
                             <div class="text-center py-3">
                               <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;

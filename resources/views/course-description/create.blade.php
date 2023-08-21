@@ -66,7 +66,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
+                            <!-- <div class="form-group row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                     <label class="col-form-label">Pre Requisites<span class="text-danger">*</span></label>
@@ -144,7 +144,7 @@
                                     <input type="text" class="form-control"  name="topics_covered" placeholder="Enter Topics Covered">
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="text-center py-3">
                                 <button type="button" id="btn-save" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>&nbsp;&nbsp;

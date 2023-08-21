@@ -58,16 +58,68 @@
                             <p>Web Link <span>{{$outline->web_link}}</span></p>
                             <p>Teaching Team <span>{{$outline->teaching_team}}</span></p>
                             <p>Course Description <span>{{$outline->course_description}}</span></p>
-                            <p>SLOs<span>{{$outline->slos}}</span></p>
+                            <p>Student Learning Objectives<span>{{$outline->slos}}</span></p>
                             <p>Tools & Technology<span>{{$outline->tools_and_tech}}</span></p>
-                            <p>Tentative Grading Policy<span>{{$outline->tentative_grading_policy}}</span></p>
-                            <p>Attendance<span>{{$outline->attendance}}</span></p>
-                            <p>SLOs<span>{{$outline->slos}}</span></p>
+                            <p>Attendance Requirements<span>{{$outline->attendance}}</span></p>
                             <p>General Information<span>{{$outline->general_info}}</span></p>
+                            <p>TextBooks<span>{{$outline->textbook}}</span></p>
+                            <p>Objectives<span>{{$outline->objectives}}</span></p>
+                            <p>Other Resources<span>{{$outline->other_resources}}</span></p>
+
 													</div>
 												</div>
 											</div>
                     </div>
+                    <div class= "row">
+                    <div class="page-header pt-3 mb-0 ">
+                    <h3>Tentative Grading Distribution and Policy</h3>
+                </div>
+                    <div class="table-responsive">
+                                    <table class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>Criteria</th>
+                                                <th>Weightage</th>
+                                                <th>Policy</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Assignment(s)</td>
+                                                <td>10% </td>
+                                                <td>
+                                                6 assignments, each of which has to be submitted by individual students with standard title page duly filled in by the students.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Quizes</td>
+                                                <td>10% </td>
+                                                <td>
+                                                3 Quizzes (no retakes)   </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mid Term Examination
+
+</td>
+                                                <td>30% </td>
+                                                <td>
+                                                Comprises of course contents covered in class
+
+</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Final Term Examination</td>
+                                                <td>50% </td>
+                                                <td>
+                                                Comprises of course contents covered in class
+</td>
+                                            </tr>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                    </div>
+
                     <div class= "row">
                     <div class="page-header pt-3 mb-0 ">
                     <div class="row">

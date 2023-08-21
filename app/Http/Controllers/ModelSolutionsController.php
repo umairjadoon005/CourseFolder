@@ -31,9 +31,9 @@ parent::__construct();
      */
     public function index()
     {
-        $model_solutions=ModelSolutions::join('question_papers','question_papers.id','=','model_solutions.paper_id')->join('courses','courses.id','=','question_papers.course_id')
+        $model_solutions=ModelSolutions::join('courses','courses.id','=','model_solutions.course_id')
         ->where('courses.id', '=', session('default_course'))
-        ->select('model_solutions.*','question_papers.paper_type')->get();
+        ->select('model_solutions.*')->get();
         return view('model-solutions.index',compact('model_solutions'));
     }
 
@@ -67,7 +67,7 @@ $this->saveAndUpdate($solution,$request);
     }
 
     private function saveAndUpdate($solution,$request){
-        // $solution->title = $request->title;
+         $solution->solution_type = $request->solution_type;
         $solution->description = $request->description;
         $file_array= $this->UploadFile($request,'solutions_document');
         $solution->document_path = json_encode($file_array);

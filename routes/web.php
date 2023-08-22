@@ -32,6 +32,8 @@ Route::get('course-log-details/{id}',[App\Http\Controllers\CourseLogDetailContro
 Route::resource('course-log-details', App\Http\Controllers\CourseLogDetailController::class);
 //Route::resource('course-description-topic-detail','CourseDescriptionTopicDetailController');
 Route::get('edit-description/{id}', [App\Http\Controllers\CourseController::class,'editDescription'])->name('edit-description');
+
+
 Route::put('update-description/{id}', [App\Http\Controllers\CourseController::class,'updateDescription'])->name('updateDescription');
 Route::resource('course-descriptions', App\Http\Controllers\CourseController::class);
 Route::resource('course-outlines', App\Http\Controllers\CourseOutlineController::class);
@@ -69,4 +71,15 @@ Route::resource('model-solutions', App\Http\Controllers\ModelSolutionsController
 
 Route::get('/edit', [PasswordController::class, 'edit'])->name('edit');
 Route::put('/edit', [PasswordController::class, 'update'])->name('update');
+
+
+Route::get('course-descriptions/download-pdf/{id}', [App\Http\Controllers\CourseController::class,'downloadPDF'])->name('course-descriptions.downloadPdf');
+Route::get('course-outlines/download-pdf/{id}', [App\Http\Controllers\CourseOutlineController::class,'downloadPDF'])->name('course-outlines.downloadPdf');
+Route::get('lecture-notes/download-pdf/{id}', [App\Http\Controllers\LectureNotesController::class,'downloadPDF'])->name('lecture-notes.downloadPdf');
+Route::get('question-papers/download-pdf/{id}', [App\Http\Controllers\QuestionPapersController::class,'downloadPDF'])->name('question-papers.downloadPdf');
+Route::get('attendance/download-pdf/{id}', [App\Http\Controllers\AttendanceController::class,'downloadPDF'])->name('attendance.downloadPdf');
+Route::get('logs/download-pdf/{id}', [App\Http\Controllers\CourseLogController::class,'downloadPDF'])->name('logs.downloadPdf');
+Route::get('results/download-pdf/{id}', [App\Http\Controllers\ResultController::class,'downloadPDF'])->name('results.downloadPdf');
+
+
 });

@@ -64,6 +64,8 @@
                                                             <a class="dropdown-item" href="{{route('course-descriptions.edit',$course->id)}}" target="_blank">Edit</a>
                                                             <a class="dropdown-item" href="{{route('course-descriptions.show',$course->id)}}" target="_blank">Show</a>
                                                             <a class="dropdown-item" onclick="deleteRecord('delete','{{route('course-descriptions.destroy',$course->id)}}','By deleting course, you would not be able to revert it');" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{ route('course-descriptions.downloadPdf', $course->id) }}">Download PDF</a>
+
                                                         </div>
                                                     </div>
                                                 </td>

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
+use PDF;
+
 
 class LectureNotesController extends BaseController
 {
@@ -39,6 +41,24 @@ class LectureNotesController extends BaseController
         //
     }
 
+    
+    public function downloadPDF($id)
+{
+    $lecture_notes=LectureNotes::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'PDF Data',
+        'content' => 'This is PDF content.',
+        'lecture_notes' => $lecture_notes,  
+    ];
+ 
+
+    $pdf = Pdf::loadView('lecture-notes/lecturenotespdf', $dynamicData);
+
+
+    return $pdf->download('Lecture Notes.pdf');
+
+}
     /**
      * Show the form for creating a new resource.
      *

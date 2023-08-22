@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\File;
 use App\Models\Result;
 use App\Http\Controllers\Response;
 use App\Http\Controllers\ZipArchive;
+use PDF;
 
 class CourseLogController extends BaseController
 {
@@ -40,6 +41,23 @@ parent::__construct();
         //
     }
 
+    public function downloadPDF($id)
+{
+    $log=CourseLog::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'PDF Data',
+        'content' => 'This is PDF content.',
+        'log' => $log,  
+    ];
+ 
+
+    $pdf = Pdf::loadView('course-log/courselogspdf', $dynamicData);
+
+
+    return $pdf->download('Course Logs.pdf');
+
+}
     /**
      * Show the form for creating a new resource.
      *

@@ -62,6 +62,7 @@
                                                             <a class="dropdown-item" href="{{route('question-papers.show',$paper->id)}}" target="_blank">View</a>
                                                             <a class="dropdown-item" href="{{route('question-papers.edit',$paper->id)}}" target="_blank">Edit</a>
                                                             <a class="dropdown-item" onclick="deleteRecord('delete','{{route('question-papers.destroy',$paper->id)}}','By deleting paper, you would not be able to revert it.');" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{ route('question-papers.downloadPdf', $paper->id) }}">Download PDF</a>
                                                         </div>
                                                     </div>
                                                 </td>

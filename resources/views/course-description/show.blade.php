@@ -24,6 +24,7 @@
                 @can('view courses')
                 <div class="modal-actions"> <a class="btn btn-info" style="float:right; color:white" href="{{route('edit-description',$course->id)}}">Update Course Description
 </a></div>  
+
 @endcan
 
 </div>

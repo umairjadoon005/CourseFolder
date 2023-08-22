@@ -8,6 +8,9 @@ use App\Models\CourseOutline;
 use App\Models\CourseOutlineTopicDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\PDF;
+use PDF;
+
 
 class CourseOutlineController extends BaseController
 {
@@ -34,6 +37,25 @@ parent::__construct();
         return view('course-outline.index',compact('course_outlines'));
         //
     }
+
+    public function downloadPDF($id)
+    {
+        $course=CourseOutline::findOrFail($id);
+    
+        $dynamicData = [
+            'title' => 'PDF Data',
+            'content' => 'This is PDF content.',
+            'course' => $course,  
+        ];
+    
+    
+        $pdf = Pdf::loadView('course-outlines/courseoutlinespdf', $dynamicData);
+    
+    
+        return $pdf->download('Course Outlines.pdf');
+    
+    }
+
     /**
      * Show the form for creating a new resource.
      *

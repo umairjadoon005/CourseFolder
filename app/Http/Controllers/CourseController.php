@@ -7,8 +7,10 @@ use App\Models\Course;
 use App\Models\LectureNotes;
 use App\Models\QuestionPapers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\CourseDescriptionTopicDetail;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\View;
+use PDF;
+
 
 class CourseController extends BaseController
 {
@@ -38,6 +40,26 @@ class CourseController extends BaseController
         return view('course-description.index',compact('courses'))->render();
         //
     }
+
+
+
+    public function downloadPDF($id)
+{
+    $course=Course::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'PDF Data',
+        'content' => 'This is PDF content.',
+        'course' => $course,  
+    ];
+
+
+    $pdf = Pdf::loadView('course-description/coursespdf', $dynamicData);
+
+
+    return $pdf->download('Course Details.pdf');
+
+}
 
     /**
      * Show the form for creating a new resource.
@@ -103,13 +125,10 @@ class CourseController extends BaseController
         return view('course-description.editDescription',compact('course'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     */
+
+
+
+    
     public function update(CourseRequest $request, $id)
     {
     

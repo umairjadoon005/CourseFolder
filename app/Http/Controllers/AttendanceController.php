@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
+use PDF;
 
 class AttendanceController extends BaseController
 {
@@ -38,6 +39,23 @@ class AttendanceController extends BaseController
         //
     }
 
+    public function downloadPDF($id)
+{
+    $attendance=Attendance::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'PDF Data',
+        'content' => 'This is PDF content.',
+        'attendance' => $attendance,  
+    ];
+ 
+
+    $pdf = Pdf::loadView('attendance/attendancepdf', $dynamicData);
+
+
+    return $pdf->download('Attendance.pdf');
+
+}
     /**
      * Show the form for creating a new resource.
      *

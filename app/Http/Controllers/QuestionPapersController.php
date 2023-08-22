@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
+use PDF;
+
 
 class QuestionPapersController extends BaseController
 {
@@ -37,6 +39,23 @@ class QuestionPapersController extends BaseController
         //
     }
 
+    public function downloadPDF($id)
+{
+    $question_papers=QuestionPapers::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'PDF Data',
+        'content' => 'This is PDF content.',
+        'question_papers' => $question_papers,  
+    ];
+ 
+
+    $pdf = Pdf::loadView('question-papers/questionpaperspdf', $dynamicData);
+
+
+    return $pdf->download('Question Paper.pdf');
+
+}
     /**
      * Show the form for creating a new resource.
      *

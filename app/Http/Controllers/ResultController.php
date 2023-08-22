@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use ZipArchive;
+use PDF;
 
 class ResultController extends BaseController
 {
@@ -35,6 +36,26 @@ parent::__construct();
         ->select('results.*','question_papers.paper_type')->get();
         return view('results.index',compact('results'));
     }
+
+
+    public function downloadPDF($id)
+    {
+        $result=Result::findOrFail($id);
+    
+        $dynamicData = [
+            'title' => 'PDF Data',
+            'content' => 'This is PDF content.',
+            'result' => $result,  
+        ];
+     
+    
+        $pdf = Pdf::loadView('results/resultspdf', $dynamicData);
+    
+    
+        return $pdf->download('Result.pdf');
+    
+    }
+
 
     /**
      * Show the form for creating a new resource.

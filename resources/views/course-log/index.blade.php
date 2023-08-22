@@ -57,6 +57,7 @@
                                                             <a class="dropdown-item" href="{{route('logs.show',$log->id)}}" target="_blank">View</a>
                                                             <a class="dropdown-item" href="{{route('logs.edit',$log->id)}}" target="_blank">Edit</a>
                                                             <a class="dropdown-item" onclick="deleteRecord('delete','{{route('logs.destroy',$log->id)}}','By deleting log, you would not be able to revert it.');" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{ route('logs.downloadPdf', $log->id) }}">Download PDF</a>
                                                         </div>
                                                     </div>
                                                 </td>

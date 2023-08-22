@@ -8,7 +8,6 @@ use App\Models\CourseOutline;
 use App\Models\CourseOutlineTopicDetail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Barryvdh\DomPDF\PDF;
 use PDF;
 
 
@@ -40,16 +39,16 @@ parent::__construct();
 
     public function downloadPDF($id)
     {
-        $course=CourseOutline::findOrFail($id);
+        $outline=CourseOutline::findOrFail($id);
     
         $dynamicData = [
             'title' => 'PDF Data',
             'content' => 'This is PDF content.',
-            'course' => $course,  
+            'outline' => $outline,  
         ];
     
     
-        $pdf = Pdf::loadView('course-outlines/courseoutlinespdf', $dynamicData);
+        $pdf = Pdf::loadView('course-outline/courseoutlinespdf', $dynamicData);
     
     
         return $pdf->download('Course Outlines.pdf');
@@ -73,9 +72,6 @@ parent::__construct();
      */
     public function store(CourseOutlineRequest $request)
     {
-       
-       
-
         $outline = new CourseOutline;
         $this->saveAndUpdate($request,$outline);
         return response()->json('Outline successfully saved.',200);

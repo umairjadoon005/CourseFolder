@@ -71,7 +71,8 @@ $this->saveAndUpdate($solution,$request);
         $solution->description = $request->description;
         $file_array= $this->UploadFile($request,'solutions_document');
         $solution->document_path = json_encode($file_array);
-        $solution->paper_id = $request->paper_id;
+
+        $solution->course_id = $request->paper_id;
         $solution->save();
 
     }

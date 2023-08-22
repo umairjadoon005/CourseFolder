@@ -48,8 +48,8 @@ class CourseController extends BaseController
     $course=Course::findOrFail($id);
 
     $dynamicData = [
-        'title' => 'PDF Data',
-        'content' => 'This is PDF content.',
+        'title' => 'Abbottabad University of Science & Technology',
+        'content' => 'Ph:+92 992-811720                      Email: info@aust.edu.pk                Address: Havelian, KPK, Pakistan',
         'course' => $course,  
     ];
 

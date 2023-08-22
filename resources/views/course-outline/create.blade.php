@@ -110,6 +110,15 @@
                                                 <textarea type="text" class="form-control" name="attendance" placeholder="Enter Attendance">Students are encouraged and expected to attend all lectures, lab sessions, or any other activity related to the course. Moreover, students are responsible for their attendance and they must meet the minimum attendance requirement policy of the Department for appearing in final term exam.</textarea>
                                             </div>
                                         </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-sm-12">
+                                                <label class="col-form-label">Grading Policy<span class="text-danger"></span></label>
+                                                <textarea type="text" class="form-control" name="tentative_grading_policy" placeholder="Enter Grading Policy"></textarea>
+                                            </div>
+                                        </div>
+
+
                                         <div class="form-group row">
                                             <div class="col-sm-12">
                                                 <label class="col-form-label">General Information<span class="text-danger">*</span></label>

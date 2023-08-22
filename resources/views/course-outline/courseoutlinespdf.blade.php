@@ -8,9 +8,9 @@
 </head>
 <body>
     <h1>Course Details</h1>
-    <p><strong>Title:</strong> {{ $course->course_title }}</p>
-    <p><strong>Code:</strong> {{ $course->course_code }}</p>
-    <p><strong>Credit Hours:</strong> {{ $course->credit_hours }}</p>
+    <p><strong>Course Type:</strong> {{ $outline->course_type }}</p>
+    <p><strong>Course Duration:</strong> {{ $outline->course_duration }}</p>
+    <p><strong>Weekly Tution Pattern:</strong> {{ $outline->weekly_tution_pattern }}</p>
     <!-- Add more details as needed -->
 </body>
 </html>

@@ -20,9 +20,9 @@ class ModelSolutionsRequest extends FormRequest{
     {
         return [
             'paper_id' => 'required',
-            // 'title' => 'required',
+            'title' => 'required',
             'solutions_document.*' => 'mimes:pdf,doc,docx,ppt,pptx,csv,xlsx|max:5120',
-            'solutions_document' => 'required|max:10',
+          'solutions_document' => 'required|max:10',
             'description' => 'required',
         ];
     }

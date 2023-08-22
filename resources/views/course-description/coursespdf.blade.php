@@ -6,6 +6,10 @@
         /* Define your styling for the PDF content */
     </style>
 </head>
+
+
+
+
 <body>
     <h1>Course Details</h1>
     <p><strong>Title:</strong> {{ $course->course_title }}</p>

@@ -22,8 +22,14 @@
                             <div class="modal-header">
                 <h4 class="modal-title text-center">Course Details</h4>
                 @can('view courses')
-                <div class="modal-actions"> <a class="btn btn-info" style="float:right; color:white" href="{{route('edit-description',$course->id)}}">Update Course Description
-</a></div>  
+                <div class="modal-actions"> 
+                    <a class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded" style="float:right; color:white" href="{{route('edit-description',$course->id)}}">Update Course Description
+</a>
+
+<a class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded" style="float:right; margin:0 5px 0 0; color:white" href="{{ route('course-descriptions.downloadPdf', $course->id) }}">Download Pdf
+</a>
+
+</div>  
 
 @endcan
 

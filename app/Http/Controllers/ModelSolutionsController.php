@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Course;
+use Illuminate\Database\Events\ModelsPruned;
 use ZipArchive;
+use PDF;
 
 class ModelSolutionsController extends BaseController
 {
@@ -36,6 +38,24 @@ parent::__construct();
         ->select('model_solutions.*')->get();
         return view('model-solutions.index',compact('model_solutions'));
     }
+
+    public function downloadPDF($id)
+{
+    $solution=ModelSolutions::findOrFail($id);
+
+    $dynamicData = [
+        'title' => 'Abbottabad University of Science & Technology',
+        'content' => 'Ph:+92 992-811720                      Email: info@aust.edu.pk                Address: Havelian, KPK, Pakistan',
+        'solution' => $solution,  
+    ];
+
+
+    $pdf = Pdf::loadView('model-solutions/modelsolutionspdf', $dynamicData);
+
+
+    return $pdf->download('Model Solution.pdf');
+
+}
 
     /**
      * Show the form for creating a new resource.

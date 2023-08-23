@@ -45,12 +45,19 @@ class CourseController extends BaseController
 
     public function downloadPDF($id)
 {
+
     $course=Course::findOrFail($id);
+        $notes_count=LectureNotes::where('course_id','=',$id)->count();
+        $papers_count=QuestionPapers::where('course_id','=',$id)->count();
+        $course_desc = \App\Models\CourseDescriptionTopicDetail::where('course_id',$id)->get();   
+
+
 
     $dynamicData = [
-        'title' => 'Abbottabad University of Science & Technology',
-        'content' => 'Ph:+92 992-811720                      Email: info@aust.edu.pk                Address: Havelian, KPK, Pakistan',
-        'course' => $course,  
+        'title' => '',
+        'content' => '',
+        'coursedesc' => $course_desc,  
+        'course' => $course,
     ];
 
 

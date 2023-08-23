@@ -80,6 +80,7 @@ Route::get('question-papers/download-pdf/{id}', [App\Http\Controllers\QuestionPa
 Route::get('attendance/download-pdf/{id}', [App\Http\Controllers\AttendanceController::class,'downloadPDF'])->name('attendance.downloadPdf');
 Route::get('logs/download-pdf/{id}', [App\Http\Controllers\CourseLogController::class,'downloadPDF'])->name('logs.downloadPdf');
 Route::get('results/download-pdf/{id}', [App\Http\Controllers\ResultController::class,'downloadPDF'])->name('results.downloadPdf');
+Route::get('model-solutions/download-pdf/{id}', [App\Http\Controllers\ModelSolutionsController::class,'downloadPDF'])->name('model-solutions.downloadPdf');
 
 
 });

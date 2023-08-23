@@ -62,6 +62,8 @@
                                                             <a class="dropdown-item" href="{{route('model-solutions.show',$solution->id)}}" target="_blank">View</a>
                                                             <a class="dropdown-item" href="{{route('model-solutions.edit',$solution->id)}}" target="_blank">Edit</a>
                                                             <a class="dropdown-item" onclick="deleteRecord('delete','{{route('model-solutions.destroy',$solution->id)}}','By deleting solution, you would not be able to revert it.');" href="#">Delete</a>
+                                                            <a class="dropdown-item" href="{{ route('model-solutions.downloadPdf', $solution->id) }}">Download PDF</a>
+
                                                         </div>
                                                     </div>
                                                 </td>

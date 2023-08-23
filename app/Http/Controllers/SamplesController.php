@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Course;
 use ZipArchive;
+use PDF;
 
 class SamplesController extends BaseController
 {
@@ -38,6 +39,30 @@ class SamplesController extends BaseController
         ->select('samples.*')->get();
         return view('samples.index',compact('samples'));
     }
+
+
+    public function downloadPDF($id)
+{
+
+    $sample=Samples::findOrFail($id);
+        
+
+    $dynamicData = [
+        'title' => '',
+        'content' => '',
+        'sample' => $sample,
+    ];
+
+
+    $pdf = PDF::loadView('samples/samplespdf', $dynamicData);
+
+
+    return $pdf->download('Sample.pdf');
+
+}
+
+
+
 
     /**
      * Show the form for creating a new resource.

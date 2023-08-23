@@ -81,6 +81,7 @@ Route::get('attendance/download-pdf/{id}', [App\Http\Controllers\AttendanceContr
 Route::get('logs/download-pdf/{id}', [App\Http\Controllers\CourseLogController::class,'downloadPDF'])->name('logs.downloadPdf');
 Route::get('results/download-pdf/{id}', [App\Http\Controllers\ResultController::class,'downloadPDF'])->name('results.downloadPdf');
 Route::get('model-solutions/download-pdf/{id}', [App\Http\Controllers\ModelSolutionsController::class,'downloadPDF'])->name('model-solutions.downloadPdf');
+Route::get('samples/download-pdf/{id}', [App\Http\Controllers\SamplesController::class,'downloadPDF'])->name('samples.downloadPdf');
 
 
 });

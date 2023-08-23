@@ -40,6 +40,8 @@ parent::__construct();
     public function downloadPDF($id)
     {
         $outline=CourseOutline::findOrFail($id);
+        $outlineDetail = CourseOutlineTopicDetail::where('course_outlines_id',$id)->get();
+        $course=Course::where('id',$outline->course_id);
     
         $dynamicData = [
             'title' => 'PDF Data',

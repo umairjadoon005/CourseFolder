@@ -52,7 +52,6 @@ class CourseController extends BaseController
         $course_desc = \App\Models\CourseDescriptionTopicDetail::where('course_id',$id)->get();   
 
 
-
     $dynamicData = [
         'title' => '',
         'content' => '',

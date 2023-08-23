@@ -56,7 +56,7 @@ class CourseController extends BaseController
     $dynamicData = [
         'title' => '',
         'content' => '',
-        'coursedesc' => $course_desc,  
+        'course_desc' => $course_desc,  
         'course' => $course,
     ];
 

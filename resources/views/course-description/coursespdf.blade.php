@@ -36,6 +36,8 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+
+
                                             <tr>
                                              
                                             <td>{{$course->course_code}}</td>
@@ -54,11 +56,13 @@
                                             <td>{{$course->topics_covered}}</td>
 
 
-                                                <td>{{$coursedesc->week_no}}</td>
-                                                <td>{{$coursedesc->lecture_no}}</td>
-                                                <td>{{$coursedesc->contents}}</td>
+                                                <td>{{$course_desc->week_no}}</td>
+                                                <td>{{$course_desc->lecture_no}}</td>
+                                                <td>{{$course_desc->contents}}</td>
 
                                             </tr>
+
+                                       
                                         </tbody>
                                     </table>
 

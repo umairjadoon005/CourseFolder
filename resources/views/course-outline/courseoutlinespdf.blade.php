@@ -59,6 +59,23 @@ p {
                             <p>TextBooks: <span>{{$outline->textbook}}</span></p>
                             <p>Objectives: <span>{{$outline->objectives}}</span></p>
                             <p>Other Resources: <span>{{$outline->other_resources}}</span></p>
+                            <table style="width:100%" class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:left">Week Number</th>
+                                                <th style="text-align:left">Topics</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($outlineDetail as $outline)
+                                            <tr>
+                                                <td>{{$outline->week_no}}</td>
+                                                <td>{{$outline->topics}} </td>
+                                            </tr>
+                                       @endforeach
+                                          
+                                        </tbody>
+                                    </table>
 
 </body>
 </html>

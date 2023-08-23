@@ -55,11 +55,28 @@ p {
                                             <p><strong>Topics Covered:</strong> {{$course->topics_covered}}</p>
 
 
+                                            <table style="width: 100%;"  class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align:left">Week Number</th>
+                                                <th style="text-align:left">Lecture Number</th>
+                                                <th style="text-align:left">Contents</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
                                             @foreach($course_desc as $coursedesc)
-                                            <p><strong>Contents:</strong> {{$coursedesc->contents}}</p>
-                                                <p><strong>Week Number: </strong>{{$coursedesc->week_no}}</p>
-                                                <p><strong>Lecture Number:</strong> {{$coursedesc->lecture_no}}</p>
-                                                @endforeach
+                                            <tr>
+                                                <!-- <td>
+                                                    <a href="{{route('course-descriptions.show',$course->id)}}" target="_blank">{{$course->course_title}}</a>
+                                                </td> -->
+                                                <td>{{$coursedesc->week_no}}</td>
+                                                <td>{{$coursedesc->lecture_no}}</td>
+                                                <td>{{$coursedesc->contents}}</td>
+                                            </tr>
+                                       @endforeach
+                                          
+                                        </tbody>
+                                    </table>
 
 
 </body> 

@@ -44,11 +44,12 @@ parent::__construct();
     public function downloadPDF($id)
 {
     $log=CourseLog::findOrFail($id);
-
+    $log_details = \App\Models\CourseLogDetail::where('course_log_id',$id)->get();
     $dynamicData = [
         'title' => 'PDF Data',
         'content' => 'This is PDF content.',
         'log' => $log,  
+        'log_details'=>$log_details,    
     ];
  
 

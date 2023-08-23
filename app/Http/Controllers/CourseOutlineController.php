@@ -47,6 +47,7 @@ parent::__construct();
             'title' => 'PDF Data',
             'content' => 'This is PDF content.',
             'outline' => $outline,  
+            'outlineDetail'=>$outlineDetail
         ];
     
     

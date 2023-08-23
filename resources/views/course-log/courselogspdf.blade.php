@@ -34,9 +34,27 @@ p {
   <span class="contact-info">Ph:+92 992-811720 | Email: info@aust.edu.pk | Address: Havelian, KPK, Pakistan</span>
 </h5>
     <h1>Course Logs</h1>
-    <p><strong>Signature:</strong> {{ $log->signature }}</p>
     <p><strong>Course Title:</strong> {{ $log->course_title }}</p>
     <p><strong>Catalog Number:</strong> {{ $log->catalog_number }}</p>
-    <!-- Add more details as needed -->
+    <table style="width: 100%;" class="table table-striped table-nowrap custom-table mb-0 datatable">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: left;">Log Date</th>
+                                                <th style="text-align: left;">Lecture Number</th>
+                                                <th style="text-align: left;">Topics Covered</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($log_details as $detail)
+                                            <tr>
+                                                <td>{{$detail->log_date}}</td>
+                                                <td>{{$detail->lecture_number}}</td>
+                                                <td>{{$detail->topics_covered}}</td>
+                                            </tr>
+                                       @endforeach
+                                          
+                                        </tbody>
+                                    </table>
+
 </body>
 </html>

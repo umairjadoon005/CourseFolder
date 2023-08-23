@@ -29,7 +29,7 @@
                         @csrf 
                         <input type="hidden" name="course_id" value="{{session('default_course')}}"/>
                         <div class="form-group row">
-                                <div class="col-md-12"><label class="col-form-label">Question Paper<span class="text-danger">*</span></label></div>
+                                <div class="col-md-12"><label class="col-form-label">Sample Type<span class="text-danger">*</span></label></div>
                                 <div class="col-md-12">
                                 <select class="form-control" name="sample_type">
                                         <option value="Quiz">Quiz</option>

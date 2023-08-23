@@ -5,7 +5,7 @@
 
     <style>
 p {
-    border:1px solid lightgrey;
+    /* border:1px solid lightgrey; */
     padding: 10px;
  }
    

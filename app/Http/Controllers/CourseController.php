@@ -60,7 +60,7 @@ class CourseController extends BaseController
     ];
 
 
-    $pdf = Pdf::loadView('course-description/coursespdf', $dynamicData);
+    $pdf = PDF::loadView('course-description/coursespdf', $dynamicData);
 
 
     return $pdf->download('Course Details.pdf');
